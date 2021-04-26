@@ -14,6 +14,7 @@ import static palya.Cselekves.SEMMI;
 
 public class Palya implements JatekElem {
 
+    public static final String TENGER = "tenger";
     private static Random random = new Random();
 
     private Mezo[][] palya;
@@ -50,6 +51,11 @@ public class Palya implements JatekElem {
     @Override
     public Cselekves hatas(Cselekves cselekves, Palya palya) {
         return SEMMI;
+    }
+
+    @Override
+    public String tipus() {
+        return null;
     }
 
     public void frissit() {
@@ -109,6 +115,18 @@ public class Palya implements JatekElem {
         JatekElem jatekElem = palya[currI][currJ].levesz();
         if (currJ > 0) {
             palya[currI][currJ - 1].lehelyez(jatekElem);
+        }
+    }
+
+    public void foglalTerulet() {
+        if (currI - 1 >= 0 && palya[currI-1][currJ].getJatekElem().tipus().equals(TENGER)) {
+            palya[currI-1][currJ] = new Mezo(new Fold());
+        } else if (currI + 1 < palya.length && palya[currI+1][currJ].getJatekElem().tipus().equals(TENGER)) {
+            palya[currI+1][currJ] = new Mezo(new Fold());
+        } else if (currJ - 1 >= 0 && palya[currI][currJ-1].getJatekElem().tipus().equals(TENGER)) {
+            palya[currI][currJ-1] = new Mezo(new Fold());
+        } else if (currJ + 1 < palya[0].length && palya[currI][currJ+1].getJatekElem().tipus().equals(TENGER)) {
+            palya[currI][currJ+1] = new Mezo(new Fold());
         }
     }
 

@@ -2,8 +2,6 @@ package palya;
 
 import jatekos.JatekElem;
 
-import static palya.Cselekves.SEMMI;
-
 public class Tenger implements JatekElem {
     @Override
     public void rajzol() {
@@ -13,5 +11,10 @@ public class Tenger implements JatekElem {
     @Override
     public Cselekves hatas(Cselekves cselekves, Palya palya) {
         return cselekves;
+    }
+
+    @Override
+    public String tipus() {
+        return "tenger";
     }
 }

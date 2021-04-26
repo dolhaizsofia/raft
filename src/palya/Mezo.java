@@ -35,4 +35,9 @@ public class Mezo implements JatekElem {
     public Cselekves hatas(Cselekves cselekves, Palya palya) {
         return cselekves;
     }
+
+    @Override
+    public String tipus() {
+        return null;
+    }
 }

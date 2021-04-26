@@ -35,6 +35,14 @@ public class Jatekos implements JatekElem {
         if (MOZGAS_LE == cselekves) {
             palya.leMozgat();
         }
+        if (TERULET_BOVITES == cselekves) {
+            palya.foglalTerulet();
+        }
         return SEMMI;
+    }
+
+    @Override
+    public String tipus() {
+        return null;
     }
 }

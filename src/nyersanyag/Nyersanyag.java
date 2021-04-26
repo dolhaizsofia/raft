@@ -16,4 +16,9 @@ public abstract class Nyersanyag implements JatekElem {
         return cselekves;
     }
 
+    @Override
+    public String tipus() {
+        return null;
+    }
+
 }
