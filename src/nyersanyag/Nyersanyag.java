@@ -1,6 +1,5 @@
 package nyersanyag;
 
-public class Nyersanyag {
-
+public abstract class Nyersanyag {
 
 }
