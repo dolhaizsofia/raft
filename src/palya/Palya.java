@@ -71,6 +71,16 @@ public class Palya implements JatekElem {
         }
     }
 
+    public void ervenyesitHatasok(Cselekves cselekves) {
+        for (int i = 0; i < palya.length; i++) {
+            for (int j = 0; j < palya[i].length; j++) {
+                currI = i;
+                currJ = j;
+                palya[i][j].getJatekElem().hatas(cselekves, this);
+            }
+        }
+    }
+
     public void leMozgat() {
         JatekElem jatekElem = palya[currI][currJ].levesz();
         if (currI < palya.length - 1) {
