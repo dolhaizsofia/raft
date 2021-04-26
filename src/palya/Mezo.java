@@ -4,6 +4,8 @@ import jatekos.JatekElem;
 
 import java.util.Stack;
 
+import static palya.Cselekves.SEMMI;
+
 public class Mezo implements JatekElem {
 
     private Stack<JatekElem> elemek = new Stack<>();
@@ -30,7 +32,7 @@ public class Mezo implements JatekElem {
     }
 
     @Override
-    public void hatas(Cselekves cselekves, Palya palya) {
-
+    public Cselekves hatas(Cselekves cselekves, Palya palya) {
+        return cselekves;
     }
 }

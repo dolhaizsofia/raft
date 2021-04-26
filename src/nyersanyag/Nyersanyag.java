@@ -4,13 +4,16 @@ import jatekos.JatekElem;
 import palya.Cselekves;
 import palya.Palya;
 
+import static palya.Cselekves.FRISSIT_PALYA;
+
 public abstract class Nyersanyag implements JatekElem {
 
     @Override
-    public void hatas(Cselekves cselekves, Palya palya) {
-        if (Cselekves.FRISSIT_PALYA == cselekves) {
+    public Cselekves hatas(Cselekves cselekves, Palya palya) {
+        if (FRISSIT_PALYA == cselekves) {
             palya.leMozgat();
         }
+        return cselekves;
     }
 
 }

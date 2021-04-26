@@ -10,6 +10,7 @@ import java.util.Set;
 
 import static nyersanyag.NyersanyagFactory.letrehozNyersanyag;
 import static palya.Cselekves.FRISSIT_PALYA;
+import static palya.Cselekves.SEMMI;
 
 public class Palya implements JatekElem {
 
@@ -28,7 +29,8 @@ public class Palya implements JatekElem {
         }
         int middleHeight = palya.length / 2;
         int middleWidth = palya[0].length / 2;
-        palya[middleHeight-1][middleWidth-1] = new Mezo(new Jatekos());
+        palya[middleHeight-1][middleWidth-1] = new Mezo(new Fold());
+        palya[middleHeight-1][middleWidth-1].lehelyez(new Jatekos());
         palya[middleHeight-1][middleWidth] = new Mezo(new Fold());
         palya[middleHeight][middleWidth-1] = new Mezo(new Fold());
         palya[middleHeight][middleWidth] = new Mezo(new Fold());
@@ -46,8 +48,8 @@ public class Palya implements JatekElem {
     }
 
     @Override
-    public void hatas(Cselekves cselekves, Palya palya) {
-
+    public Cselekves hatas(Cselekves cselekves, Palya palya) {
+        return SEMMI;
     }
 
     public void frissit() {
@@ -76,11 +78,12 @@ public class Palya implements JatekElem {
             for (int j = 0; j < palya[i].length; j++) {
                 currI = i;
                 currJ = j;
-                palya[i][j].getJatekElem().hatas(cselekves, this);
+                cselekves = palya[i][j].getJatekElem().hatas(cselekves, this);
             }
         }
     }
 
+//    szmet es jatekos utkozik???
     public void leMozgat() {
         JatekElem jatekElem = palya[currI][currJ].levesz();
         if (currI < palya.length - 1) {

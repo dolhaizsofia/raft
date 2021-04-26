@@ -5,5 +5,5 @@ import palya.Palya;
 
 public interface JatekElem {
     void rajzol();
-    void hatas(Cselekves cselekves, Palya palya);
+    Cselekves hatas(Cselekves cselekves, Palya palya);
 }

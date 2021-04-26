@@ -2,6 +2,8 @@ package palya;
 
 import jatekos.JatekElem;
 
+import static palya.Cselekves.SEMMI;
+
 public class Fold implements JatekElem {
     @Override
     public void rajzol() {
@@ -9,7 +11,7 @@ public class Fold implements JatekElem {
     }
 
     @Override
-    public void hatas(Cselekves cselekves, Palya palya) {
-
+    public Cselekves hatas(Cselekves cselekves, Palya palya) {
+        return cselekves;
     }
 }

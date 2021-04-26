@@ -4,6 +4,7 @@ import palya.Cselekves;
 import palya.Palya;
 
 import static palya.Cselekves.MOZGAS_JOBBRA;
+import static palya.Cselekves.SEMMI;
 
 public class Jatekos implements JatekElem {
     private int egeszseg = 3;
@@ -22,9 +23,10 @@ public class Jatekos implements JatekElem {
     }
 
     @Override
-    public void hatas(Cselekves cselekves, Palya palya) {
+    public Cselekves hatas(Cselekves cselekves, Palya palya) {
         if (MOZGAS_JOBBRA == cselekves) {
             palya.jobbraMozgat();
         }
+        return SEMMI;
     }
 }

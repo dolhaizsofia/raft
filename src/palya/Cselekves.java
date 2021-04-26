@@ -1,6 +1,7 @@
 package palya;
 
 public enum Cselekves {
+    SEMMI(0),
     FRISSIT_PALYA(1),
     TERULET_BOVITES(2),
     MOZGAS_LE(3),
