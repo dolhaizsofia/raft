@@ -10,7 +10,7 @@ import static palya.Cselekves.keresKodAlapjan;
 public class Main {
 
     public static void main(String[] args) {
-        Palya palya = new Palya(5, 5);
+        Palya palya = new Palya(35, 25);
         palya.rajzol();
         Jatekos jatekos = new Jatekos();
         Scanner olvaso = new Scanner(System.in);

@@ -3,11 +3,10 @@ package jatekos;
 import palya.Cselekves;
 import palya.Palya;
 
-import static palya.Cselekves.MOZGAS_JOBBRA;
-import static palya.Cselekves.SEMMI;
+import static palya.Cselekves.*;
 
 public class Jatekos implements JatekElem {
-    private int egeszseg = 3;
+    private int egeszseg = 10;
 
     public boolean isAlive() {
         return egeszseg > 0;
@@ -26,6 +25,15 @@ public class Jatekos implements JatekElem {
     public Cselekves hatas(Cselekves cselekves, Palya palya) {
         if (MOZGAS_JOBBRA == cselekves) {
             palya.jobbraMozgat();
+        }
+        if (MOZGAS_BALRA == cselekves) {
+            palya.balraMozgat();
+        }
+        if (MOZGAS_FEL == cselekves) {
+            palya.felMozgat();
+        }
+        if (MOZGAS_LE == cselekves) {
+            palya.leMozgat();
         }
         return SEMMI;
     }
