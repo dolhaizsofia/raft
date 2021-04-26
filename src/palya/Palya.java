@@ -1,7 +1,7 @@
 package palya;
 
 import jatekos.JatekElem;
-import nyersanyag.Level;
+import jatekos.Jatekos;
 import nyersanyag.Nyersanyag;
 
 import java.util.HashSet;
@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.Set;
 
 import static nyersanyag.NyersanyagFactory.letrehozNyersanyag;
-import static palya.Akcio.FRISSIT_PALYA;
+import static palya.Cselekves.FRISSIT_PALYA;
 
 public class Palya implements JatekElem {
 
@@ -28,7 +28,7 @@ public class Palya implements JatekElem {
         }
         int middleHeight = palya.length / 2;
         int middleWidth = palya[0].length / 2;
-        palya[middleHeight-1][middleWidth-1] = new Mezo(new Fold());
+        palya[middleHeight-1][middleWidth-1] = new Mezo(new Jatekos());
         palya[middleHeight-1][middleWidth] = new Mezo(new Fold());
         palya[middleHeight][middleWidth-1] = new Mezo(new Fold());
         palya[middleHeight][middleWidth] = new Mezo(new Fold());
@@ -46,7 +46,7 @@ public class Palya implements JatekElem {
     }
 
     @Override
-    public void hatas(Akcio akcio, Palya palya) {
+    public void hatas(Cselekves cselekves, Palya palya) {
 
     }
 
@@ -67,38 +67,9 @@ public class Palya implements JatekElem {
             hova.add(random.nextInt(palya[0].length));
         }
         for (int oszlop: hova) {
-            Nyersanyag nyersanyag = letrehozNyersanyag();
             palya[0][oszlop].lehelyez(letrehozNyersanyag());
         }
     }
-
-//    private void leMozgat(int i, int j) {
-//        JatekElem jatekElem = palya[i][j].levesz();
-//        if (i < palya.length - 1) {
-//            palya[i + 1][j].lehelyez(jatekElem);
-//        }
-//    }
-//
-//    private void felMozgat(int i, int j) {
-//        JatekElem jatekElem = palya[i][j].levesz();
-//        if (i > 0) {
-//            palya[i - 1][j].lehelyez(jatekElem);
-//        }
-//    }
-//
-//    private void jobbraMozgat(int i, int j) {
-//        JatekElem jatekElem = palya[i][j].levesz();
-//        if (i < palya[i].length - 1) {
-//            palya[i][j + 1].lehelyez(jatekElem);
-//        }
-//    }
-//
-//    private void balraMozgat(int i, int j) {
-//        JatekElem jatekElem = palya[i][j].levesz();
-//        if (j > 0) {
-//            palya[i][j - 1].lehelyez(jatekElem);
-//        }
-//    }
 
     public void leMozgat() {
         JatekElem jatekElem = palya[currI][currJ].levesz();

@@ -1,9 +1,9 @@
 package jatekos;
 
-import palya.Akcio;
+import palya.Cselekves;
 import palya.Palya;
 
 public interface JatekElem {
     void rajzol();
-    void hatas(Akcio akcio, Palya palya);
+    void hatas(Cselekves cselekves, Palya palya);
 }

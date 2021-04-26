@@ -9,7 +9,7 @@ public class Fold implements JatekElem {
     }
 
     @Override
-    public void hatas(Akcio akcio, Palya palya) {
+    public void hatas(Cselekves cselekves, Palya palya) {
 
     }
 }
