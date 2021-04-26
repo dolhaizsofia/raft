@@ -20,8 +20,17 @@ public class Mezo implements JatekElem {
         return elemek.pop();
     }
 
+    public JatekElem getJatekElem() {
+        return elemek.peek();
+    }
+
     @Override
     public void rajzol() {
         elemek.peek().rajzol();
+    }
+
+    @Override
+    public void hatas(Akcio akcio, Palya palya) {
+
     }
 }

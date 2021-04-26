@@ -7,4 +7,9 @@ public class Tenger implements JatekElem {
     public void rajzol() {
         System.out.print("T");
     }
+
+    @Override
+    public void hatas(Akcio akcio, Palya palya) {
+
+    }
 }

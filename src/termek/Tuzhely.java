@@ -1,6 +1,6 @@
 package termek;
 
-public class Tuzhely extends Termek{
+public class Tuzhely extends Termek {
     @Override
     public void ar() {
 

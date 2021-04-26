@@ -7,4 +7,9 @@ public class Fold implements JatekElem {
     public void rajzol() {
         System.out.print("F");
     }
+
+    @Override
+    public void hatas(Akcio akcio, Palya palya) {
+
+    }
 }
