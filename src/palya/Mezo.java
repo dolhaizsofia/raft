@@ -16,7 +16,7 @@ public class Mezo implements JatekElem {
         elemek.push(jatekElem);
     }
 
-    public JatekElem levesz(JatekElem jatekElem) {
+    public JatekElem levesz() {
         return elemek.pop();
     }
 
