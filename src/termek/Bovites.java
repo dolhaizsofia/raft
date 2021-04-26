@@ -7,7 +7,7 @@ public class Bovites extends Termek{
     }
 
     @Override
-    public void hatasa() {
+    public void hatas() {
 
     }
 }

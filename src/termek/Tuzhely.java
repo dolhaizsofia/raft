@@ -7,7 +7,7 @@ public class Tuzhely extends Termek{
     }
 
     @Override
-    public void hatasa() {
+    public void hatas() {
 
     }
 }

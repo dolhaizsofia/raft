@@ -7,7 +7,7 @@ public class Viztisztito extends Termek{
     }
 
     @Override
-    public void hatasa() {
+    public void hatas() {
 
     }
 }

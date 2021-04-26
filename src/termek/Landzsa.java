@@ -7,7 +7,7 @@ public class Landzsa extends Termek{
     }
 
     @Override
-    public void hatasa() {
+    public void hatas() {
 
     }
 }
