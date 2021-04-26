@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Palya palya = new Palya();
+        Palya palya = new Palya(5, 5);
         palya.rajzol();
         Jatekos jatekos = new Jatekos();
         Scanner olvaso =new Scanner(System.in);

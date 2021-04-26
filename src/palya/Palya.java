@@ -3,7 +3,6 @@ package palya;
 import jatekos.JatekElem;
 import nyersanyag.Level;
 import nyersanyag.Nyersanyag;
-import nyersanyag.NyersanyagFactory;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -14,25 +13,25 @@ import static palya.Akcio.FRISSIT_PALYA;
 
 public class Palya implements JatekElem {
 
+    private static Random random = new Random();
+
     private Mezo[][] palya;
     //    jatekelem should have position???
     private int currI, currJ;
 
-    public Palya() {
-        this.palya = new Mezo[5][5];
+    public Palya(int height, int width) {
+        this.palya = new Mezo[height][width];
         for (int i = 0; i < palya.length; i++) {
             for (int j = 0; j < palya[i].length; j++) {
                 palya[i][j] = new Mezo(new Tenger());
             }
         }
-        palya[3][3] = new Mezo(new Fold());
-//        palya[12][18] = new Mezo(new Fold());
-//        palya[13][17] = new Mezo(new Fold());
-//        palya[13][18] = new Mezo(new Tenger());
-//        palya[13][18].lehelyez(new Fold());
-//        leMozgat(13, 18);
-
-        palya[0][1].lehelyez(new Level());
+        int middleHeight = palya.length / 2;
+        int middleWidth = palya[0].length / 2;
+        palya[middleHeight-1][middleWidth-1] = new Mezo(new Fold());
+        palya[middleHeight-1][middleWidth] = new Mezo(new Fold());
+        palya[middleHeight][middleWidth-1] = new Mezo(new Fold());
+        palya[middleHeight][middleWidth] = new Mezo(new Fold());
     }
 
     @Override
@@ -62,7 +61,6 @@ public class Palya implements JatekElem {
     }
 
     public void generalUjNyersanyagok() {
-        Random random = new Random();
         int nyersanyagSzam = random.nextInt(3 + 1);
         Set<Integer> hova = new HashSet<>();
         for (int i = 0; i < nyersanyagSzam; i++) {
