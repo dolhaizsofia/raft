@@ -7,6 +7,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Objects;
 
 import static javax.imageio.ImageIO.read;
 import static javax.swing.BorderFactory.createEmptyBorder;
@@ -78,7 +79,7 @@ class Board extends JFrame {
 
         ImagePanel(String fileName) {
             try {
-                image = read(new File(getClass().getClassLoader().getResource(fileName + ".png").toURI()));
+                image = read(new File(Objects.requireNonNull(getClass().getClassLoader().getResource(fileName + ".png")).toURI()));
             } catch (IOException | URISyntaxException e) {
                 e.printStackTrace();
             }
