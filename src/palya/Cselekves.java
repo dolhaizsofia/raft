@@ -7,7 +7,11 @@ public enum Cselekves {
     MOZGAS_LE(3),
     MOZGAS_FEL(4),
     MOZGAS_BALRA(5),
-    MOZGAS_JOBBRA(6);
+    MOZGAS_JOBBRA(6),
+    MOZGAS_BALFEL(7),
+    MOZGAS_BALLE(8),
+    MOZGAS_JOBBFEL(9),
+    MOZGAS_JOBBLE(10);
 
     private int kod;
 

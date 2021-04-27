@@ -41,6 +41,18 @@ public class Jatekos implements JatekElem {
         if (MOZGAS_LE == cselekves) {
             palya.leMozgat();
         }
+        if (MOZGAS_BALFEL == cselekves) {
+            palya.balfelMozgat();
+        }
+        if (MOZGAS_BALLE == cselekves) {
+            palya.balleMozgat();
+        }
+        if (MOZGAS_JOBBFEL == cselekves) {
+            palya.jobbfelMozgat();
+        }
+        if (MOZGAS_JOBBLE == cselekves) {
+            palya.jobbleMozgat();
+        }
         if (TERULET_BOVITES == cselekves) {
             palya.foglalTerulet();
         }

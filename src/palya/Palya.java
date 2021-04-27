@@ -117,6 +117,30 @@ public class Palya implements JatekElem {
             palya[currI][currJ - 1].lehelyez(jatekElem);
         }
     }
+    public void balfelMozgat() {
+        JatekElem jatekElem = palya[currI][currJ].levesz();
+        if (currJ > 0 && currI > 0) {
+            palya[currI-1][currJ - 1].lehelyez(jatekElem);
+        }
+    }
+    public void jobbfelMozgat() {
+        JatekElem jatekElem = palya[currI][currJ].levesz();
+        if (currI < palya[currI].length - 1 && currI > 0) {
+            palya[currI-1][currJ + 1].lehelyez(jatekElem);
+        }
+    }
+    public void balleMozgat() {
+        JatekElem jatekElem = palya[currI][currJ].levesz();
+        if (currJ > 0 && currI < palya.length - 1) {
+            palya[currI+1][currJ - 1].lehelyez(jatekElem);
+        }
+    }
+    public void jobbleMozgat() {
+        JatekElem jatekElem = palya[currI][currJ].levesz();
+        if (currI < palya[currI].length - 1 && currI < palya.length - 1) {
+            palya[currI+1][currJ + 1].lehelyez(jatekElem);
+        }
+    }
 
     public void foglalTerulet() {
         if (currI - 1 >= 0 && palya[currI-1][currJ].getJatekElem().tipus().equals(TENGER)) {
@@ -127,6 +151,14 @@ public class Palya implements JatekElem {
             palya[currI][currJ-1] = new Mezo(new Fold());
         } else if (currJ + 1 < palya[0].length && palya[currI][currJ+1].getJatekElem().tipus().equals(TENGER)) {
             palya[currI][currJ+1] = new Mezo(new Fold());
+        } else if(currI - 1 >= 0 && currJ + 1 < palya[0].length && palya[currI-1][currJ+1].getJatekElem().tipus().equals(TENGER)){
+            palya[currI-1][currJ+1] = new Mezo(new Fold());
+        } else if(currI - 1 >= 0 && currJ - 1 < palya[0].length && palya[currI-1][currJ-1].getJatekElem().tipus().equals(TENGER)){
+            palya[currI-1][currJ-1] = new Mezo(new Fold());
+        } else if(currJ + 1 < palya[0].length && currJ + 1 < palya[0].length && palya[currI+1][currJ+1].getJatekElem().tipus().equals(TENGER)){
+            palya[currI+1][currJ+1] = new Mezo(new Fold());
+        } else if (currJ + 1 < palya[0].length && currJ - 1 < palya[0].length && palya[currI+1][currJ-1].getJatekElem().tipus().equals(TENGER)){
+            palya[currI+1][currJ-1] = new Mezo(new Fold());
         }
     }
 
