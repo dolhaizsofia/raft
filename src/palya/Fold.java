@@ -2,8 +2,6 @@ package palya;
 
 import jatekos.JatekElem;
 
-import static palya.Cselekves.SEMMI;
-
 public class Fold implements JatekElem {
     @Override
     public void rajzol() {
@@ -17,6 +15,11 @@ public class Fold implements JatekElem {
 
     @Override
     public String tipus() {
+        return "fold";
+    }
+
+    @Override
+    public String getImageName() {
         return "fold";
     }
 }

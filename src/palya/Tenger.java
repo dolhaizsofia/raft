@@ -17,4 +17,9 @@ public class Tenger implements JatekElem {
     public String tipus() {
         return "tenger";
     }
+
+    @Override
+    public String getImageName() {
+        return "tenger";
+    }
 }

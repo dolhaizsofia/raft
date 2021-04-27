@@ -40,4 +40,9 @@ public class Mezo implements JatekElem {
     public String tipus() {
         return null;
     }
+
+    @Override
+    public String getImageName() {
+        return "tenger";
+    }
 }

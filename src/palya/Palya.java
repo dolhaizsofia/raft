@@ -58,6 +58,11 @@ public class Palya implements JatekElem {
         return null;
     }
 
+    @Override
+    public String getImageName() {
+        return null;
+    }
+
     public void frissit() {
         for (int i = palya.length - 1; i >= 0; i--) {
             for (int j = 0; j < palya[i].length; j++) {
@@ -162,4 +167,7 @@ public class Palya implements JatekElem {
         }
     }
 
+    public Mezo[][] getTabla() {
+        return palya;
+    }
 }

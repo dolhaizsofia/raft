@@ -63,4 +63,9 @@ public class Jatekos implements JatekElem {
     public String tipus() {
         return null;
     }
+
+    @Override
+    public String getImageName() {
+        return "tenger";
+    }
 }

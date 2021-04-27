@@ -21,4 +21,9 @@ public abstract class Nyersanyag implements JatekElem {
         return null;
     }
 
+    @Override
+    public String getImageName() {
+        return "tenger";
+    }
+
 }
