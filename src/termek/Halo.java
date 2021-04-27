@@ -10,8 +10,5 @@ public class Halo extends Termek{
     public void hatas() {
 
     }
-    @Override
-    public String getImageName() {
-        return "deszka";
-    }
+
 }

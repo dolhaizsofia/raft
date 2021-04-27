@@ -6,10 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import static javax.imageio.ImageIO.read;
 import static javax.swing.BorderFactory.createEmptyBorder;
-import static javax.imageio.ImageIO.*;
 import static javax.swing.BorderFactory.createLineBorder;
 
 public class Board extends JFrame {
@@ -83,8 +83,8 @@ public class Board extends JFrame {
 
         ImagePanel(String fileName) {
             try {
-                image = read(new File(getClass().getClassLoader().getResourceAsStream(getImageName()+ ".png")));
-            } catch (IOException e) {
+                image = read(new File(getClass().getClassLoader().getResource(fileName + ".png").toURI()));
+            } catch (IOException | URISyntaxException e) {
                 e.printStackTrace();
             }
         }
