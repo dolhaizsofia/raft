@@ -1,5 +1,5 @@
 package palya;
 
 public enum Irany {
-    LE, FEL, BALRA, JOBBRA
+    LE, FEL, BALRA, JOBBRA,
 }
