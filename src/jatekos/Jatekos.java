@@ -6,15 +6,29 @@ import palya.Palya;
 import java.util.HashMap;
 import java.util.Map;
 
-import static palya.Cselekves.*;
+import static nyersanyag.Burgonya.BURGONYA;
+import static nyersanyag.Deszka.DESZKA;
+import static nyersanyag.Hulladek.HULLADEK;
+import static nyersanyag.Level.LEVEL;
+import static palya.Cselekves.SEMMI;
 
 public class Jatekos implements JatekElem {
+
+    public static final String JATEKOS = "jatekos";
 
     private int egeszseg = 10;
     private int ehseg = 100;
     private int szomjusag = 100;
 
-    private Map<String, Integer> holmik = new HashMap<>();
+    private Map<String, Integer> holmik;
+
+    public Jatekos() {
+        holmik = new HashMap<>();
+        holmik.put(DESZKA, 0);
+        holmik.put(LEVEL, 0);
+        holmik.put(HULLADEK, 0);
+        holmik.put(BURGONYA, 0);
+    }
 
     public boolean isAlive() {
         return egeszseg > 0;
@@ -24,52 +38,21 @@ public class Jatekos implements JatekElem {
         egeszseg--;
     }
 
-    @Override
-    public void rajzol() {
-        System.out.print("J");
+    public int keresHolmni(String holmi) {
+        return holmik.getOrDefault(holmi, 0);
     }
 
-    @Override
-    public Cselekves hatas(Cselekves cselekves, Palya palya) {
-        ehseg--;
-        szomjusag--;
-        if (MOZGAS_JOBBRA == cselekves) {
-            palya.jobbraMozgat();
-        }
-        if (MOZGAS_BALRA == cselekves) {
-            palya.balraMozgat();
-        }
-        if (MOZGAS_FEL == cselekves) {
-            palya.felMozgat();
-        }
-        if (MOZGAS_LE == cselekves) {
-            palya.leMozgat();
-        }
-        if (MOZGAS_BALFEL == cselekves) {
-            palya.balfelMozgat();
-        }
-        if (MOZGAS_BALLE == cselekves) {
-            palya.balleMozgat();
-        }
-        if (MOZGAS_JOBBFEL == cselekves) {
-            palya.jobbfelMozgat();
-        }
-        if (MOZGAS_JOBBLE == cselekves) {
-            palya.jobbleMozgat();
-        }
-        if (TERULET_BOVITES == cselekves) {
-            palya.foglalTerulet();
-        }
-        return SEMMI;
+    public void csokkentHolmi(String holmi, int mennyiseg) {
+        holmik.put(holmi, holmik.get(holmi) - mennyiseg);
     }
 
     @Override
     public String tipus() {
-        return null;
+        return JATEKOS;
     }
 
     @Override
     public String getImageName() {
-        return "jatekos";
+        return JATEKOS;
     }
 }

@@ -2,28 +2,36 @@ package main;
 
 import jatekos.Jatekos;
 import palya.Palya;
+import parancs.GeneralUjNyersanyagok;
+import parancs.MozgatNyersanyag;
+import parancs.Parancs;
 
-import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.System.in;
 import static javax.swing.JOptionPane.showMessageDialog;
-import static palya.Cselekves.keresKodAlapjan;
+import static parancs.ParancsFactory.letrehozParancs;
 
 public class BoardMain {
 
     public static void main(String[] args) {
         Palya palya = new Palya(25, 35);
         Board board = new Board(palya);
+        ParancsFeldolgozo parancsFeldolgozo = new ParancsFeldolgozo(palya);
 
-        int cselekvesSzamlalo = 3;
+        int cselekvesSzamlalo = 10;
         Jatekos jatekos = new Jatekos();
         Scanner olvaso = new Scanner(in);
         while (jatekos.isAlive()) {
-            palya.frissit();
-            palya.generalUjNyersanyagok();
-            palya.ervenyesitHatasok(keresKodAlapjan(olvaso.nextInt()));
-            board.addComponentsToPane(board);
+            List<Parancs> parancsok = new ArrayList<>();
+            parancsok.add(new MozgatNyersanyag());
+            parancsok.add(new GeneralUjNyersanyagok());
+            parancsok.add(letrehozParancs(olvaso.nextInt()));
+
+            parancsFeldolgozo.vegrehajt(parancsok);
+            board.draw(board);
             jatekos.csokkentEgeszseg();
             cselekvesSzamlalo--;
             if (cselekvesSzamlalo == 0) {

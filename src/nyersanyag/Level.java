@@ -1,10 +1,9 @@
 package nyersanyag;
 
 public class Level extends Nyersanyag {
-    @Override
-    public void rajzol() {
-        System.out.print("L");
-    }
+
+    public static final String LEVEL = "level";
+
     @Override
     public String getImageName() {
         return "level";

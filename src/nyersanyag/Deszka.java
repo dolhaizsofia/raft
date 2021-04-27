@@ -1,11 +1,10 @@
 package nyersanyag;
 
-public class Deszka extends Nyersanyag{
+public class Deszka extends Nyersanyag {
+
+    public static final String DESZKA = "deszka";
+
     @Override
-    public void rajzol() {
-        System.out.print("D");
-    }
-   @Override
     public String getImageName() {
         return "deszka";
     }

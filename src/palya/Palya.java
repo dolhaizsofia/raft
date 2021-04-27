@@ -2,7 +2,7 @@ package palya;
 
 import jatekos.JatekElem;
 import jatekos.Jatekos;
-import nyersanyag.Nyersanyag;
+import parancs.Parancs;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -10,12 +10,10 @@ import java.util.Set;
 
 import static nyersanyag.NyersanyagFactory.letrehozNyersanyag;
 import static palya.Cselekves.FRISSIT_PALYA;
-import static palya.Cselekves.SEMMI;
 
-public class Palya implements JatekElem {
+public class Palya {
 
-    public static final String TENGER = "tenger";
-    private static Random random = new Random();
+    private Jatekos jatekos;
 
     private Mezo[][] palya;
     //    jatekelem should have position???
@@ -31,143 +29,40 @@ public class Palya implements JatekElem {
         int middleHeight = palya.length / 2;
         int middleWidth = palya[0].length / 2;
         palya[middleHeight-1][middleWidth-1] = new Mezo(new Fold());
-        palya[middleHeight-1][middleWidth-1].lehelyez(new Jatekos());
+        jatekos = new Jatekos();
+        palya[middleHeight-1][middleWidth-1].lehelyez(jatekos);
         palya[middleHeight-1][middleWidth] = new Mezo(new Fold());
         palya[middleHeight][middleWidth-1] = new Mezo(new Fold());
         palya[middleHeight][middleWidth] = new Mezo(new Fold());
     }
 
-    @Override
-    public void rajzol() {
-        for (Mezo[] sor : palya) {
-            for (Mezo elem : sor) {
-                elem.rajzol();
-                System.out.print(" ");
-            }
-            System.out.println();
-        }
-    }
-
-    @Override
-    public Cselekves hatas(Cselekves cselekves, Palya palya) {
-        return SEMMI;
-    }
-
-    @Override
-    public String tipus() {
-        return null;
-    }
-
-    @Override
-    public String getImageName() {
-        return null;
-    }
-
-    public void frissit() {
+    public void vegigMegy(Parancs parancs) {
         for (int i = palya.length - 1; i >= 0; i--) {
             for (int j = 0; j < palya[i].length; j++) {
                 currI = i;
                 currJ = j;
-                palya[i][j].getJatekElem().hatas(FRISSIT_PALYA, this);
+                parancs.csinal(this);
             }
         }
     }
 
-    public void generalUjNyersanyagok() {
-        int nyersanyagSzam = random.nextInt(3 + 1);
-        Set<Integer> hova = new HashSet<>();
-        for (int i = 0; i < nyersanyagSzam; i++) {
-            hova.add(random.nextInt(palya[0].length));
-        }
-        for (int oszlop: hova) {
-            palya[0][oszlop].lehelyez(letrehozNyersanyag());
-        }
+    public Jatekos getJatekos() {
+        return jatekos;
     }
 
-    public void ervenyesitHatasok(Cselekves cselekves) {
-        for (int i = 0; i < palya.length; i++) {
-            for (int j = 0; j < palya[i].length; j++) {
-                currI = i;
-                currJ = j;
-                cselekves = palya[i][j].getJatekElem().hatas(cselekves, this);
-            }
-        }
+    public int getCurrI() {
+        return currI;
     }
 
-//    szmet es jatekos utkozik???
-    public void leMozgat() {
-        JatekElem jatekElem = palya[currI][currJ].levesz();
-        if (currI < palya.length - 1) {
-            palya[currI + 1][currJ].lehelyez(jatekElem);
-        }
-    }
-
-    public void felMozgat() {
-        JatekElem jatekElem = palya[currI][currJ].levesz();
-        if (currI > 0) {
-            palya[currI - 1][currJ].lehelyez(jatekElem);
-        }
-    }
-
-    public void jobbraMozgat() {
-        JatekElem jatekElem = palya[currI][currJ].levesz();
-        if (currI < palya[currI].length - 1) {
-            palya[currI][currJ + 1].lehelyez(jatekElem);
-        }
-    }
-
-    public void balraMozgat() {
-        JatekElem jatekElem = palya[currI][currJ].levesz();
-        if (currJ > 0) {
-            palya[currI][currJ - 1].lehelyez(jatekElem);
-        }
-    }
-    public void balfelMozgat() {
-        JatekElem jatekElem = palya[currI][currJ].levesz();
-        if (currJ > 0 && currI > 0) {
-            palya[currI-1][currJ - 1].lehelyez(jatekElem);
-        }
-    }
-    public void jobbfelMozgat() {
-        JatekElem jatekElem = palya[currI][currJ].levesz();
-        if (currI < palya[currI].length - 1 && currI > 0) {
-            palya[currI-1][currJ + 1].lehelyez(jatekElem);
-        }
-    }
-    public void balleMozgat() {
-        JatekElem jatekElem = palya[currI][currJ].levesz();
-        if (currJ > 0 && currI < palya.length - 1) {
-            palya[currI+1][currJ - 1].lehelyez(jatekElem);
-        }
-    }
-    public void jobbleMozgat() {
-        JatekElem jatekElem = palya[currI][currJ].levesz();
-        if (currI < palya[currI].length - 1 && currI < palya.length - 1) {
-            palya[currI+1][currJ + 1].lehelyez(jatekElem);
-        }
-    }
-
-    public void foglalTerulet() {
-        if (currI - 1 >= 0 && palya[currI-1][currJ].getJatekElem().tipus().equals(TENGER)) {
-            palya[currI-1][currJ] = new Mezo(new Fold());
-        } else if (currI + 1 < palya.length && palya[currI+1][currJ].getJatekElem().tipus().equals(TENGER)) {
-            palya[currI+1][currJ] = new Mezo(new Fold());
-        } else if (currJ - 1 >= 0 && palya[currI][currJ-1].getJatekElem().tipus().equals(TENGER)) {
-            palya[currI][currJ-1] = new Mezo(new Fold());
-        } else if (currJ + 1 < palya[0].length && palya[currI][currJ+1].getJatekElem().tipus().equals(TENGER)) {
-            palya[currI][currJ+1] = new Mezo(new Fold());
-        } else if(currI - 1 >= 0 && currJ + 1 < palya[0].length && palya[currI-1][currJ+1].getJatekElem().tipus().equals(TENGER)){
-            palya[currI-1][currJ+1] = new Mezo(new Fold());
-        } else if(currI - 1 >= 0 && currJ - 1 < palya[0].length && palya[currI-1][currJ-1].getJatekElem().tipus().equals(TENGER)){
-            palya[currI-1][currJ-1] = new Mezo(new Fold());
-        } else if(currJ + 1 < palya[0].length && currJ + 1 < palya[0].length && palya[currI+1][currJ+1].getJatekElem().tipus().equals(TENGER)){
-            palya[currI+1][currJ+1] = new Mezo(new Fold());
-        } else if (currJ + 1 < palya[0].length && currJ - 1 < palya[0].length && palya[currI+1][currJ-1].getJatekElem().tipus().equals(TENGER)){
-            palya[currI+1][currJ-1] = new Mezo(new Fold());
-        }
+    public int getCurrJ() {
+        return currJ;
     }
 
     public Mezo[][] getTabla() {
         return palya;
+    }
+
+    public Mezo aktualisMezo() {
+        return palya[currI][currJ];
     }
 }

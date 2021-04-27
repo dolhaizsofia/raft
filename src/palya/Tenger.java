@@ -3,23 +3,16 @@ package palya;
 import jatekos.JatekElem;
 
 public class Tenger implements JatekElem {
-    @Override
-    public void rajzol() {
-        System.out.print("T");
-    }
 
-    @Override
-    public Cselekves hatas(Cselekves cselekves, Palya palya) {
-        return cselekves;
-    }
+    public static final String TENGER = "tenger";
 
     @Override
     public String tipus() {
-        return "tenger";
+        return TENGER;
     }
 
     @Override
     public String getImageName() {
-        return "tenger";
+        return TENGER;
     }
 }

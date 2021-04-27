@@ -28,13 +28,13 @@ class Board extends JFrame {
     private void createAndShowGUI() {
         setTitle("Chess board example");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        addComponentsToPane(getContentPane());
+        draw(getContentPane());
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
-    public void addComponentsToPane(Container contentPane) {
+    public void draw(Container contentPane) {
         centerPanel.removeAll();
         GridLayout gridLayout = new GridLayout(palya.getTabla().length, palya.getTabla()[0].length);
         centerPanel.setLayout(gridLayout);

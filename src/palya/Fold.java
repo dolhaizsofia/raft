@@ -3,23 +3,16 @@ package palya;
 import jatekos.JatekElem;
 
 public class Fold implements JatekElem {
-    @Override
-    public void rajzol() {
-        System.out.print("F");
-    }
 
-    @Override
-    public Cselekves hatas(Cselekves cselekves, Palya palya) {
-        return cselekves;
-    }
+    public static final String FOLD = "fold";
 
     @Override
     public String tipus() {
-        return "fold";
+        return FOLD;
     }
 
     @Override
     public String getImageName() {
-        return "fold";
+        return FOLD;
     }
 }
