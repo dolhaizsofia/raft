@@ -3,10 +3,16 @@ package jatekos;
 import palya.Cselekves;
 import palya.Palya;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static palya.Cselekves.*;
 
 public class Jatekos implements JatekElem {
+
     private int egeszseg = 10;
+
+    private Map<String, Integer> holmik = new HashMap<>();
 
     public boolean isAlive() {
         return egeszseg > 0;
