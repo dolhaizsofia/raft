@@ -11,6 +11,8 @@ import static palya.Cselekves.*;
 public class Jatekos implements JatekElem {
 
     private int egeszseg = 10;
+    private int ehseg = 100;
+    private int szomjusag = 100;
 
     private Map<String, Integer> holmik = new HashMap<>();
 
@@ -29,6 +31,8 @@ public class Jatekos implements JatekElem {
 
     @Override
     public Cselekves hatas(Cselekves cselekves, Palya palya) {
+        ehseg--;
+        szomjusag--;
         if (MOZGAS_JOBBRA == cselekves) {
             palya.jobbraMozgat();
         }

@@ -34,10 +34,6 @@ class Board extends JFrame {
         setVisible(true);
     }
 
-    /**
-     * Adds all the necessary components to the content pane of the JFrame, and
-     * adds appropriate listeners to components.
-     */
     public void addComponentsToPane(Container contentPane) {
         centerPanel.removeAll();
         GridLayout gridLayout = new GridLayout(palya.getTabla().length, palya.getTabla()[0].length);
