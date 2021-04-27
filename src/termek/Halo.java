@@ -12,6 +12,6 @@ public class Halo extends Termek{
     }
     @Override
     public String getImageName() {
-        return "deszka";
+        return "halo";
     }
 }
