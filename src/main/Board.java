@@ -7,6 +7,8 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
+import static javax.imageio.ImageIO.read;
+import static javax.swing.BorderFactory.createEmptyBorder;
 import static javax.imageio.ImageIO.*;
 import static javax.swing.BorderFactory.createLineBorder;
 
@@ -40,11 +42,11 @@ public class Board extends JFrame {
      * Adds all the necessary components to the content pane of the JFrame, and
      * adds appropriate listeners to components.
      */
-    private void addComponentsToPane(Container contentPane) {
-
+    public void addComponentsToPane(Container contentPane) {
+        centerPanel.removeAll();
         GridLayout gridLayout = new GridLayout(25, 35);
         centerPanel.setLayout(gridLayout);
-        centerPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+        centerPanel.setBorder(createEmptyBorder(2, 2, 2, 2));
 
         //call method to add panels and labels to the center panel which holds the board
         addPanelsAndLabels();
@@ -52,16 +54,13 @@ public class Board extends JFrame {
         contentPane.add(centerPanel, BorderLayout.CENTER);
     }
 
-    private void addPanelsAndLabels() {
-
-        //call methd to create panels with backgound images and appropriate names
+    public void addPanelsAndLabels() {
         addPanelsAndImages();
-
         for (int i = 0; i < panels.length; i++) {
-
-            //adds panels created in addPanelsAndImages()
             centerPanel.add(panels[i]);
         }
+//        centerPanel.repaint();
+        centerPanel.revalidate();
     }
 
     private void addPanelsAndImages() {
