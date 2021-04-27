@@ -12,27 +12,22 @@ import static javax.imageio.ImageIO.read;
 import static javax.swing.BorderFactory.createEmptyBorder;
 import static javax.swing.BorderFactory.createLineBorder;
 
-public class Board extends JFrame {
+class Board extends JFrame {
 
-    //intialize variables
-   private Palya palya;
-    //intialize components
+    private Palya palya;
     private JPanel centerPanel = new JPanel();
-    //initialze arrays to hold panels and images of the board
-    private ImagePanel[] panels = new ImagePanel[35 * 25];
+    private ImagePanel[] panels;
 
-    public Board(Palya palya) {
+    Board(Palya palya) {
         this.palya = palya;
-        createAndShowGUI();//call method to create gui
+        panels = new ImagePanel[palya.getTabla().length * palya.getTabla()[0].length];
+        createAndShowGUI();
     }
 
     private void createAndShowGUI() {
         setTitle("Chess board example");
-
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         addComponentsToPane(getContentPane());
-
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -44,7 +39,7 @@ public class Board extends JFrame {
      */
     public void addComponentsToPane(Container contentPane) {
         centerPanel.removeAll();
-        GridLayout gridLayout = new GridLayout(25, 35);
+        GridLayout gridLayout = new GridLayout(palya.getTabla().length, palya.getTabla()[0].length);
         centerPanel.setLayout(gridLayout);
         centerPanel.setBorder(createEmptyBorder(2, 2, 2, 2));
 
