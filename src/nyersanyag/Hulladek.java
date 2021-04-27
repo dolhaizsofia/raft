@@ -5,4 +5,8 @@ public class Hulladek extends Nyersanyag{
     public void rajzol() {
         System.out.print("h");
     }
+    @Override
+    public String getImageName() {
+        return "szemet";
+    }
 }

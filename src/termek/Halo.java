@@ -10,4 +10,5 @@ public class Halo extends Termek{
     public void hatas() {
 
     }
+
 }

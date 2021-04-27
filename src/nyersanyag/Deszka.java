@@ -5,4 +5,8 @@ public class Deszka extends Nyersanyag{
     public void rajzol() {
         System.out.print("D");
     }
+   @Override
+    public String getImageName() {
+        return "deszka";
+    }
 }

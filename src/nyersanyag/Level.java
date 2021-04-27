@@ -5,5 +5,9 @@ public class Level extends Nyersanyag {
     public void rajzol() {
         System.out.print("L");
     }
+    @Override
+    public String getImageName() {
+        return "level";
+    }
 
 }

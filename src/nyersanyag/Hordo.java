@@ -16,4 +16,8 @@ public class Hordo extends Nyersanyag {
     public void rajzol() {
         System.out.print("H");
     }
+    @Override
+    public String getImageName() {
+        return "hordo";
+    }
 }
