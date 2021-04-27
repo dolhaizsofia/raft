@@ -70,6 +70,6 @@ public class Jatekos implements JatekElem {
 
     @Override
     public String getImageName() {
-        return "tenger";
+        return "jatekos";
     }
 }
