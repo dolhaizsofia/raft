@@ -9,7 +9,7 @@ public class Mozgas extends Parancs {
     private Irany irany;
     private boolean valid = true;
 
-    public Mozgas(Irany irany) {
+    Mozgas(Irany irany) {
         this.irany = irany;
     }
 

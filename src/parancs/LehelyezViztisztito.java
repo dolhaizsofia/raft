@@ -13,14 +13,15 @@ public class LehelyezViztisztito extends Parancs {
 
     private Irany irany;
 
-    public LehelyezViztisztito(Irany irany) {
+    LehelyezViztisztito(Irany irany) {
         this.irany = irany;
     }
 
     @Override
     protected boolean tamogatott(Palya palya) {
         return jatekosEsMellettVmi(palya, irany, FOLD)
-                && palya.getJatekos().keresHolmni(LEVEL) >= 2 && palya.getJatekos().keresHolmni(HULLADEK) >= 4;
+                && palya.getJatekos().keresHolmni(LEVEL) >= 2
+                && palya.getJatekos().keresHolmni(HULLADEK) >= 4;
     }
 
     @Override

@@ -9,7 +9,7 @@ public class Felvesz extends Parancs {
 
     private Irany irany;
 
-    public Felvesz(Irany irany) {
+    Felvesz(Irany irany) {
         this.irany = irany;
     }
 
