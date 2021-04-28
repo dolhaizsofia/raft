@@ -25,6 +25,7 @@ public class Palya {
         palya[middleHeight-1][middleWidth] = new Mezo(new Fold());
         palya[middleHeight][middleWidth-1] = new Mezo(new Fold());
         palya[middleHeight][middleWidth] = new Mezo(new Fold());
+        palya[3][4].lehelyez(new Capa());
     }
 
     public void vegigMegy(Parancs parancs) {
