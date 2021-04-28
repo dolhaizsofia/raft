@@ -16,11 +16,10 @@ public class Bovites extends Parancs {
         this.irany = irany;
     }
 
-//    todo foldon all!!
     @Override
     protected boolean tamogatott(Palya palya) {
         return palya.palyanBelulE(irany)
-                && jatekosEsMellettVmi(palya, irany, TENGER)
+                && jatekosFoldonEsMellettVmi(palya, irany, TENGER)
                 && palya.getJatekos().keresHolmni(DESZKA) >= 2
                 && palya.getJatekos().keresHolmni(LEVEL) >= 2
                 && valid;
