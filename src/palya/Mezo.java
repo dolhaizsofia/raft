@@ -19,8 +19,16 @@ public class Mezo {
         return elemek.remove(getNumberOfElements()-1);
     }
 
-    public JatekElem getJatekElem() {
+    public boolean ellFelsoKetTipusat(String felsoTipus, String alattaTipus) {
+        return getLegfelso().tipus().equals(felsoTipus) && getMasodikLegfelso().tipus().equals(alattaTipus);
+    }
+
+    public JatekElem getLegfelso() {
         return elemek.get(getNumberOfElements()-1);
+    }
+
+    public JatekElem getMasodikLegfelso() {
+        return elemek.get(getNumberOfElements()-2);
     }
 
     public int getNumberOfElements() {

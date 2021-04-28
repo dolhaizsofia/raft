@@ -13,7 +13,7 @@ public abstract class MozgasParancs extends Parancs {
     @Override
     protected boolean tamogatott(Palya p) {
         Mezo mezo = p.aktualisMezo();
-        if(valid && mezo.getJatekElem().tipus().equals(JATEKOS)) {
+        if(valid && mezo.getLegfelso().tipus().equals(JATEKOS)) {
             valid = false;
             return true;
         }

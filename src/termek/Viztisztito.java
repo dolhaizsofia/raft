@@ -12,6 +12,6 @@ public class Viztisztito extends Termek {
 
     @Override
     public String tipus() {
-        return null;
+        return VIZ_TISZTITO;
     }
 }

@@ -11,7 +11,7 @@ public class MozgatNyersanyag extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return nyersanyagE(mezo.getJatekElem().tipus());
+        return nyersanyagE(mezo.getLegfelso().tipus());
     }
 
     @Override

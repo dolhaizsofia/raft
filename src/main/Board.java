@@ -62,7 +62,7 @@ class Board extends JFrame {
 
         for (int row = 0; row < palya.getTabla().length; row++) {
             for (int col = 0; col < palya.getTabla()[0].length; col++) {
-                ImagePanel imagePanel = new ImagePanel(palya.getTabla()[row][col].getJatekElem().tipus());
+                ImagePanel imagePanel = new ImagePanel(palya.getTabla()[row][col].getLegfelso().tipus());
                 imagePanel.setBorder(createLineBorder(Color.BLACK));
                 panels[count] = imagePanel;
                 count++;

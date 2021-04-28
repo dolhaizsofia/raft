@@ -19,10 +19,9 @@ public class Felvesz extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.getJatekElem().tipus().equals(JATEKOS);
+        return mezo.getLegfelso().tipus().equals(JATEKOS);
     }
 
-    //    todo egeszitsd ki
     @Override
     protected void vegrehajt(Palya p) {
         Pozicio kovetkezoLepes = p.getKovetkezoLepes(irany);

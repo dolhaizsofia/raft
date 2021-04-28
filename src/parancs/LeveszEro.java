@@ -9,7 +9,7 @@ public class LeveszEro extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.getJatekElem().tipus().equals(JATEKOS);
+        return mezo.getLegfelso().tipus().equals(JATEKOS);
     }
 
     @Override
