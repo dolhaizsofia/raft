@@ -1,5 +1,7 @@
 package nyersanyag;
 
+import termek.Burgonya;
+
 import java.util.Random;
 
 public class NyersanyagFactory {

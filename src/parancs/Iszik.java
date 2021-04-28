@@ -20,6 +20,6 @@ public class Iszik extends Parancs{
     protected void vegrehajt(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
         ((Viztisztito) mezo.getMasodikLegfelso()).csokkentEgyPoharral();
-        palya.getJatekos().eszik();
+        palya.getJatekos().iszik();
     }
 }

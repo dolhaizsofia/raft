@@ -35,4 +35,7 @@ public class Mezo {
         return elemek.size();
     }
 
+    public List<JatekElem> getElemek() {
+        return elemek;
+    }
 }
