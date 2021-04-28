@@ -1,9 +1,9 @@
 package parancs;
 
-import palya.*;
+import palya.Irany;
+import palya.Palya;
+import palya.Pozicio;
 import termek.Viztisztito;
-
-import static palya.Jatekos.JATEKOS;
 
 public class LehelyezViztisztito extends Parancs {
 
@@ -15,8 +15,7 @@ public class LehelyezViztisztito extends Parancs {
 
     @Override
     protected boolean tamogatott(Palya palya) {
-        Mezo mezo = palya.aktualisMezo();
-        return mezo.getLegfelso().tipus().equals(JATEKOS);
+        return jatekosEsMellettFoldE(palya, irany);
     }
 
     @Override
