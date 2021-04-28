@@ -21,14 +21,14 @@ public class BoardMain {
         Board board = new Board(palya);
         ParancsFeldolgozo parancsFeldolgozo = new ParancsFeldolgozo(palya);
 
-        int cselekvesSzamlalo = 10;
+        int cselekvesSzamlalo = 100;
         Jatekos jatekos = new Jatekos();
         Scanner olvaso = new Scanner(in);
         while (jatekos.isAlive()) {
             List<Parancs> parancsok = new ArrayList<>();
+            parancsok.add(letrehozParancs(olvaso.nextInt()));
             parancsok.add(new MozgatNyersanyag());
             parancsok.add(new GeneralUjNyersanyagok());
-            parancsok.add(letrehozParancs(olvaso.nextInt()));
 
             parancsFeldolgozo.vegrehajt(parancsok);
             board.draw(board);

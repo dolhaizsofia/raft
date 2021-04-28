@@ -1,15 +1,7 @@
 package palya;
 
-import jatekos.JatekElem;
 import jatekos.Jatekos;
 import parancs.Parancs;
-
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
-
-import static nyersanyag.NyersanyagFactory.letrehozNyersanyag;
-import static palya.Cselekves.FRISSIT_PALYA;
 
 public class Palya {
 

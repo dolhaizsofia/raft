@@ -1,16 +1,16 @@
 package jatekos;
 
-import palya.Cselekves;
-import palya.Palya;
+import nyersanyag.Hordo;
+import nyersanyag.Nyersanyag;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static nyersanyag.Burgonya.BURGONYA;
 import static nyersanyag.Deszka.DESZKA;
+import static nyersanyag.Hordo.HORDO;
 import static nyersanyag.Hulladek.HULLADEK;
 import static nyersanyag.Level.LEVEL;
-import static palya.Cselekves.SEMMI;
 
 public class Jatekos implements JatekElem {
 
@@ -44,6 +44,16 @@ public class Jatekos implements JatekElem {
 
     public void csokkentHolmi(String holmi, int mennyiseg) {
         holmik.put(holmi, holmik.get(holmi) - mennyiseg);
+    }
+
+    public void felvesz(JatekElem jatekElem) {
+        if(jatekElem.tipus().equals(HORDO)){
+            for (Nyersanyag nyersanyag :((Hordo)jatekElem).getTartalom()) {
+                holmik.put(nyersanyag.tipus(), holmik.get(nyersanyag.tipus())  + 1);
+            }
+        } else {
+            holmik.put(jatekElem.tipus(), holmik.get(jatekElem.tipus())  + 1);
+        }
     }
 
     @Override

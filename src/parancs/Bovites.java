@@ -1,10 +1,10 @@
 package parancs;
 
-import jatekos.Jatekos;
 import palya.Fold;
 import palya.Mezo;
 import palya.Palya;
 
+import static jatekos.Jatekos.JATEKOS;
 import static nyersanyag.Deszka.DESZKA;
 import static nyersanyag.Level.LEVEL;
 import static palya.Tenger.TENGER;
@@ -16,14 +16,14 @@ public class Bovites extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.getJatekElem().tipus().equals(Jatekos.JATEKOS);
+        return mezo.getJatekElem().tipus().equals(JATEKOS);
     }
 
     @Override
     public void vegrehajt(Palya palya) {
-//        if (!(palya.getJatekos().keresHolmni(DESZKA) >= 2 && palya.getJatekos().keresHolmni(LEVEL) >= 2) || !valid) {
-//            return;
-//        }
+        if (!(palya.getJatekos().keresHolmni(DESZKA) >= 2 && palya.getJatekos().keresHolmni(LEVEL) >= 2) || !valid) {
+            return;
+        }
 
         palya.getJatekos().csokkentHolmi(DESZKA, 2);
         palya.getJatekos().csokkentHolmi(LEVEL, 2);

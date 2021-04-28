@@ -1,17 +1,18 @@
 package parancs;
 
 import jatekos.JatekElem;
+import nyersanyag.Nyersanyag;
 import palya.Mezo;
 import palya.Palya;
 
-import static nyersanyag.Nyersanyag.NYERSANYAG;
+import static nyersanyag.Nyersanyag.nyersanyagE;
 
 public class MozgatNyersanyag extends Parancs {
 
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.getJatekElem().tipus().equals(NYERSANYAG);
+        return nyersanyagE(mezo.getJatekElem().tipus());
     }
 
     @Override
