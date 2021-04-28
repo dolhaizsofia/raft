@@ -59,7 +59,8 @@ public class Palya {
 
     public Pozicio getKovetkezoLepes(Irany irany){
         Pozicio elmozdulas=getElmozdulasIranyhoz(irany);
-        return new Pozicio(currJ+ elmozdulas.getX(), currI+ elmozdulas.getY());
+        Pozicio ujPozicio = new Pozicio(currJ+ elmozdulas.getX(), currI+ elmozdulas.getY());
+        return palyanBelulE(ujPozicio) ? ujPozicio : new Pozicio(currJ, currI);
     }
 
     public Pozicio getElmozdulasIranyhoz(Irany irany){
@@ -81,5 +82,10 @@ public class Palya {
             return new Pozicio(1,-1);
         }
         return new Pozicio(0,0);
+    }
+
+    private boolean palyanBelulE(Pozicio pozicio) {
+        return  (pozicio.getX() >= 0 && pozicio.getX() < palya[0].length) &&
+                pozicio.getY() >= 0 && pozicio.getY() < palya.length;
     }
 }

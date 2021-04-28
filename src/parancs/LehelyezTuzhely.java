@@ -1,11 +1,9 @@
 package parancs;
 
-import palya.Irany;
-import palya.Mezo;
-import palya.Palya;
-import palya.Pozicio;
+import palya.*;
 import termek.Tuz;
 
+import static palya.Fold.FOLD;
 import static palya.Jatekos.JATEKOS;
 
 public class LehelyezTuzhely extends Parancs {
@@ -19,7 +17,10 @@ public class LehelyezTuzhely extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.getLegfelso().tipus().equals(JATEKOS);
+        Pozicio kovetkezoLepes = palya.getKovetkezoLepes(irany);
+        return palya.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()]
+                .getLegfelso()
+                .tipus().equals(FOLD) && mezo.getLegfelso().tipus().equals(JATEKOS);
     }
 
     @Override
