@@ -70,6 +70,11 @@ public class Palya {
         return  palyanBelulE(ujPozicio);
     }
 
+    public boolean palyanBelulE(int i, int j) {
+        return  (j >= 0 && j < palya[0].length) &&
+                i >= 0 && i < palya.length;
+    }
+
     public Pozicio getElmozdulasIranyhoz(Irany irany){
         if (irany == Irany.FEL) {
             return new Pozicio(0,-1);

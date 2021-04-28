@@ -40,7 +40,7 @@ public abstract class Parancs {
 
     boolean mezoTipusu(Palya palya, String keresettTipus) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.getLegfelso().tipus().equals(JATEKOS);
+        return mezo.getLegfelso().tipus().equals(keresettTipus);
     }
 
 }
