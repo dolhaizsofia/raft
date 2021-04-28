@@ -1,11 +1,9 @@
 package parancs;
 
-import palya.Irany;
-import palya.Mezo;
-import palya.Palya;
-import palya.Pozicio;
+import palya.*;
 
 import static palya.Jatekos.JATEKOS;
+import static palya.Tenger.TENGER;
 
 public abstract class Parancs {
 
@@ -26,4 +24,5 @@ public abstract class Parancs {
                 .getLegfelso()
                 .tipus().equals(keresettTipus) && mezo.getLegfelso().tipus().equals(JATEKOS);
     }
+
 }
