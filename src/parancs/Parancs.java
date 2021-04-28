@@ -38,4 +38,9 @@ public abstract class Parancs {
                 && mezo.getMasodikLegfelso().tipus().equals(FOLD);
     }
 
+    boolean mezoTipusu(Palya palya, String keresettTipus) {
+        Mezo mezo = palya.aktualisMezo();
+        return mezo.getLegfelso().tipus().equals(JATEKOS);
+    }
+
 }
