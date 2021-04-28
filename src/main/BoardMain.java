@@ -6,12 +6,14 @@ import parancs.GeneralUjNyersanyagok;
 import parancs.MozgatNyersanyag;
 import parancs.Parancs;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.System.in;
 import static javax.swing.JOptionPane.showMessageDialog;
+import static javax.swing.SwingUtilities.invokeLater;
 import static parancs.ParancsFactory.letrehozParancs;
 
 public class BoardMain {
@@ -31,7 +33,9 @@ public class BoardMain {
             parancsok.add(new GeneralUjNyersanyagok());
 
             parancsFeldolgozo.vegrehajt(parancsok);
-            board.draw(board);
+
+            invokeLater(() -> board.draw(board));
+
             jatekos.csokkentEgeszseg();
             cselekvesSzamlalo--;
             if (cselekvesSzamlalo == 0) {

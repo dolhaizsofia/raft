@@ -35,10 +35,12 @@ class Board extends JFrame {
     }
 
     public void draw(Container contentPane) {
-        centerPanel.removeAll();
+
         GridLayout gridLayout = new GridLayout(palya.getTabla().length, palya.getTabla()[0].length);
         centerPanel.setLayout(gridLayout);
         centerPanel.setBorder(createEmptyBorder(2, 2, 2, 2));
+
+        centerPanel.removeAll();
 
         //call method to add panels and labels to the center panel which holds the board
         addPanelsAndLabels();
