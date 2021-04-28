@@ -56,6 +56,14 @@ public class Jatekos implements JatekElem {
         szomjusag--;
     }
 
+    public void iszik() {
+        szomjusag += 40;
+    }
+
+    public void eszik() {
+        ehseg += 60;
+    }
+
     @Override
     public String tipus() {
         return JATEKOS;

@@ -19,8 +19,6 @@ public class ParancsFactory {
                 return new MozgasBalra();
             case 9:
                 return new MozgasJobbraFel();
-            //case 5:
-               // return new Bovites();
             case 11:
                 return new Felvesz(BALLE);
             case 12:

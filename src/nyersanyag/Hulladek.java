@@ -2,7 +2,7 @@ package nyersanyag;
 
 public class Hulladek extends Nyersanyag{
 
-    public static final String HULLADEK = "szemet";
+    public static final String HULLADEK = "hulladek";
 
     @Override
     public String tipus() {

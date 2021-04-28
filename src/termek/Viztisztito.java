@@ -14,4 +14,12 @@ public class Viztisztito extends Termek {
     public String tipus() {
         return VIZ_TISZTITO;
     }
+
+    public boolean vanEgyPoharnyi() {
+        return vizMennyiseg >= 25;
+    }
+
+    public void csokkentEgyPoharral() {
+        vizMennyiseg -= 25;
+    }
 }

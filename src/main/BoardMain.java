@@ -30,6 +30,7 @@ public class BoardMain {
             parancsok.add(new GeneralUjNyersanyagok());
             parancsok.add(new LeveszEro());
             parancsok.add(new TisztitViz());
+            parancsok.add(new Iszik());
 
             parancsFeldolgozo.vegrehajt(parancsok);
 
