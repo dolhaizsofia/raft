@@ -16,10 +16,11 @@ public class Bovites extends Parancs {
         this.irany = irany;
     }
 
+//    todo foldon all!!
     @Override
     protected boolean tamogatott(Palya palya) {
-        return jatekosEsMellettVmi(palya, irany, TENGER)
-                && palya.palyanBelulE(irany)
+        return palya.palyanBelulE(irany)
+                && jatekosEsMellettVmi(palya, irany, TENGER)
                 && palya.getJatekos().keresHolmni(DESZKA) >= 2
                 && palya.getJatekos().keresHolmni(LEVEL) >= 2
                 && valid;
@@ -35,30 +36,7 @@ public class Bovites extends Parancs {
     }
 
     private void foglalTerulet(Palya p) {
-        Mezo[][] palya = p.getTabla();
-        int currI = p.getCurrI();
-        int currJ = p.getCurrJ();
-
         Pozicio kovetkezoLepes = p.getKovetkezoLepes(irany);
-        JatekElem jatekElem = palya[currI][currJ].levesz();
-        p.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()].lehelyez(jatekElem);
-
-        if (currI - 1 >= 0 && palya[currI - 1][currJ].getLegfelso().tipus().equals(TENGER)) {
-            palya[currI - 1][currJ] = new Mezo(new Fold());
-        } else if (currI + 1 < palya.length && palya[currI + 1][currJ].getLegfelso().tipus().equals(TENGER)) {
-            palya[currI + 1][currJ] = new Mezo(new Fold());
-        } else if (currJ - 1 >= 0 && palya[currI][currJ - 1].getLegfelso().tipus().equals(TENGER)) {
-            palya[currI][currJ - 1] = new Mezo(new Fold());
-        } else if (currJ + 1 < palya[0].length && palya[currI][currJ + 1].getLegfelso().tipus().equals(TENGER)) {
-            palya[currI][currJ + 1] = new Mezo(new Fold());
-        } else if (currI - 1 >= 0 && currJ + 1 < palya[0].length && palya[currI - 1][currJ + 1].getLegfelso().tipus().equals(TENGER)) {
-            palya[currI - 1][currJ + 1] = new Mezo(new Fold());
-        } else if (currI - 1 >= 0 && currJ - 1 < palya[0].length && palya[currI - 1][currJ - 1].getLegfelso().tipus().equals(TENGER)) {
-            palya[currI - 1][currJ - 1] = new Mezo(new Fold());
-        } else if (currJ + 1 < palya[0].length && currJ + 1 < palya[0].length && palya[currI + 1][currJ + 1].getLegfelso().tipus().equals(TENGER)) {
-            palya[currI + 1][currJ + 1] = new Mezo(new Fold());
-        } else if (currJ + 1 < palya[0].length && currJ - 1 < palya[0].length && palya[currI + 1][currJ - 1].getLegfelso().tipus().equals(TENGER)) {
-            palya[currI + 1][currJ - 1] = new Mezo(new Fold());
-        }
+        p.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()].lehelyez(new Fold());
     }
 }
