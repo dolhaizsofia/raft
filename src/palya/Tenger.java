@@ -1,7 +1,5 @@
 package palya;
 
-import jatekos.JatekElem;
-
 public class Tenger implements JatekElem {
 
     public static final String TENGER = "tenger";

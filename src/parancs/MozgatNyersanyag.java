@@ -1,7 +1,6 @@
 package parancs;
 
-import jatekos.JatekElem;
-import nyersanyag.Nyersanyag;
+import palya.JatekElem;
 import palya.Mezo;
 import palya.Palya;
 

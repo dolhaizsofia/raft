@@ -1,6 +1,5 @@
 package palya;
 
-import jatekos.Jatekos;
 import parancs.Parancs;
 
 public class Palya {

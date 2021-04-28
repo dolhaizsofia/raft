@@ -1,6 +1,6 @@
 package termek;
 
-import jatekos.JatekElem;
+import palya.JatekElem;
 
 public abstract class Termek implements JatekElem {
 

@@ -3,7 +3,7 @@ package parancs;
 import palya.Mezo;
 import palya.Palya;
 
-import static jatekos.Jatekos.JATEKOS;
+import static palya.Jatekos.JATEKOS;
 
 public class LeveszEro extends Parancs {
     @Override

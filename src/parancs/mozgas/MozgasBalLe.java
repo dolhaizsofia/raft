@@ -1,6 +1,6 @@
 package parancs.mozgas;
 
-import jatekos.JatekElem;
+import palya.JatekElem;
 import palya.Mezo;
 import palya.Palya;
 

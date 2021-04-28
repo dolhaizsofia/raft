@@ -1,12 +1,12 @@
 package parancs;
 
-import jatekos.JatekElem;
+import palya.JatekElem;
 import palya.Irany;
 import palya.Mezo;
 import palya.Palya;
 import palya.Pozicio;
 
-import static jatekos.Jatekos.JATEKOS;
+import static palya.Jatekos.JATEKOS;
 
 public class Felvesz extends Parancs {
 

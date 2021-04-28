@@ -1,4 +1,4 @@
-package jatekos;
+package palya;
 
 import nyersanyag.Hordo;
 import nyersanyag.Nyersanyag;

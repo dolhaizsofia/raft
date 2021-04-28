@@ -1,10 +1,9 @@
 package main;
 
-import jatekos.Jatekos;
+import palya.Jatekos;
 import palya.Palya;
 import parancs.*;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

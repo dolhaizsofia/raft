@@ -1,4 +1,4 @@
-package jatekos;
+package palya;
 
 public interface JatekElem {
 

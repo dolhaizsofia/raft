@@ -4,7 +4,7 @@ import palya.Irany;
 import palya.Mezo;
 import palya.Palya;
 
-import static jatekos.Jatekos.JATEKOS;
+import static palya.Jatekos.JATEKOS;
 
 public class LehelyezTuzhely extends Parancs {
 

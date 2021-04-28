@@ -1,31 +1,30 @@
 package palya;
 
-import jatekos.JatekElem;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.Stack;
+public class Mezo {
 
-public class Mezo implements JatekElem {
-
-    private Stack<JatekElem> elemek = new Stack<>();
+    private List<JatekElem> elemek = new ArrayList<>();
 
     public Mezo(JatekElem jatekElem) {
-        this.elemek.push(jatekElem);
+        this.elemek.add(jatekElem);
     }
 
     public void lehelyez(JatekElem jatekElem) {
-        elemek.push(jatekElem);
+        elemek.add(jatekElem);
     }
 
     public JatekElem levesz() {
-        return elemek.pop();
+        return elemek.remove(getNumberOfElements()-1);
     }
 
     public JatekElem getJatekElem() {
-        return elemek.peek();
+        return elemek.get(getNumberOfElements()-1);
     }
 
-    @Override
-    public String tipus() {
-        return null;
+    public int getNumberOfElements() {
+        return elemek.size();
     }
+
 }

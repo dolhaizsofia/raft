@@ -4,7 +4,7 @@ import palya.Fold;
 import palya.Mezo;
 import palya.Palya;
 
-import static jatekos.Jatekos.JATEKOS;
+import static palya.Jatekos.JATEKOS;
 import static nyersanyag.Deszka.DESZKA;
 import static nyersanyag.Level.LEVEL;
 import static palya.Tenger.TENGER;

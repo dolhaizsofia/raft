@@ -4,7 +4,7 @@ import palya.Mezo;
 import palya.Palya;
 import parancs.Parancs;
 
-import static jatekos.Jatekos.JATEKOS;
+import static palya.Jatekos.JATEKOS;
 
 public abstract class MozgasParancs extends Parancs {
 
