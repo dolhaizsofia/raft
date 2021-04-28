@@ -1,15 +1,12 @@
 package parancs;
 
-import nyersanyag.Deszka;
 import palya.Irany;
 import palya.Palya;
 import palya.Pozicio;
 import palya.Tenger;
 import termek.Halo;
-import termek.Tuz;
 
 import static nyersanyag.Deszka.DESZKA;
-import static nyersanyag.Hulladek.HULLADEK;
 import static nyersanyag.Level.LEVEL;
 
 public class LehelyezHalo extends Parancs {
