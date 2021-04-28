@@ -18,7 +18,7 @@ public class Mozgas extends Parancs {
         Mezo mezo = p.aktualisMezo();
         if (valid && mezo.getLegfelso().tipus().equals(JATEKOS)) {
             valid = false;
-            return true;
+            return p.palyanBelulE(irany);
         }
         return false;
     }
