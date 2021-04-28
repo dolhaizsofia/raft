@@ -16,7 +16,6 @@ public class Jatekos implements JatekElem {
 
     public static final String JATEKOS = "jatekos";
 
-    private int egeszseg = 10;
     private int ehseg = 100;
     private int szomjusag = 100;
 
@@ -31,11 +30,7 @@ public class Jatekos implements JatekElem {
     }
 
     public boolean isAlive() {
-        return egeszseg > 0;
-    }
-
-    public void csokkentEgeszseg() {
-        egeszseg--;
+        return ehseg > 0 && szomjusag > 0;
     }
 
     public int keresHolmni(String holmi) {
@@ -54,6 +49,11 @@ public class Jatekos implements JatekElem {
         } else {
             holmik.put(jatekElem.tipus(), holmik.get(jatekElem.tipus())  + 1);
         }
+    }
+
+    public void csokkentElet() {
+        ehseg--;
+        szomjusag--;
     }
 
     @Override

@@ -2,9 +2,7 @@ package main;
 
 import jatekos.Jatekos;
 import palya.Palya;
-import parancs.GeneralUjNyersanyagok;
-import parancs.MozgatNyersanyag;
-import parancs.Parancs;
+import parancs.*;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -31,12 +29,19 @@ public class BoardMain {
             parancsok.add(letrehozParancs(olvaso.nextInt()));
             parancsok.add(new MozgatNyersanyag());
             parancsok.add(new GeneralUjNyersanyagok());
+            parancsok.add(new LeveszEro());
+            parancsok.add(new TisztitViz());
 
             parancsFeldolgozo.vegrehajt(parancsok);
 
             invokeLater(() -> board.draw(board));
 
-            jatekos.csokkentEgeszseg();
+            if(!palya.getJatekos().isAlive()) {
+                showMessageDialog(board, "Vesztettel!!!");
+                board.dispose();
+                break;
+            }
+
             cselekvesSzamlalo--;
             if (cselekvesSzamlalo == 0) {
                 showMessageDialog(board, "Nyertel!!!");
