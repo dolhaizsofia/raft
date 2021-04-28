@@ -1,9 +1,7 @@
 package parancs;
 
-import parancs.mozgas.MozgasBalra;
-import parancs.mozgas.MozgasFel;
-import parancs.mozgas.MozgasJobbraFel;
-import parancs.mozgas.MozgasLe;
+import palya.Irany;
+import parancs.mozgas.Mozgas;
 
 import static palya.Irany.*;
 
@@ -11,18 +9,16 @@ public class ParancsFactory {
 
     public static Parancs letrehozParancs(int parancsKod) {
         switch (parancsKod) {
-            case 2:
-                return new MozgasLe();
-            case 8:
-                return new MozgasFel();
-            case 4:
-                return new MozgasBalra();
-            case 9:
-                return new MozgasJobbraFel();
-            case 11:
-                return new Felvesz(BALLE);
-            case 12:
-                return new Felvesz(LE);
+            case 1: return new Mozgas(BALLE);
+            case 2: return new Mozgas(LE);
+            case 3: return new Mozgas(JOBBLE);
+            case 4: return new Mozgas(BAL);
+            case 6: return new Mozgas(JOBB);
+            case 7: return new Mozgas(BALFEL);
+            case 8: return new Mozgas(FEL);
+            case 9: return new Mozgas(JOBBFEL);
+            case 11: return new Felvesz(BALLE);
+            case 12: return new Felvesz(LE);
             case 13: return new Felvesz(JOBBLE);
             case 14: return new Felvesz(BAL);
             case 16: return new Felvesz(JOBB);
