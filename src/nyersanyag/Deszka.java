@@ -8,9 +8,4 @@ public class Deszka extends Nyersanyag {
     public String tipus() {
         return DESZKA;
     }
-
-    @Override
-    public String getImageName() {
-        return "deszka";
-    }
 }

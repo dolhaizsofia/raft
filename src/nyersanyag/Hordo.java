@@ -23,8 +23,4 @@ public class Hordo extends Nyersanyag {
         return HORDO;
     }
 
-    @Override
-    public String getImageName() {
-        return "hordo";
-    }
 }

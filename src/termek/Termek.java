@@ -2,14 +2,6 @@ package termek;
 
 import jatekos.JatekElem;
 
-public class Termek implements JatekElem {
-    @Override
-    public String tipus() {
-        return "termek";
-    }
+public abstract class Termek implements JatekElem {
 
-    @Override
-    public String getImageName() {
-        return null;
-    }
 }

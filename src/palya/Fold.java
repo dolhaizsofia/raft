@@ -11,8 +11,4 @@ public class Fold implements JatekElem {
         return FOLD;
     }
 
-    @Override
-    public String getImageName() {
-        return FOLD;
-    }
 }

@@ -10,4 +10,8 @@ public class Viztisztito extends Termek {
         vizMennyiseg++;
     }
 
+    @Override
+    public String tipus() {
+        return null;
+    }
 }

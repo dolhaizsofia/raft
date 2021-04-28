@@ -14,11 +14,6 @@ public abstract class Nyersanyag implements JatekElem {
 
     public static final List<String> nyersanyag = Arrays.asList(DESZKA,HORDO, HULLADEK, LEVEL);
 
-    @Override
-    public String getImageName() {
-        return "tenger";
-    }
-
     public static boolean nyersanyagE(String elemTipus) {
         return nyersanyag.contains(elemTipus);
     }

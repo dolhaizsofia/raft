@@ -9,9 +9,4 @@ public class Level extends Nyersanyag {
         return LEVEL;
     }
 
-    @Override
-    public String getImageName() {
-        return "level";
-    }
-
 }

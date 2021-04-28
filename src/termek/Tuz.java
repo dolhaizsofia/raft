@@ -1,6 +1,7 @@
 package termek;
 
-public class Halo extends Termek {
+public class Tuz extends Termek {
+
     @Override
     public String tipus() {
         return null;
