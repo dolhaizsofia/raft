@@ -63,6 +63,12 @@ public class Palya {
         return palyanBelulE(ujPozicio) ? ujPozicio : new Pozicio(currJ, currI);
     }
 
+    public boolean palyanBelulE(Irany irany) {
+        Pozicio elmozdulas=getElmozdulasIranyhoz(irany);
+        Pozicio ujPozicio = new Pozicio(currJ+ elmozdulas.getX(), currI+ elmozdulas.getY());
+        return  palyanBelulE(ujPozicio);
+    }
+
     public Pozicio getElmozdulasIranyhoz(Irany irany){
         if (irany == Irany.FEL) {
             return new Pozicio(0,-1);
@@ -88,4 +94,5 @@ public class Palya {
         return  (pozicio.getX() >= 0 && pozicio.getX() < palya[0].length) &&
                 pozicio.getY() >= 0 && pozicio.getY() < palya.length;
     }
+
 }

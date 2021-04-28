@@ -7,6 +7,7 @@ import termek.Viztisztito;
 
 import static nyersanyag.Hulladek.HULLADEK;
 import static nyersanyag.Level.LEVEL;
+import static palya.Fold.FOLD;
 
 public class LehelyezViztisztito extends Parancs {
 
@@ -18,7 +19,7 @@ public class LehelyezViztisztito extends Parancs {
 
     @Override
     protected boolean tamogatott(Palya palya) {
-        return jatekosEsMellettFoldE(palya, irany)
+        return jatekosEsMellettVmi(palya, irany, FOLD)
                 && palya.getJatekos().keresHolmni(LEVEL) >= 2 && palya.getJatekos().keresHolmni(HULLADEK) >= 4;
     }
 

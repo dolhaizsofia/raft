@@ -8,6 +8,7 @@ import termek.Tuz;
 import static nyersanyag.Deszka.DESZKA;
 import static nyersanyag.Hulladek.HULLADEK;
 import static nyersanyag.Level.LEVEL;
+import static palya.Fold.FOLD;
 
 public class LehelyezTuzhely extends Parancs {
 
@@ -19,7 +20,7 @@ public class LehelyezTuzhely extends Parancs {
 
     @Override
     protected boolean tamogatott(Palya palya) {
-        return jatekosEsMellettFoldE(palya, irany)
+        return jatekosEsMellettVmi(palya, irany, FOLD)
                 && palya.getJatekos().keresHolmni(DESZKA) >= 2
                 && palya.getJatekos().keresHolmni(LEVEL) >= 4
                 && palya.getJatekos().keresHolmni(HULLADEK) >= 3;
