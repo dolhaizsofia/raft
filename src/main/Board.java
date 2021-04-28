@@ -17,6 +17,11 @@ class Board extends JFrame {
 
     private Palya palya;
     private JPanel centerPanel = new JPanel();
+    private JPanel leftPanel = new JPanel();
+    private Label korokSzamaLabel = new Label();
+    private Label szomjusagLabel = new Label();
+    private Label ehsegLabel = new Label();
+    private Label holmikLabel = new Label();
     private ImagePanel[] panels;
 
     Board(Palya palya) {
@@ -26,16 +31,28 @@ class Board extends JFrame {
     }
 
     private void createAndShowGUI() {
-        setTitle("Chess board example");
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        draw(getContentPane());
+        setTitle("Raft");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        Container container = getContentPane();
+        leftPanel.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        leftPanel.add(korokSzamaLabel, gbc);
+        leftPanel.add(szomjusagLabel, gbc);
+        leftPanel.add(ehsegLabel, gbc);
+        leftPanel.add(holmikLabel, gbc);
+        container.add(leftPanel, BorderLayout.SOUTH);
+        draw(container, new VisszaJelzes());
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
-    public void draw(Container contentPane) {
-
+    public void draw(Container contentPane, VisszaJelzes visszaJelzes) {
+        korokSzamaLabel.setText(visszaJelzes.getKorokSzama());
+        szomjusagLabel.setText(visszaJelzes.getSzomjusag());
+        ehsegLabel.setText(visszaJelzes.getEhseg());
+        holmikLabel.setText(visszaJelzes.getHolmik());
         GridLayout gridLayout = new GridLayout(palya.getTabla().length, palya.getTabla()[0].length);
         centerPanel.setLayout(gridLayout);
         centerPanel.setBorder(createEmptyBorder(2, 2, 2, 2));
@@ -53,7 +70,6 @@ class Board extends JFrame {
         for (int i = 0; i < panels.length; i++) {
             centerPanel.add(panels[i]);
         }
-//        centerPanel.repaint();
         centerPanel.revalidate();
     }
 

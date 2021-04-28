@@ -20,7 +20,7 @@ public class BoardMain {
         Board board = new Board(palya);
         ParancsFeldolgozo parancsFeldolgozo = new ParancsFeldolgozo(palya);
 
-        int cselekvesSzamlalo = 100;
+        int cselekvesSzamlalo = 1000;
         Jatekos jatekos = new Jatekos();
         Scanner olvaso = new Scanner(in);
         while (jatekos.isAlive()) {
@@ -34,7 +34,12 @@ public class BoardMain {
 
             parancsFeldolgozo.vegrehajt(parancsok);
 
-            invokeLater(() -> board.draw(board));
+            cselekvesSzamlalo--;
+            VisszaJelzes visszaJelzes = new VisszaJelzes(cselekvesSzamlalo,
+                    palya.getJatekos().getEhseg(),
+                    palya.getJatekos().getSzomjusag(),
+                    palya.getJatekos().getHolmik());
+            invokeLater(() -> board.draw(board, visszaJelzes));
 
             if(!palya.getJatekos().isAlive()) {
                 showMessageDialog(board, "Vesztettel!!!");
@@ -42,7 +47,6 @@ public class BoardMain {
                 break;
             }
 
-            cselekvesSzamlalo--;
             if (cselekvesSzamlalo == 0) {
                 showMessageDialog(board, "Nyertel!!!");
                 board.dispose();

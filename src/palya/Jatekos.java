@@ -66,6 +66,18 @@ public class Jatekos implements JatekElem {
         ehseg += 60;
     }
 
+    public int getEhseg() {
+        return ehseg;
+    }
+
+    public int getSzomjusag() {
+        return szomjusag;
+    }
+
+    public Map<String, Integer> getHolmik() {
+        return holmik;
+    }
+
     @Override
     public String tipus() {
         return JATEKOS;
