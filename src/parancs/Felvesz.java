@@ -4,6 +4,7 @@ import jatekos.JatekElem;
 import palya.Irany;
 import palya.Mezo;
 import palya.Palya;
+import palya.Pozicio;
 
 import static jatekos.Jatekos.JATEKOS;
 
@@ -21,16 +22,11 @@ public class Felvesz extends Parancs {
         return mezo.getJatekElem().tipus().equals(JATEKOS);
     }
 
-//    todo egeszitsd ki
+    //    todo egeszitsd ki
     @Override
     protected void vegrehajt(Palya p) {
-        if (irany == Irany.BALFEL) {
-            Mezo[][] palya = p.getTabla();
-            int currI = p.getCurrI();
-            int currJ = p.getCurrJ();
-            JatekElem jatekElem = palya[currI-1][currJ-1].levesz();
-            p.getJatekos().felvesz(jatekElem);
-        }
-
+        Pozicio kovetkezoLepes = p.getKovetkezoLepes(irany);
+        JatekElem jatekElem = p.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()].levesz();
+        p.getJatekos().felvesz(jatekElem);
     }
 }
