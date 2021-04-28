@@ -57,4 +57,30 @@ public class Palya {
     public Mezo aktualisMezo() {
         return palya[currI][currJ];
     }
+
+    public Pozicio getKovetkezoLepes(Irany irany){
+        Pozicio elmozdulas=getElmozdulasIranyhoz(irany);
+        return new Pozicio(currI+ elmozdulas.getY(),currJ+ elmozdulas.getX());
+    }
+
+    public Pozicio getElmozdulasIranyhoz(Irany irany){
+        if (irany == Irany.FEL) {
+            return new Pozicio(0,-1);
+        } else if (irany == Irany.LE) {
+            return new Pozicio(0,1);
+        } else if (irany == Irany.BAL) {
+            return new Pozicio(-1,0);
+        } else if (irany == Irany.JOBB) {
+            return new Pozicio(1,0);
+        } else if (irany == Irany.BALFEL) {
+            return new Pozicio(-1,-1);
+        } else if (irany == Irany.BALLE) {
+            return new Pozicio(-1,1);
+        } else if (irany == Irany.JOBBLE) {
+            return new Pozicio(1,1);
+        } else if (irany == Irany.JOBBFEL) {
+            return new Pozicio(1,-1);
+        }
+        return new Pozicio(0,0);
+    }
 }
