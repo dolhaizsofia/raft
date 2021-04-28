@@ -16,7 +16,7 @@ public class TisztitViz extends Parancs {
 
     @Override
     protected void vegrehajt(Palya palya) {
-        ((Viztisztito) palya.aktualisMezo().getJatekElem()).novelvizMennyiseg();
+        ((Viztisztito) palya.aktualisMezo().getJatekElem()).novelVizMennyiseg();
     }
 
 }

@@ -60,7 +60,7 @@ public class Palya {
 
     public Pozicio getKovetkezoLepes(Irany irany){
         Pozicio elmozdulas=getElmozdulasIranyhoz(irany);
-        return new Pozicio(currI+ elmozdulas.getY(),currJ+ elmozdulas.getX());
+        return new Pozicio(currJ+ elmozdulas.getX(), currI+ elmozdulas.getY());
     }
 
     public Pozicio getElmozdulasIranyhoz(Irany irany){

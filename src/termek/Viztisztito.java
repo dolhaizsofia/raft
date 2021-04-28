@@ -6,7 +6,7 @@ public class Viztisztito extends Termek {
 
     private int vizMennyiseg = 0;
 
-    public void novelvizMennyiseg() {
+    public void novelVizMennyiseg() {
         vizMennyiseg++;
     }
 
