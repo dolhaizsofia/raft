@@ -31,6 +31,7 @@ public class BoardMain {
             parancsok.add(new LeveszEro());
             parancsok.add(new TisztitViz());
             parancsok.add(new SulEtel());
+            parancsok.add(new HaloBegyujt());
 
             parancsFeldolgozo.vegrehajt(parancsok);
 
