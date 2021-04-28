@@ -8,11 +8,9 @@ import static palya.Tenger.TENGER;
 
 public class Bovites extends Parancs {
 
-    private boolean valid = true;
-
     private Irany irany;
 
-    public Bovites(Irany irany) {
+    Bovites(Irany irany) {
         this.irany = irany;
     }
 
@@ -21,17 +19,14 @@ public class Bovites extends Parancs {
         return palya.palyanBelulE(irany)
                 && jatekosFoldonEsMellettVmi(palya, irany, TENGER)
                 && palya.getJatekos().keresHolmni(DESZKA) >= 2
-                && palya.getJatekos().keresHolmni(LEVEL) >= 2
-                && valid;
+                && palya.getJatekos().keresHolmni(LEVEL) >= 2;
     }
 
     @Override
     public void vegrehajt(Palya palya) {
         palya.getJatekos().csokkentHolmi(DESZKA, 2);
         palya.getJatekos().csokkentHolmi(LEVEL, 2);
-
         foglalTerulet(palya);
-        valid = false;
     }
 
     private void foglalTerulet(Palya p) {
