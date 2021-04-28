@@ -2,6 +2,7 @@ package parancs;
 
 import palya.*;
 
+import static nyersanyag.Nyersanyag.nyersanyagE;
 import static palya.Jatekos.JATEKOS;
 
 public class Felvesz extends Parancs {
@@ -15,7 +16,11 @@ public class Felvesz extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.getLegfelso().tipus().equals(JATEKOS);
+        Pozicio kovetkezoLepes = palya.getKovetkezoLepes(irany);
+        return nyersanyagE(palya.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()]
+                .getLegfelso()
+                .tipus())
+                && mezo.getLegfelso().tipus().equals(JATEKOS);
     }
 
     @Override
