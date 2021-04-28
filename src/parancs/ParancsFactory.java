@@ -1,8 +1,5 @@
 package parancs;
 
-import palya.Irany;
-import parancs.mozgas.Mozgas;
-
 import static palya.Irany.*;
 
 public class ParancsFactory {

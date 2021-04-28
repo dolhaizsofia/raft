@@ -6,11 +6,11 @@ import nyersanyag.Nyersanyag;
 import java.util.HashMap;
 import java.util.Map;
 
-import static termek.Burgonya.BURGONYA;
 import static nyersanyag.Deszka.DESZKA;
 import static nyersanyag.Hordo.HORDO;
 import static nyersanyag.Hulladek.HULLADEK;
 import static nyersanyag.Level.LEVEL;
+import static termek.Burgonya.BURGONYA;
 import static termek.Hal.HAL;
 
 public class Jatekos implements JatekElem {

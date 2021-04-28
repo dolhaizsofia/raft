@@ -1,7 +1,6 @@
-package parancs.mozgas;
+package parancs;
 
 import palya.*;
-import parancs.Parancs;
 
 import static palya.Jatekos.JATEKOS;
 

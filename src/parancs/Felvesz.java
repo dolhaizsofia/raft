@@ -1,10 +1,6 @@
 package parancs;
 
-import palya.JatekElem;
-import palya.Irany;
-import palya.Mezo;
-import palya.Palya;
-import palya.Pozicio;
+import palya.*;
 
 import static palya.Jatekos.JATEKOS;
 
