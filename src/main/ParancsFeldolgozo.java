@@ -9,7 +9,7 @@ public class ParancsFeldolgozo {
 
     private Palya palya;
 
-    public ParancsFeldolgozo(Palya palya) {
+    ParancsFeldolgozo(Palya palya) {
         this.palya = palya;
     }
 

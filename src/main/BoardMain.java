@@ -37,8 +37,8 @@ public class BoardMain {
 
             cselekvesSzamlalo--;
             VisszaJelzes visszaJelzes = new VisszaJelzes(cselekvesSzamlalo,
-                    palya.getJatekos().getEhseg(),
                     palya.getJatekos().getSzomjusag(),
+                    palya.getJatekos().getEhseg(),
                     palya.getJatekos().getHolmik());
             invokeLater(() -> board.draw(board, visszaJelzes));
 

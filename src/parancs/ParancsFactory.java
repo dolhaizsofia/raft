@@ -54,7 +54,7 @@ public class ParancsFactory {
             case 67: return new LehelyezViztisztito(BALFEL);
             case 68: return new LehelyezViztisztito(FEL);
             case 69: return new LehelyezViztisztito(JOBBFEL);
-
+            case 90: return new Iszik();
             default: return new NoOp();
         }
 

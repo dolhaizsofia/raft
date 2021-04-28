@@ -6,6 +6,7 @@ import nyersanyag.Nyersanyag;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.lang.Math.min;
 import static nyersanyag.Deszka.DESZKA;
 import static nyersanyag.Hordo.HORDO;
 import static nyersanyag.Hulladek.HULLADEK;
@@ -59,11 +60,11 @@ public class Jatekos implements JatekElem {
     }
 
     public void iszik() {
-        szomjusag += 40;
+        szomjusag = min(szomjusag + 40, 100 + 1); //+1 a mostani kor miatt
     }
 
     public void eszik() {
-        ehseg += 60;
+        ehseg = min(ehseg + 60, 100 + 1);
     }
 
     public int getEhseg() {
