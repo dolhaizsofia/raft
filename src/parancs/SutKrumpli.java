@@ -20,6 +20,7 @@ public class SutKrumpli extends Parancs {
     @Override
     protected void vegrehajt(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
+        palya.getJatekos().csokkentHolmi(BURGONYA, 1);
         ((Tuz) mezo.getMasodikLegfelso()).rarak(new Burgonya());
     }
 }

@@ -54,6 +54,7 @@ public class Tuz extends Termek {
         for (Burgonya b: burgonyak) {
             if (b.kesz()) {
                 burgonyak.remove(b);
+                break;
             }
         }
     }
@@ -62,6 +63,7 @@ public class Tuz extends Termek {
         for (Hal h: halak) {
             if (h.kesz()) {
                 halak.remove(h);
+                break;
             }
         }
     }

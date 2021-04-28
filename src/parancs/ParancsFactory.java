@@ -58,6 +58,8 @@ public class ParancsFactory {
             case 91: return new EszikHal();
             case 92: return new EszikBurgonya();
             case 93: return new Horgaszik();
+            case 94: return new SutHal();
+            case 95: return new SutKrumpli();
             default: return new NoOp();
         }
 

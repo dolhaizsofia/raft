@@ -21,6 +21,7 @@ public class SutHal extends Parancs {
     @Override
     protected void vegrehajt(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
+        palya.getJatekos().csokkentHolmi(HAL, 1);
         ((Tuz) mezo.getMasodikLegfelso()).rarak(new Hal());
     }
 
