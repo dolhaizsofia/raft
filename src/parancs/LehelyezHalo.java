@@ -2,7 +2,7 @@ package parancs;
 
 import palya.Palya;
 
-public class Halo extends Parancs {
+public class LehelyezHalo extends Parancs {
 
     @Override
     protected boolean tamogatott(Palya palya) {
