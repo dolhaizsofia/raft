@@ -47,6 +47,14 @@ public class ParancsFactory {
             case 47: return new LehelyezTuzhely(BALFEL);
             case 48: return new LehelyezTuzhely(FEL);
             case 49: return new LehelyezTuzhely(JOBBFEL);
+            case 61: return new LehelyezViztisztito(BALLE);
+            case 62: return new LehelyezViztisztito(LE);
+            case 63: return new LehelyezViztisztito(JOBBLE);
+            case 64: return new LehelyezViztisztito(BAL);
+            case 66: return new LehelyezViztisztito(JOBB);
+            case 67: return new LehelyezViztisztito(BALFEL);
+            case 68: return new LehelyezViztisztito(FEL);
+            case 69: return new LehelyezViztisztito(JOBBFEL);
             case 51: return new Bovites(BALLE);
             case 52: return new Bovites(LE);
             case 53: return new Bovites(JOBBLE);
