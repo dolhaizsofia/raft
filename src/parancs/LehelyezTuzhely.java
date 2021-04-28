@@ -1,11 +1,18 @@
 package parancs;
 
+import palya.Irany;
 import palya.Mezo;
 import palya.Palya;
 
 import static jatekos.Jatekos.JATEKOS;
 
 public class LehelyezTuzhely extends Parancs {
+
+    private Irany irany;
+
+    public LehelyezTuzhely(Irany irany) {
+        this.irany = irany;
+    }
 
     @Override
     protected boolean tamogatott(Palya palya) {
