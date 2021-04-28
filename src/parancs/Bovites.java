@@ -1,6 +1,7 @@
 package parancs;
 
 import palya.Fold;
+import palya.Irany;
 import palya.Mezo;
 import palya.Palya;
 
@@ -18,6 +19,13 @@ public class Bovites extends Parancs {
         Mezo mezo = palya.aktualisMezo();
         return mezo.getJatekElem().tipus().equals(JATEKOS);
     }
+
+    private Irany irany;
+
+    public Bovites(Irany irany) {
+        this.irany = irany;
+    }
+
 
     @Override
     public void vegrehajt(Palya palya) {
