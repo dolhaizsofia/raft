@@ -2,11 +2,11 @@ package palya;
 
 public class Capa implements JatekElem {
 
-    public static final String CAPA = "capa";
+    public static final String CAPA_TIPUS = "capa";
 
     @Override
     public String tipus() {
-        return CAPA;
+        return CAPA_TIPUS;
     }
 
 }

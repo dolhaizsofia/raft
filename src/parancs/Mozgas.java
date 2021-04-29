@@ -2,7 +2,7 @@ package parancs;
 
 import palya.*;
 
-import static palya.Jatekos.JATEKOS;
+import static palya.Jatekos.JATEKOS_TIPUS;
 
 public class Mozgas extends Parancs {
 
@@ -16,7 +16,7 @@ public class Mozgas extends Parancs {
     @Override
     protected boolean tamogatott(Palya p) {
         Mezo mezo = p.aktualisMezo();
-        if (valid && mezo.getLegfelso().tipus().equals(JATEKOS)) {
+        if (valid && mezo.getLegfelso().tipus().equals(JATEKOS_TIPUS)) {
             valid = false;
             return p.palyanBelulE(irany);
         }

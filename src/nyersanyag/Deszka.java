@@ -2,10 +2,10 @@ package nyersanyag;
 
 public class Deszka extends Nyersanyag {
 
-    public static final String DESZKA = "deszka";
+    public static final String DESZKA_TIPUS = "deszka";
 
     @Override
     public String tipus() {
-        return DESZKA;
+        return DESZKA_TIPUS;
     }
 }

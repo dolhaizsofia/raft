@@ -3,11 +3,11 @@ package main;
 import java.util.HashMap;
 import java.util.Map;
 
-import static nyersanyag.Deszka.DESZKA;
-import static nyersanyag.Hulladek.HULLADEK;
-import static nyersanyag.Level.LEVEL;
-import static termek.Burgonya.BURGONYA;
-import static termek.Hal.HAL;
+import static nyersanyag.Deszka.DESZKA_TIPUS;
+import static nyersanyag.Hulladek.HULLADEK_TIPUS;
+import static nyersanyag.Level.LEVEL_TIPUS;
+import static termek.Burgonya.BURGONYA_TIPUS;
+import static termek.Hal.HAL_TIPUS;
 
 public class VisszaJelzes {
     private Integer korokSzama;
@@ -15,37 +15,37 @@ public class VisszaJelzes {
     private Integer ehseg;
     private Map<String, Integer> holmik;
 
-    public VisszaJelzes(int korokSzama, int szomjusag, int ehseg, Map<String, Integer> holmik) {
+    VisszaJelzes(int korokSzama, int szomjusag, int ehseg, Map<String, Integer> holmik) {
         this.korokSzama = korokSzama;
         this.szomjusag = szomjusag;
         this.ehseg = ehseg;
         this.holmik = holmik;
     }
 
-    public VisszaJelzes() {
+    VisszaJelzes() {
         this.korokSzama = 1000;
         this.szomjusag = 100;
         this.ehseg = 100;holmik = new HashMap<>();
-        holmik.put(DESZKA, 0);
-        holmik.put(LEVEL, 0);
-        holmik.put(HULLADEK, 0);
-        holmik.put(BURGONYA, 0);
-        holmik.put(HAL, 0);
+        holmik.put(DESZKA_TIPUS, 0);
+        holmik.put(LEVEL_TIPUS, 0);
+        holmik.put(HULLADEK_TIPUS, 0);
+        holmik.put(BURGONYA_TIPUS, 0);
+        holmik.put(HAL_TIPUS, 0);
     }
 
-    public String getKorokSzama() {
+    String getKorokSzama() {
         return "korok szama: " + korokSzama.toString();
     }
 
-    public String getSzomjusag() {
+    String getSzomjusag() {
         return "szomjusag: " + szomjusag.toString();
     }
 
-    public String getEhseg() {
+    String getEhseg() {
         return "ehseg: " + ehseg.toString();
     }
 
-    public String getHolmik() {
+    String getHolmik() {
         StringBuilder builder = new StringBuilder();
         for (Map.Entry<String, Integer> e:holmik.entrySet()) {
             builder.append(e.getKey())

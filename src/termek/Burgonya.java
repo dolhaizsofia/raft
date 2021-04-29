@@ -4,24 +4,20 @@ import nyersanyag.Nyersanyag;
 
 public class Burgonya extends Nyersanyag {
 
-    public static final String BURGONYA = "burgonya";
+    public static final String BURGONYA_TIPUS = "burgonya";
 
     private int atsultseg = 0;
 
-    public void novelAtsultseg() {
+    void novelAtsultseg() {
         atsultseg++;
     }
 
-    public int getAtsultseg() {
-        return atsultseg;
-    }
-
-    public boolean kesz() {
+    boolean kesz() {
         return atsultseg >= 25;
     }
 
     @Override
     public String tipus() {
-        return BURGONYA;
+        return BURGONYA_TIPUS;
     }
 }

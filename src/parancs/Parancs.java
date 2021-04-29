@@ -5,8 +5,8 @@ import palya.Mezo;
 import palya.Palya;
 import palya.Pozicio;
 
-import static palya.Fold.FOLD;
-import static palya.Jatekos.JATEKOS;
+import static palya.Fold.FOLD_TIPUS;
+import static palya.Jatekos.JATEKOS_TIPUS;
 
 public abstract class Parancs {
 
@@ -25,7 +25,7 @@ public abstract class Parancs {
         Pozicio kovetkezoLepes = palya.getKovetkezoLepes(irany);
         return palya.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()]
                 .getLegfelso()
-                .tipus().equals(keresettTipus) && mezo.getLegfelso().tipus().equals(JATEKOS);
+                .tipus().equals(keresettTipus) && mezo.getLegfelso().tipus().equals(JATEKOS_TIPUS);
     }
 
     boolean jatekosFoldonEsMellettVmi(Palya palya, Irany irany, String keresettTipus) {
@@ -34,8 +34,8 @@ public abstract class Parancs {
         return palya.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()]
                 .getLegfelso()
                 .tipus().equals(keresettTipus)
-                && mezo.getLegfelso().tipus().equals(JATEKOS)
-                && mezo.getMasodikLegfelso().tipus().equals(FOLD);
+                && mezo.getLegfelso().tipus().equals(JATEKOS_TIPUS)
+                && mezo.getMasodikLegfelso().tipus().equals(FOLD_TIPUS);
     }
 
     boolean mezoTipusu(Palya palya, String keresettTipus) {

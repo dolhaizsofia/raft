@@ -21,9 +21,8 @@ public class BoardMain {
         ParancsFeldolgozo parancsFeldolgozo = new ParancsFeldolgozo(palya);
 
         int cselekvesSzamlalo = 1000;
-        Jatekos jatekos = new Jatekos();
         Scanner olvaso = new Scanner(in);
-        while (jatekos.isAlive()) {
+        while (palya.getJatekos().isAlive()) {
             List<Parancs> parancsok = new ArrayList<>();
             parancsok.add(letrehozParancs(olvaso.nextInt()));
             parancsok.add(new MozgatNyersanyag());

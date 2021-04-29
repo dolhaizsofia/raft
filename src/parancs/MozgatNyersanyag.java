@@ -3,7 +3,6 @@ package parancs;
 import palya.JatekElem;
 import palya.Mezo;
 import palya.Palya;
-import palya.Tenger;
 import termek.Halo;
 
 import static nyersanyag.Nyersanyag.nyersanyagE;
@@ -29,7 +28,7 @@ public class MozgatNyersanyag extends Parancs {
         JatekElem jatekElem = palya[currI][currJ].levesz();
         if (currI < palya.length - 1
                 && (palya[currI + 1][currJ].getLegfelso().tipus().equals(TENGER)
-                || palya[currI + 1][currJ].getLegfelso().tipus().equals(Halo.HALO))) {
+                || palya[currI + 1][currJ].getLegfelso().tipus().equals(Halo.HALO_TIPUS))) {
             palya[currI + 1][currJ].lehelyez(jatekElem);
         }
     }

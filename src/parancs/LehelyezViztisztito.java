@@ -5,9 +5,9 @@ import palya.Palya;
 import palya.Pozicio;
 import termek.Viztisztito;
 
-import static nyersanyag.Hulladek.HULLADEK;
-import static nyersanyag.Level.LEVEL;
-import static palya.Fold.FOLD;
+import static nyersanyag.Hulladek.HULLADEK_TIPUS;
+import static nyersanyag.Level.LEVEL_TIPUS;
+import static palya.Fold.FOLD_TIPUS;
 
 public class LehelyezViztisztito extends Parancs {
 
@@ -19,15 +19,15 @@ public class LehelyezViztisztito extends Parancs {
 
     @Override
     protected boolean tamogatott(Palya palya) {
-        return jatekosEsMellettVmi(palya, irany, FOLD)
-                && palya.getJatekos().keresHolmni(LEVEL) >= 2
-                && palya.getJatekos().keresHolmni(HULLADEK) >= 4;
+        return jatekosEsMellettVmi(palya, irany, FOLD_TIPUS)
+                && palya.getJatekos().keresHolmni(LEVEL_TIPUS) >= 2
+                && palya.getJatekos().keresHolmni(HULLADEK_TIPUS) >= 4;
     }
 
     @Override
     public void vegrehajt(Palya p) {
-        p.getJatekos().csokkentHolmi(LEVEL, 2);
-        p.getJatekos().csokkentHolmi(HULLADEK, 4);
+        p.getJatekos().csokkentHolmi(LEVEL_TIPUS, 2);
+        p.getJatekos().csokkentHolmi(HULLADEK_TIPUS, 4);
         Pozicio kovetkezoLepes = p.getKovetkezoLepes(irany);
         p.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()].lehelyez(new Viztisztito());
     }

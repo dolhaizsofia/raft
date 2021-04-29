@@ -1,9 +1,11 @@
 package termek;
 
+import palya.JatekElem;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tuz extends Termek {
+public class Tuz implements JatekElem {
 
     private List<Burgonya> burgonyak;
     private List<Hal> halak;

@@ -1,11 +1,13 @@
 package termek;
 
-public class Halo extends Termek {
+import palya.JatekElem;
 
-    public static final String HALO = "halo";
+public class Halo implements JatekElem {
+
+    public static final String HALO_TIPUS = "halo";
 
     @Override
     public String tipus() {
-        return HALO;
+        return HALO_TIPUS;
     }
 }

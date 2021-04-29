@@ -2,20 +2,22 @@ package nyersanyag;
 
 import palya.JatekElem;
 
-import java.util.Arrays;
 import java.util.List;
 
-import static nyersanyag.Deszka.DESZKA;
+import static java.util.Arrays.asList;
+import static nyersanyag.Deszka.DESZKA_TIPUS;
 import static nyersanyag.Hordo.HORDO;
-import static nyersanyag.Hulladek.HULLADEK;
-import static nyersanyag.Level.LEVEL;
+import static nyersanyag.Hulladek.HULLADEK_TIPUS;
+import static nyersanyag.Level.LEVEL_TIPUS;
 
 public abstract class Nyersanyag implements JatekElem {
 
-    public static final List<String> nyersanyag = Arrays.asList(DESZKA,HORDO, HULLADEK, LEVEL);
+    protected Nyersanyag() {}
+
+    private static final List<String> NYERSANYAGOK = asList(DESZKA_TIPUS,HORDO, HULLADEK_TIPUS, LEVEL_TIPUS);
 
     public static boolean nyersanyagE(String elemTipus) {
-        return nyersanyag.contains(elemTipus);
+        return NYERSANYAGOK.contains(elemTipus);
     }
 
 }

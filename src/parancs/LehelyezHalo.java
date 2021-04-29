@@ -5,8 +5,8 @@ import palya.Palya;
 import palya.Pozicio;
 import termek.Halo;
 
-import static nyersanyag.Deszka.DESZKA;
-import static nyersanyag.Level.LEVEL;
+import static nyersanyag.Deszka.DESZKA_TIPUS;
+import static nyersanyag.Level.LEVEL_TIPUS;
 import static palya.Tenger.TENGER;
 
 public class LehelyezHalo extends Parancs {
@@ -20,14 +20,14 @@ public class LehelyezHalo extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         return jatekosFoldonEsMellettVmi(palya, irany, TENGER)
-                && palya.getJatekos().keresHolmni(DESZKA) >= 2
-                && palya.getJatekos().keresHolmni(LEVEL) >= 6;
+                && palya.getJatekos().keresHolmni(DESZKA_TIPUS) >= 2
+                && palya.getJatekos().keresHolmni(LEVEL_TIPUS) >= 6;
     }
 
     @Override
     public void vegrehajt(Palya p) {
-        p.getJatekos().csokkentHolmi(DESZKA, 2);
-        p.getJatekos().csokkentHolmi(LEVEL, 6);
+        p.getJatekos().csokkentHolmi(DESZKA_TIPUS, 2);
+        p.getJatekos().csokkentHolmi(LEVEL_TIPUS, 6);
         Pozicio kovetkezoLepes = p.getKovetkezoLepes(irany);
         p.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()].lehelyez(new Halo());
 

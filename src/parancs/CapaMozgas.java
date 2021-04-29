@@ -6,7 +6,7 @@ import palya.Palya;
 
 import java.util.Random;
 
-import static palya.Capa.CAPA;
+import static palya.Capa.CAPA_TIPUS;
 import static palya.Tenger.TENGER;
 
 public class CapaMozgas extends Parancs {
@@ -17,7 +17,7 @@ public class CapaMozgas extends Parancs {
 
     @Override
     protected boolean tamogatott(Palya palya) {
-        return mezoTipusu(palya, CAPA) && valid;
+        return mezoTipusu(palya, CAPA_TIPUS) && valid;
     }
 
     @Override

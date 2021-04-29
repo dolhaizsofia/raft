@@ -4,7 +4,7 @@ import palya.Mezo;
 import palya.Palya;
 import termek.Viztisztito;
 
-import static palya.Jatekos.JATEKOS;
+import static palya.Jatekos.JATEKOS_TIPUS;
 import static termek.Viztisztito.VIZ_TISZTITO;
 
 public class Iszik extends Parancs{
@@ -12,7 +12,7 @@ public class Iszik extends Parancs{
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.ellFelsoKetTipusat(JATEKOS, VIZ_TISZTITO)
+        return mezo.ellFelsoKetTipusat(JATEKOS_TIPUS, VIZ_TISZTITO)
                 && ((Viztisztito) mezo.getMasodikLegfelso()).vanEgyPoharnyi();
     }
 

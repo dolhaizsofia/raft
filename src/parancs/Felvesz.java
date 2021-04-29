@@ -3,7 +3,7 @@ package parancs;
 import palya.*;
 
 import static nyersanyag.Nyersanyag.nyersanyagE;
-import static palya.Jatekos.JATEKOS;
+import static palya.Jatekos.JATEKOS_TIPUS;
 
 public class Felvesz extends Parancs {
 
@@ -20,7 +20,7 @@ public class Felvesz extends Parancs {
         return nyersanyagE(palya.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()]
                 .getLegfelso()
                 .tipus())
-                && mezo.getLegfelso().tipus().equals(JATEKOS);
+                && mezo.getLegfelso().tipus().equals(JATEKOS_TIPUS);
     }
 
     @Override

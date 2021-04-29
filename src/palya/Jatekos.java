@@ -7,16 +7,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static java.lang.Math.min;
-import static nyersanyag.Deszka.DESZKA;
+import static nyersanyag.Deszka.DESZKA_TIPUS;
 import static nyersanyag.Hordo.HORDO;
-import static nyersanyag.Hulladek.HULLADEK;
-import static nyersanyag.Level.LEVEL;
-import static termek.Burgonya.BURGONYA;
-import static termek.Hal.HAL;
+import static nyersanyag.Hulladek.HULLADEK_TIPUS;
+import static nyersanyag.Level.LEVEL_TIPUS;
+import static termek.Burgonya.BURGONYA_TIPUS;
+import static termek.Hal.HAL_TIPUS;
 
 public class Jatekos implements JatekElem {
 
-    public static final String JATEKOS = "jatekos";
+    public static final String JATEKOS_TIPUS = "jatekos";
 
     private int ehseg = 100;
     private int szomjusag = 100;
@@ -25,11 +25,11 @@ public class Jatekos implements JatekElem {
 
     public Jatekos() {
         holmik = new HashMap<>();
-        holmik.put(DESZKA, 0);
-        holmik.put(LEVEL, 0);
-        holmik.put(HULLADEK, 0);
-        holmik.put(BURGONYA, 0);
-        holmik.put(HAL, 0);
+        holmik.put(DESZKA_TIPUS, 0);
+        holmik.put(LEVEL_TIPUS, 0);
+        holmik.put(HULLADEK_TIPUS, 0);
+        holmik.put(BURGONYA_TIPUS, 0);
+        holmik.put(HAL_TIPUS, 0);
     }
 
     public boolean isAlive() {
@@ -81,6 +81,6 @@ public class Jatekos implements JatekElem {
 
     @Override
     public String tipus() {
-        return JATEKOS;
+        return JATEKOS_TIPUS;
     }
 }

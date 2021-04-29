@@ -1,6 +1,8 @@
 package termek;
 
-public class Viztisztito extends Termek {
+import palya.JatekElem;
+
+public class Viztisztito implements JatekElem {
 
     public static final String VIZ_TISZTITO = "viztisztito";
 

@@ -1,12 +1,14 @@
 package termek;
 
-public class Hal extends Termek {
+import palya.JatekElem;
 
-    public static final String HAL = "hal";
+public class Hal implements JatekElem {
+
+    public static final String HAL_TIPUS = "hal";
 
     private int atsultseg = 0;
 
-    public void novelAtsultseg() {
+    void novelAtsultseg() {
         atsultseg++;
     }
 
@@ -14,12 +16,12 @@ public class Hal extends Termek {
         return atsultseg;
     }
 
-    public boolean kesz() {
+    boolean kesz() {
         return atsultseg >= 25;
     }
 
     @Override
     public String tipus() {
-        return HAL;
+        return HAL_TIPUS;
     }
 }

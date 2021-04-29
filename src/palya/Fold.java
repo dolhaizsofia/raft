@@ -2,11 +2,11 @@ package palya;
 
 public class Fold implements JatekElem {
 
-    public static final String FOLD = "fold";
+    public static final String FOLD_TIPUS = "fold";
 
     @Override
     public String tipus() {
-        return FOLD;
+        return FOLD_TIPUS;
     }
 
 }

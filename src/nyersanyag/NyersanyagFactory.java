@@ -8,6 +8,8 @@ public class NyersanyagFactory {
 
     private static Random random = new Random();
 
+    private NyersanyagFactory() { }
+
     public static Nyersanyag letrehozNyersanyag() {
         int valoszinuseg = random.nextInt(100);
         if (valoszinuseg < 32) return new Deszka();
@@ -16,7 +18,7 @@ public class NyersanyagFactory {
         else return new Hordo();
     }
 
-    public static Nyersanyag letrehozHordoTartalom() {
+    static Nyersanyag letrehozHordoTartalom() {
         int valoszinuseg = random.nextInt(4);
         if (valoszinuseg == 0) return new Deszka();
         else if (valoszinuseg == 1) return new Level();

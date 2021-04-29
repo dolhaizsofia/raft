@@ -7,8 +7,8 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Objects;
 
+import static java.util.Objects.requireNonNull;
 import static javax.imageio.ImageIO.read;
 import static javax.swing.BorderFactory.createEmptyBorder;
 import static javax.swing.BorderFactory.createLineBorder;
@@ -69,7 +69,7 @@ class Board extends JFrame {
         setVisible(true);
     }
 
-    public void draw(Container contentPane, VisszaJelzes visszaJelzes) {
+    void draw(Container contentPane, VisszaJelzes visszaJelzes) {
         korokSzamaLabel.setText(visszaJelzes.getKorokSzama());
         szomjusagLabel.setText(visszaJelzes.getSzomjusag());
         ehsegLabel.setText(visszaJelzes.getEhseg());
@@ -80,16 +80,14 @@ class Board extends JFrame {
 
         centerPanel.removeAll();
 
-        //call method to add panels and labels to the center panel which holds the board
         addPanelsAndLabels();
-        //add all panels to frame
         contentPane.add(centerPanel, BorderLayout.CENTER);
     }
 
-    public void addPanelsAndLabels() {
+    private void addPanelsAndLabels() {
         addPanelsAndImages();
-        for (int i = 0; i < panels.length; i++) {
-            centerPanel.add(panels[i]);
+        for (ImagePanel panel : panels) {
+            centerPanel.add(panel);
         }
         centerPanel.revalidate();
     }
@@ -107,14 +105,13 @@ class Board extends JFrame {
         }
     }
 
-    //nested class used to set the background of frame contenPane
-    class ImagePanel extends JPanel {
+    static class ImagePanel extends JPanel {
 
         private Image image;
 
         ImagePanel(String fileName) {
             try {
-                image = read(new File(Objects.requireNonNull(getClass().getClassLoader().getResource(fileName + ".png")).toURI()));
+                image = read(new File(requireNonNull(getClass().getClassLoader().getResource(fileName + ".png")).toURI()));
             } catch (IOException | URISyntaxException e) {
                 e.printStackTrace();
             }
