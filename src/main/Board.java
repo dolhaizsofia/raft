@@ -1,5 +1,6 @@
 package main;
 
+import palya.Jatekos;
 import palya.Palya;
 
 import javax.swing.*;
@@ -16,7 +17,7 @@ import static javax.swing.BorderFactory.createEmptyBorder;
 import static javax.swing.BorderFactory.createLineBorder;
 import static javax.swing.BoxLayout.Y_AXIS;
 
-class Board extends JFrame {
+public class Board extends JFrame {
 
     private Palya palya;
     private JPanel centerPanel = new JPanel();
@@ -77,23 +78,22 @@ class Board extends JFrame {
         container.add(southPanel, BorderLayout.SOUTH);
         container.add(westPanel, BorderLayout.WEST);
         container.add(eastPanel, BorderLayout.EAST);
-        draw(container, new VisszaJelzes());
+        draw(container);
         setSize(1000, 600);
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
-    void draw(Container contentPane, VisszaJelzes visszaJelzes) {
-        korokSzamaLabel.setText(visszaJelzes.getKorokSzama());
-        szomjusagLabel.setText(visszaJelzes.getSzomjusag());
-        ehsegLabel.setText(visszaJelzes.getEhseg());
-        holmikLabel.setText(visszaJelzes.getHolmik());
+    public void draw(Container contentPane) {
+        Jatekos jatekos = palya.getJatekos();
+        korokSzamaLabel.setText(jatekos.getFormazottCselekvesSzamlalo());
+        szomjusagLabel.setText(jatekos.getFormazottSzomjusag());
+        ehsegLabel.setText(jatekos.getFormazottEhseg());
+        holmikLabel.setText(jatekos.getFormazottHolmik());
         GridLayout gridLayout = new GridLayout(palya.getTabla().length, palya.getTabla()[0].length);
         centerPanel.setLayout(gridLayout);
         centerPanel.setBorder(createEmptyBorder(2, 2, 2, 2));
-
         centerPanel.removeAll();
-
         addPanelsAndLabels();
         contentPane.add(centerPanel, BorderLayout.CENTER);
     }

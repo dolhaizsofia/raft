@@ -10,7 +10,6 @@ public class Palya {
     private Jatekos jatekos;
 
     private Mezo[][] palya;
-    //    jatekelem should have position???
     private int currI;
     private int currJ;
 
@@ -46,6 +45,10 @@ public class Palya {
         return jatekos;
     }
 
+    public void setJatekos(Jatekos jatekos) {
+        this.jatekos = jatekos;
+    }
+
     public int getCurrI() {
         return currI;
     }
@@ -60,6 +63,10 @@ public class Palya {
 
     public Mezo aktualisMezo() {
         return palya[currI][currJ];
+    }
+
+    public void letorol() {
+        this.palya = new Mezo[palya.length][palya[0].length];
     }
 
     public Pozicio getKovetkezoLepes(Irany irany) {
