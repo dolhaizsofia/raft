@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"io"},{"l":"main"},{"l":"palya.elemek.nyersanyag"},{"l":"palya"},{"l":"parancs"},{"l":"termek"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"io"},{"l":"main"},{"l":"palya"},{"l":"palya.elemek"},{"l":"palya.elemek.nyersanyag"},{"l":"parancs"},{"l":"termek"}];updateSearchResults();
