@@ -15,7 +15,7 @@ public class EszikHal extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.ellFelsoKetTipusat(JATEKOS_TIPUS, TUZ_TIPUS)
+        return mezo.ellenorizFelsoKetTipusat(JATEKOS_TIPUS, TUZ_TIPUS)
                 && ((Tuz) mezo.getMasodikLegfelso()).vanSultHal();
     }
 

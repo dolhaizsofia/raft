@@ -17,7 +17,7 @@ public class SutHal extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.ellFelsoKetTipusat(JATEKOS_TIPUS, TUZ_TIPUS)
+        return mezo.ellenorizFelsoKetTipusat(JATEKOS_TIPUS, TUZ_TIPUS)
                 && palya.getJatekos().keresHolmni(HAL_TIPUS) > 0;
     }
 

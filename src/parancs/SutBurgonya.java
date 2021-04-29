@@ -15,7 +15,7 @@ import static termek.Tuz.TUZ_TIPUS;
 public class SutBurgonya extends Parancs {
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.ellFelsoKetTipusat(JATEKOS_TIPUS, TUZ_TIPUS)
+        return mezo.ellenorizFelsoKetTipusat(JATEKOS_TIPUS, TUZ_TIPUS)
                 && palya.getJatekos().keresHolmni(BURGONYA_TIPUS) > 0;
     }
 

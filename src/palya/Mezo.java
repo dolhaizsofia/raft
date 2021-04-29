@@ -10,8 +10,7 @@ public class Mezo {
 
     private List<JatekElem> elemek = new ArrayList<>();
 
-    public Mezo() {
-    }
+    public Mezo() {}
 
     public Mezo(JatekElem jatekElem) {
         this.elemek.add(jatekElem);
@@ -25,8 +24,9 @@ public class Mezo {
         return elemek.remove(getElemekSzama() - 1);
     }
 
-    public boolean ellFelsoKetTipusat(String felsoTipus, String alattaTipus) {
-        return getLegfelso().tipus().equals(felsoTipus) && getMasodikLegfelso().tipus().equals(alattaTipus);
+    public boolean ellenorizFelsoKetTipusat(String felsoTipus, String alattaTipus) {
+        return getLegfelso().tipus().equals(felsoTipus)
+                && getMasodikLegfelso().tipus().equals(alattaTipus);
     }
 
     public JatekElem getLegfelso() {

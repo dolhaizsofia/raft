@@ -12,8 +12,7 @@ public class NyersanyagFactory {
 
     private static Random random = new Random();
 
-    private NyersanyagFactory() {
-    }
+    private NyersanyagFactory() {}
 
     public static Nyersanyag letrehozNyersanyag() {
         int valoszinuseg = random.nextInt(100);

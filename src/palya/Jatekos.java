@@ -105,6 +105,10 @@ public class Jatekos implements JatekElem {
         this.cselekvesSzamlalo = cselekvesSzamlalo;
     }
 
+    public Map<String, Integer> getHolmik() {
+        return holmik;
+    }
+
     public String getFormazottCselekvesSzamlalo() {
         return "korok szama: " + cselekvesSzamlalo;
     }
@@ -126,10 +130,6 @@ public class Jatekos implements JatekElem {
                     .append("  ");
         }
         return builder.toString();
-    }
-
-    public Map<String, Integer> getHolmik() {
-        return holmik;
     }
 
     @Override

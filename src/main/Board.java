@@ -35,7 +35,7 @@ public class Board extends JFrame {
     private Label szomjusagLabel = new Label();
     private Label ehsegLabel = new Label();
     private Label holmikLabel = new Label();
-    private JLabel commandLabel = new JLabel("Parancs");
+    private JLabel commandLabel = new JLabel("parancs");
     private JTextField commandField = new JTextField();
     private JButton saveButton = new JButton("mentes");
     private JButton loadButton = new JButton("betoltes");
