@@ -19,6 +19,9 @@ public class ParancsFactory {
      * @return mit csinaljon az adott kodra
      */
     public static Parancs letrehozParancs(int parancsKod) {
+        if (parancsKod>=90){ // iranymentes parancsok
+            return getIranyNelkuliParancs(parancsKod);
+        }
         Irany irany = getIrany(parancsKod % 10);
         switch (parancsKod / 10) {
             case 0:
@@ -33,6 +36,13 @@ public class ParancsFactory {
                 return new LehelyezTuzhely(irany);
             case 5:
                 return new Bovites(irany);
+            default:
+                return new NoOp();
+        }
+    }
+
+    private static Parancs getIranyNelkuliParancs(int parancsKod) {
+        switch (parancsKod){
             case 90:
                 return new Iszik();
             case 91:
