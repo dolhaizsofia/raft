@@ -4,6 +4,9 @@ import static nyersanyag.NyersanyagFactory.letrehozHordoTartalom;
 
 public class Hordo extends Nyersanyag {
 
+    /** eldonti a statikus metodusa  hogy valami nyersanyage
+     */
+
     public static final String HORDO = "hordo";
 
     private Nyersanyag[] tartalom = new Nyersanyag[5];

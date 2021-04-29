@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Mezo {
+    /**
+     * lekezeli a mezoket
+     */
 
     private List<JatekElem> elemek = new ArrayList<>();
 

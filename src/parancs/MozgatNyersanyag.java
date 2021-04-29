@@ -10,6 +10,12 @@ import static palya.Tenger.TENGER_TIPUS;
 
 public class MozgatNyersanyag extends Parancs {
 
+    /**
+     * minden lepesnel lemozgatja eggyel a nyersanyagokat ha oda mehet nyersanyag
+     * @param palya
+     * @return
+     */
+
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();

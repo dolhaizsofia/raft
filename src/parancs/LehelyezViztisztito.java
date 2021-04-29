@@ -13,6 +13,11 @@ public class LehelyezViztisztito extends Parancs {
 
     private Irany irany;
 
+    /**
+     * a tamogatott megnezi hogy lehet e viztisztitot lehelyezni jo helyre akkarod e lerakni es van e eleg nyeranyagod
+     * a vegrehajt metodus meg lehelyezi es csokkenti a nyersanyagokat
+     * @param irany
+     */
     LehelyezViztisztito(Irany irany) {
         this.irany = irany;
     }

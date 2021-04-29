@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tuz implements JatekElem {
+    /** eldonti a statikus metodusa  hogy termek e
+     *es eltarolja a termekhez tartozo informaciokat
+     * es metodusokat
+     */
 
     private List<Burgonya> burgonyak;
     private List<Hal> halak;

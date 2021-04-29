@@ -13,6 +13,12 @@ public class LehelyezHalo extends Parancs {
 
     private Irany irany;
 
+    /**
+     *ez az osztaly megnezi hogy rakhat e le halot oda ahova szeretne es hogy van e eleg nyersanyaga ha mindaketto
+     * igaz akkor lerak egy halot
+     * @param irany
+     */
+
     LehelyezHalo(Irany irany) {
         this.irany = irany;
     }

@@ -10,6 +10,11 @@ import static termek.Hal.HAL_TIPUS;
 import static termek.Tuz.TUZ;
 
 public class SutHal extends Parancs {
+    /**
+     * megnezihogy tud e halat sutni es ha igen akkor suti
+     * @param palya
+     * @return
+     */
 
     @Override
     protected boolean tamogatott(Palya palya) {

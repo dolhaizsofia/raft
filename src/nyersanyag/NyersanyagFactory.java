@@ -5,6 +5,10 @@ import termek.Burgonya;
 import java.util.Random;
 
 public class NyersanyagFactory {
+    /**
+     *veletlenszeruen a megadott valoszinusegnek megfeleloen letrehoz nyersanyagokat
+     * osszerakja veletlenszeruen a hordo tartalmat
+     */
 
     private static Random random = new Random();
 

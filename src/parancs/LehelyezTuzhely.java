@@ -14,6 +14,12 @@ public class LehelyezTuzhely extends Parancs {
 
     private Irany irany;
 
+    /**
+     * ez az osztaly megnezi hogy minden feltetel teljesul e a tuzhely lehelyezesehez azaz van eleg nyersanyag es jo helyre szeretne e lerakni
+     * a felhasznalo ha mindketto igaz lerak egy tuzhelyet
+     * @param irany
+     */
+
     public LehelyezTuzhely(Irany irany) {
         this.irany = irany;
     }

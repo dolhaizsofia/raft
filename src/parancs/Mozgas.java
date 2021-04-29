@@ -13,6 +13,12 @@ public class Mozgas extends Parancs {
         this.irany = irany;
     }
 
+    /**
+     *  megnezi hogy a jatekosunk mehet e arra amera az utasitas adta es ha igen akkor odamozgatja amugy nem hajtja vegre a cselekvest
+     * @param p
+     * @return
+     */
+
     @Override
     protected boolean tamogatott(Palya p) {
         Mezo mezo = p.aktualisMezo();

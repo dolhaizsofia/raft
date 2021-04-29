@@ -11,6 +11,9 @@ import static nyersanyag.Hulladek.HULLADEK_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
 
 public abstract class Nyersanyag implements JatekElem {
+    /** eldonti a statikus metodusa  hogy valami nyersanyage
+     *
+     */
 
     protected Nyersanyag() {}
 

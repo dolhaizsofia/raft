@@ -15,10 +15,21 @@ public class CapaMozgas extends Parancs {
 
     private boolean valid = true;
 
+    /**
+     *
+     * @param palya a palyat vizsgalja
+     * @return viszater hogy oda mehet e a capa
+     */
+
     @Override
     protected boolean tamogatott(Palya palya) {
         return mezoTipusu(palya, CAPA_TIPUS) && valid;
     }
+
+    /**
+     *
+     * @param p
+     */
 
     @Override
     protected void vegrehajt(Palya p) {

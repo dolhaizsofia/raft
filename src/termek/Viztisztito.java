@@ -3,6 +3,11 @@ package termek;
 import palya.JatekElem;
 
 public class Viztisztito implements JatekElem {
+    /** eldonti a statikus metodusa  hogy termek e
+     *es eltarolja a termekhez tartozo informaciokat
+     * es metodusokat
+     */
+
 
     public static final String VIZ_TISZTITO = "viztisztito";
 

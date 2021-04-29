@@ -11,6 +11,12 @@ public class Palya {
     private int currI;
     private int currJ;
 
+    /**
+     * osszerakja a palyat
+     * @param height
+     * @param width
+     */
+
     public Palya(int height, int width) {
         this.palya = new Mezo[height][width];
         for (int i = 0; i < palya.length; i++) {

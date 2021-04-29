@@ -8,6 +8,11 @@ import static termek.Viztisztito.VIZ_TISZTITO;
 
 public class TisztitViz extends Parancs {
 
+    /**
+     * vizet tisztit ha van viztisztito 
+     * @param palya
+     * @return
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();

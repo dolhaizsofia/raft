@@ -6,6 +6,9 @@ import parancs.Parancs;
 import java.util.List;
 
 public class ParancsFeldolgozo {
+    /**
+     * feldolgoza a parancsokat
+     */
 
     private Palya palya;
 

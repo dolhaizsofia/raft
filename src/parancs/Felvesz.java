@@ -13,6 +13,12 @@ public class Felvesz extends Parancs {
         this.irany = irany;
     }
 
+    /**
+     *
+     * @param palya
+     * @return
+     */
+
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();

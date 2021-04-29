@@ -3,6 +3,9 @@ package termek;
 import palya.JatekElem;
 
 public class Hal implements JatekElem {
+    /** eldonti a statikus metodusa  hogy termek e
+     *es eltarolja a termekhez tartozo informaciokat
+     */
 
     public static final String HAL_TIPUS = "hal";
 

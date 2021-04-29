@@ -3,6 +3,9 @@ package termek;
 import nyersanyag.Nyersanyag;
 
 public class Burgonya extends Nyersanyag {
+    /** eldonti a statikus metodusa  hogy termek e
+     *es eltarolja a termekhez tartozo informaciokat
+     */
 
     public static final String BURGONYA_TIPUS = "burgonya";
 

@@ -12,6 +12,12 @@ public class Horgaszik extends Parancs {
 
     private static Random random = new Random();
 
+    /**
+     *
+     * @param palya megvizsgalja a hogy az emberunk aki horgaszni szeretne vizbe van e
+     * @return ha vizbe van hagyja horgaszni ha nem akkor nem csinal semmit
+     */
+
     @Override
     protected boolean tamogatott(Palya palya) {
         return palya.aktualisMezo().ellFelsoKetTipusat(JATEKOS_TIPUS, TENGER_TIPUS);

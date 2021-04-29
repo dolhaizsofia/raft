@@ -15,6 +15,11 @@ import static termek.Burgonya.BURGONYA_TIPUS;
 import static termek.Hal.HAL_TIPUS;
 
 public class Jatekos implements JatekElem {
+    /**
+     * eldonti a statikus metodusa  hogy palya elem e
+     * eltarolja hogy mennyi nyersanyaggal rendelkezet
+     * hogy el e meg
+     */
 
     public static final String JATEKOS_TIPUS = "jatekos";
 

@@ -8,6 +8,11 @@ import static termek.Halo.HALO_TIPUS;
 
 public class HaloBegyujt extends Parancs {
 
+    /**
+     *
+     * @param palya megvizsgalja a palyat
+     * @return ha nyersanyag kerölt a halora azt atadja a jatekosnak
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         return nyersanyagE(palya.aktualisMezo().getLegfelso().tipus())

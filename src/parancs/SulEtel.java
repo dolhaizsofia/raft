@@ -7,6 +7,11 @@ import termek.Tuz;
 import static termek.Tuz.TUZ;
 
 public class SulEtel extends Parancs {
+    /**
+     *
+     * @param palya
+     * @return
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();

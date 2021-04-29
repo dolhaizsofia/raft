@@ -1,6 +1,10 @@
 package palya;
 
 public class Pozicio {
+
+    /**
+     * eltarolja a poziciokat
+     */
     private int x;
     private int y;
 
