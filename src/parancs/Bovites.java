@@ -1,6 +1,9 @@
 package parancs;
 
-import palya.*;
+import palya.Fold;
+import palya.Irany;
+import palya.Palya;
+import palya.Pozicio;
 
 import static nyersanyag.Deszka.DESZKA_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;

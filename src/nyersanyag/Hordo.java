@@ -6,7 +6,7 @@ import static nyersanyag.NyersanyagFactory.letrehozHordoTartalom;
  */
 public class Hordo extends Nyersanyag {
 
-    public static final String HORDO = "hordo";
+    public static final String HORDO_TIPUS = "hordo";
 
     private Nyersanyag[] tartalom = new Nyersanyag[5];
 
@@ -22,7 +22,7 @@ public class Hordo extends Nyersanyag {
 
     @Override
     public String tipus() {
-        return HORDO;
+        return HORDO_TIPUS;
     }
 
 }

@@ -14,7 +14,7 @@ public class Tuz implements JatekElem {
     private List<Burgonya> burgonyak;
     private List<Hal> halak;
 
-    public static final String TUZ = "tuz";
+    public static final String TUZ_TIPUS = "tuz";
 
     public Tuz() {
         burgonyak = new ArrayList<>();
@@ -76,6 +76,6 @@ public class Tuz implements JatekElem {
 
     @Override
     public String tipus() {
-        return TUZ;
+        return TUZ_TIPUS;
     }
 }

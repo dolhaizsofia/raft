@@ -7,7 +7,8 @@ import termek.Tuz;
 
 import static palya.Jatekos.JATEKOS_TIPUS;
 import static termek.Hal.HAL_TIPUS;
-import static termek.Tuz.TUZ;
+import static termek.Tuz.TUZ_TIPUS;
+
 /**
  * megnezihogy tud e halat sutni es ha igen akkor suti
  */
@@ -16,7 +17,7 @@ public class SutHal extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.ellFelsoKetTipusat(JATEKOS_TIPUS, TUZ)
+        return mezo.ellFelsoKetTipusat(JATEKOS_TIPUS, TUZ_TIPUS)
                 && palya.getJatekos().keresHolmni(HAL_TIPUS) > 0;
     }
 

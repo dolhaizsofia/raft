@@ -1,6 +1,5 @@
 package main;
 
-import palya.Jatekos;
 import palya.Palya;
 import parancs.*;
 

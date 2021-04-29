@@ -8,7 +8,7 @@ import java.util.Map;
 
 import static java.lang.Math.min;
 import static nyersanyag.Deszka.DESZKA_TIPUS;
-import static nyersanyag.Hordo.HORDO;
+import static nyersanyag.Hordo.HORDO_TIPUS;
 import static nyersanyag.Hulladek.HULLADEK_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
 import static termek.Burgonya.BURGONYA_TIPUS;
@@ -49,7 +49,7 @@ public class Jatekos implements JatekElem {
     }
 
     public void felvesz(JatekElem jatekElem) {
-        if(jatekElem.tipus().equals(HORDO)){
+        if(jatekElem.tipus().equals(HORDO_TIPUS)){
             for (Nyersanyag nyersanyag :((Hordo)jatekElem).getTartalom()) {
                 holmik.put(nyersanyag.tipus(), holmik.get(nyersanyag.tipus())  + 1);
             }

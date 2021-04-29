@@ -8,7 +8,7 @@ import palya.JatekElem;
  */
 public class Viztisztito implements JatekElem {
 
-    public static final String VIZ_TISZTITO = "viztisztito";
+    public static final String VIZ_TISZTITO_TIPUS = "viztisztito";
 
     private int vizMennyiseg = 0;
 
@@ -18,7 +18,7 @@ public class Viztisztito implements JatekElem {
 
     @Override
     public String tipus() {
-        return VIZ_TISZTITO;
+        return VIZ_TISZTITO_TIPUS;
     }
 
     public boolean vanEgyPoharnyi() {

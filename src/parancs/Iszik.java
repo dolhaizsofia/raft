@@ -5,7 +5,7 @@ import palya.Palya;
 import termek.Viztisztito;
 
 import static palya.Jatekos.JATEKOS_TIPUS;
-import static termek.Viztisztito.VIZ_TISZTITO;
+import static termek.Viztisztito.VIZ_TISZTITO_TIPUS;
 
 /**
  * ha van egy pohar tiszta vize es a viztisztito melet van akkor iszik es no a szomjusaga
@@ -15,7 +15,7 @@ public class Iszik extends Parancs{
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.ellFelsoKetTipusat(JATEKOS_TIPUS, VIZ_TISZTITO)
+        return mezo.ellFelsoKetTipusat(JATEKOS_TIPUS, VIZ_TISZTITO_TIPUS)
                 && ((Viztisztito) mezo.getMasodikLegfelso()).vanEgyPoharnyi();
     }
 

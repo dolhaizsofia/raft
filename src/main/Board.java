@@ -8,10 +8,13 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+import static io.FileHandler.loadGame;
+import static io.FileHandler.saveGame;
 import static java.util.Objects.requireNonNull;
 import static javax.imageio.ImageIO.read;
 import static javax.swing.BorderFactory.createEmptyBorder;
 import static javax.swing.BorderFactory.createLineBorder;
+import static javax.swing.BoxLayout.Y_AXIS;
 
 class Board extends JFrame {
 
@@ -19,11 +22,14 @@ class Board extends JFrame {
     private JPanel centerPanel = new JPanel();
     private JPanel southPanel = new JPanel();
     private JPanel westPanel = new JPanel();
+    private JPanel eastPanel = new JPanel();
     private JTextArea magyarazat = new JTextArea();
     private Label korokSzamaLabel = new Label();
     private Label szomjusagLabel = new Label();
     private Label ehsegLabel = new Label();
     private Label holmikLabel = new Label();
+    private JButton saveButton = new JButton("mentes");
+    private JButton loadButton = new JButton("betoltes");
     private ImagePanel[] panels;
 
     Board(Palya palya) {
@@ -35,7 +41,7 @@ class Board extends JFrame {
     private void createAndShowGUI() {
         setTitle("Raft");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+        this.setResizable(false);
         Container container = getContentPane();
         southPanel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -43,7 +49,14 @@ class Board extends JFrame {
         southPanel.add(szomjusagLabel, gbc);
         southPanel.add(ehsegLabel, gbc);
         southPanel.add(holmikLabel, gbc);
+        eastPanel.setLayout(new BoxLayout(eastPanel, Y_AXIS));
         westPanel.add(magyarazat);
+        eastPanel.add(new Box.Filler(new Dimension(10, 10), new Dimension(10, 10), new Dimension(10, 10)));
+        eastPanel.add(saveButton);
+        eastPanel.add(new Box.Filler(new Dimension(10, 10), new Dimension(10, 10), new Dimension(10, 10)));
+        eastPanel.add(loadButton);
+        saveButton.addActionListener(e -> saveGame(this, palya));
+        loadButton.addActionListener(e -> loadGame(this, palya));
         magyarazat.setText("mozgas: szamok (kiveve 5)\n" +
                 "\n" +
                 "Parancsok irannyal:\n" +
@@ -63,6 +76,7 @@ class Board extends JFrame {
         magyarazat.setEnabled(false);
         container.add(southPanel, BorderLayout.SOUTH);
         container.add(westPanel, BorderLayout.WEST);
+        container.add(eastPanel, BorderLayout.EAST);
         draw(container, new VisszaJelzes());
         setSize(1000, 600);
         setLocationRelativeTo(null);
