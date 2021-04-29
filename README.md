@@ -17,7 +17,7 @@ A **felvesz** utasitasok **1** szammal kezdodnek es utana az iranyt kell megadni
 
 **Hajot boviteni** **5**os kezdetu szamokkal lehet ugyannazal az iranymegadassal mint a tobbit.
 
-#### Tovabbi parancsok
+### Tovabbi parancsok
 ~~~~
 Ivas:90
 
@@ -31,7 +31,10 @@ Halatsut:94
 
 Burgonyatsut:95.
 ~~~~
-#### A Termekek arai: 
+
+#### Sutni, enni, vizet inni ugy lehet ha rajt allsz a tuzhelyen vagy a viztisztiton!!!!
+
+### A Termekek arai: 
 ~~~~
 Halo: 2*deszka + 6*level
 
@@ -41,6 +44,7 @@ Tuzhely: 2*deszka + 4*level + 3*hulladek
 
 Teruletbovites: 2*deszka + 2*level.
 ~~~~
+
 A tuzhely sehol nem irja ki hogy hogy all az epp felrakot burgony igy azt erdemes lehet szamolni a viztisztito szinten nem irja ki
 , mindketto 25 cselekves allat vegez a feladataval tehat keszit egy pohar vizet es suti keszre az etelt.
 
