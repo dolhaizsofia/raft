@@ -76,7 +76,7 @@ public class Palya {
                 i >= 0 && i < palya.length;
     }
 
-    public Pozicio getElmozdulasIranyhoz(Irany irany) {
+    private Pozicio getElmozdulasIranyhoz(Irany irany) {
         if (irany == Irany.FEL) {
             return new Pozicio(0, -1);
         } else if (irany == Irany.LE) {
