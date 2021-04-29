@@ -19,7 +19,9 @@ public class TisztitViz extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.getLegfelso().tipus().equals(VIZ_TISZTITO_TIPUS);
+        return mezo.getElemek()
+                .stream()
+                .anyMatch(e -> e.tipus().equals(VIZ_TISZTITO_TIPUS));
     }
 
     /**
@@ -29,7 +31,11 @@ public class TisztitViz extends Parancs {
      */
     @Override
     protected void vegrehajt(Palya palya) {
-        ((Viztisztito) palya.aktualisMezo().getLegfelso()).novelVizMennyiseg();
+        Mezo mezo = palya.aktualisMezo();
+        mezo.getElemek()
+                .stream()
+                .filter(e -> e.tipus().equals(VIZ_TISZTITO_TIPUS))
+                .forEach(e -> ((Viztisztito) e).novelVizMennyiseg());
     }
 
 }
