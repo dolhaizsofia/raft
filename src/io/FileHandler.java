@@ -58,7 +58,7 @@ public class FileHandler {
     private static void load(String fileName, Palya palya) throws IOException {
         Jatekos jatekos = palya.getJatekos();
         palya.letorol();
-        try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String sor = br.readLine();
             String[] jatekosMezok = sor.split(" ");
             jatekos.setCselekvesSzamlalo(parseInt(jatekosMezok[0]));
@@ -75,7 +75,7 @@ public class FileHandler {
                 String[] mezok = sor.split(" ");
                 for (int j = 0; j < mezok.length; j++) {
                     Mezo m = new Mezo();
-                    for(String jatekElem : mezok[j].split(";")) {
+                    for (String jatekElem : mezok[j].split(";")) {
                         m.lehelyez(nevhezJatekElem(jatekElem, jatekos));
                     }
                     palya.getTabla()[i][j] = m;
@@ -86,7 +86,7 @@ public class FileHandler {
     }
 
     public static void saveGame(JFrame f, Palya palya) {
-        openFileChooser(f, true).ifPresent(filePath-> {
+        openFileChooser(f, true).ifPresent(filePath -> {
             try {
                 save(filePath + ".rft", palya);
             } catch (IOException e) {
@@ -99,7 +99,7 @@ public class FileHandler {
     private static void save(String fileName, Palya palya) throws IOException {
         Mezo[][] tabla = palya.getTabla();
         Jatekos jatekos = palya.getJatekos();
-        try (FileWriter fw = new FileWriter(fileName)){
+        try (FileWriter fw = new FileWriter(fileName)) {
             fw.write(jatekos.getCselekvesSzamlalo() + " ");
             fw.write(jatekos.getEhseg() + " ");
             fw.write(jatekos.getSzomjusag() + " ");
@@ -122,35 +122,39 @@ public class FileHandler {
         }
     }
 
-    private static Optional<String> openFileChooser(JFrame f, boolean save){
+    private static Optional<String> openFileChooser(JFrame f, boolean save) {
         JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("raft file extention","rft");
-        chooser.setFileFilter(filter);
-        int returnVal;
-        if (save) {
-            returnVal = chooser.showSaveDialog(f);
-        } else {
-            returnVal = chooser.showOpenDialog(f);
-        }
-        if(returnVal == JFileChooser.APPROVE_OPTION) {
-                    return of(chooser.getSelectedFile().getAbsolutePath());
-        }
+        chooser.setFileFilter(new FileNameExtensionFilter("raft file extention", "rft"));
+        int returnVal = save ? chooser.showSaveDialog(f) : chooser.showOpenDialog(f);
+        if (returnVal == JFileChooser.APPROVE_OPTION)
+            return of(chooser.getSelectedFile().getAbsolutePath());
         return empty();
     }
 
     private static JatekElem nevhezJatekElem(String nev, Jatekos jatekos) {
         switch (nev) {
-            case FOLD_TIPUS: return new Fold();
-            case CAPA_TIPUS: return new Capa();
-            case JATEKOS_TIPUS: return jatekos; // ne csinalj uj jatekost
-            case LEVEL_TIPUS: return new Level();
-            case HORDO_TIPUS: return new Hordo();
-            case HULLADEK_TIPUS: return new Hulladek();
-            case DESZKA_TIPUS: return new Deszka();
-            case HALO_TIPUS: return new Halo();
-            case TUZ_TIPUS: return new Tuz();
-            case VIZ_TISZTITO_TIPUS: return new Viztisztito();
-            default: return new Tenger();
+            case FOLD_TIPUS:
+                return new Fold();
+            case CAPA_TIPUS:
+                return new Capa();
+            case JATEKOS_TIPUS:
+                return jatekos; // ne csinalj uj jatekost
+            case LEVEL_TIPUS:
+                return new Level();
+            case HORDO_TIPUS:
+                return new Hordo();
+            case HULLADEK_TIPUS:
+                return new Hulladek();
+            case DESZKA_TIPUS:
+                return new Deszka();
+            case HALO_TIPUS:
+                return new Halo();
+            case TUZ_TIPUS:
+                return new Tuz();
+            case VIZ_TISZTITO_TIPUS:
+                return new Viztisztito();
+            default:
+                return new Tenger();
         }
     }
 
