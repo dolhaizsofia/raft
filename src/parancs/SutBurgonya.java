@@ -9,7 +9,7 @@ import static palya.Jatekos.JATEKOS;
 import static termek.Burgonya.BURGONYA;
 import static termek.Tuz.TUZ;
 
-public class SutKrumpli extends Parancs {
+public class SutBurgonya extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();

@@ -17,7 +17,9 @@ class Board extends JFrame {
 
     private Palya palya;
     private JPanel centerPanel = new JPanel();
-    private JPanel leftPanel = new JPanel();
+    private JPanel southPanel = new JPanel();
+    private JPanel westPanel = new JPanel();
+    private JTextArea magyarazat = new JTextArea();
     private Label korokSzamaLabel = new Label();
     private Label szomjusagLabel = new Label();
     private Label ehsegLabel = new Label();
@@ -35,15 +37,34 @@ class Board extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Container container = getContentPane();
-        leftPanel.setLayout(new GridBagLayout());
+        southPanel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
-        leftPanel.add(korokSzamaLabel, gbc);
-        leftPanel.add(szomjusagLabel, gbc);
-        leftPanel.add(ehsegLabel, gbc);
-        leftPanel.add(holmikLabel, gbc);
-        container.add(leftPanel, BorderLayout.SOUTH);
+        southPanel.add(korokSzamaLabel, gbc);
+        southPanel.add(szomjusagLabel, gbc);
+        southPanel.add(ehsegLabel, gbc);
+        southPanel.add(holmikLabel, gbc);
+        westPanel.add(magyarazat);
+        magyarazat.setText("mozgas: szamok (kiveve 5)\n" +
+                "\n" +
+                "Parancsok irannyal:\n" +
+                "nyersanyag felvetele: 1\n" +
+                "halo lehelyezese: 2\n" +
+                "viztisztito lehelyezese: 3\n" +
+                "tuzhely lehelyezese: 4\n" +
+                "bovites: 5\n" +
+                "\n" +
+                "Irany nelkuli parancsok:\n" +
+                "ivas: 90\n" +
+                "hal evese: 91\n" +
+                "burgonya evese: 92\n" +
+                "horgaszat: 93\n" +
+                "hal sutese: 94\n" +
+                "burgonya sutese: 95");
+        magyarazat.setEnabled(false);
+        container.add(southPanel, BorderLayout.SOUTH);
+        container.add(westPanel, BorderLayout.WEST);
         draw(container, new VisszaJelzes());
-        setSize(800, 600);
+        setSize(1000, 600);
         setLocationRelativeTo(null);
         setVisible(true);
     }
