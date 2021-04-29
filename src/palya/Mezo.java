@@ -9,6 +9,8 @@ public class Mezo {
 
     private List<JatekElem> elemek = new ArrayList<>();
 
+    public Mezo() { }
+
     public Mezo(JatekElem jatekElem) {
         this.elemek.add(jatekElem);
     }

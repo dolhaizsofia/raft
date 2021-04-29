@@ -89,7 +89,23 @@ public class Jatekos implements JatekElem {
         return szomjusag;
     }
 
-    public String getFormazottKorokSzama() {
+    public int getCselekvesSzamlalo() {
+        return cselekvesSzamlalo;
+    }
+
+    public void setEhseg(int ehseg) {
+        this.ehseg = ehseg;
+    }
+
+    public void setSzomjusag(int szomjusag) {
+        this.szomjusag = szomjusag;
+    }
+
+    public void setCselekvesSzamlalo(int cselekvesSzamlalo) {
+        this.cselekvesSzamlalo = cselekvesSzamlalo;
+    }
+
+    public String getFormazottCselekvesSzamlalo() {
         return "korok szama: " + cselekvesSzamlalo;
     }
 

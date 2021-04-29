@@ -17,7 +17,7 @@ import static javax.swing.BorderFactory.createEmptyBorder;
 import static javax.swing.BorderFactory.createLineBorder;
 import static javax.swing.BoxLayout.Y_AXIS;
 
-class Board extends JFrame {
+public class Board extends JFrame {
 
     private Palya palya;
     private JPanel centerPanel = new JPanel();
@@ -84,18 +84,16 @@ class Board extends JFrame {
         setVisible(true);
     }
 
-    void draw(Container contentPane) {
+    public void draw(Container contentPane) {
         Jatekos jatekos = palya.getJatekos();
-        korokSzamaLabel.setText(jatekos.getFormazottKorokSzama());
+        korokSzamaLabel.setText(jatekos.getFormazottCselekvesSzamlalo());
         szomjusagLabel.setText(jatekos.getFormazottSzomjusag());
         ehsegLabel.setText(jatekos.getFormazottEhseg());
         holmikLabel.setText(jatekos.getFormazottHolmik());
         GridLayout gridLayout = new GridLayout(palya.getTabla().length, palya.getTabla()[0].length);
         centerPanel.setLayout(gridLayout);
         centerPanel.setBorder(createEmptyBorder(2, 2, 2, 2));
-
         centerPanel.removeAll();
-
         addPanelsAndLabels();
         contentPane.add(centerPanel, BorderLayout.CENTER);
     }

@@ -1,7 +1,9 @@
 package io;
 
+import main.Board;
 import nyersanyag.Deszka;
 import nyersanyag.Hordo;
+import nyersanyag.Hulladek;
 import nyersanyag.Level;
 import palya.*;
 import termek.Halo;
@@ -14,21 +16,24 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import static java.lang.Integer.parseInt;
 import static java.util.Optional.empty;
 import static java.util.Optional.of;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
+import static javax.swing.SwingUtilities.invokeLater;
 import static nyersanyag.Deszka.DESZKA_TIPUS;
 import static nyersanyag.Hordo.HORDO_TIPUS;
+import static nyersanyag.Hulladek.HULLADEK_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
 import static palya.Capa.CAPA_TIPUS;
 import static palya.Fold.FOLD_TIPUS;
 import static palya.Jatekos.JATEKOS_TIPUS;
-import static palya.Tenger.TENGER_TIPUS;
+import static termek.Burgonya.BURGONYA_TIPUS;
+import static termek.Hal.HAL_TIPUS;
 import static termek.Halo.HALO_TIPUS;
 import static termek.Tuz.TUZ_TIPUS;
 import static termek.Viztisztito.VIZ_TISZTITO_TIPUS;
@@ -38,25 +43,11 @@ public class FileHandler {
     private FileHandler() {
     }
 
-    private static Map<String, JatekElem> JATEKELEM_NEVHEZ_OBJEKTUM = new HashMap<>();
-
-    static {
-        JATEKELEM_NEVHEZ_OBJEKTUM.put(FOLD_TIPUS, new Fold());
-        JATEKELEM_NEVHEZ_OBJEKTUM.put(TENGER_TIPUS, new Tenger());
-        JATEKELEM_NEVHEZ_OBJEKTUM.put(CAPA_TIPUS, new Capa());
-        JATEKELEM_NEVHEZ_OBJEKTUM.put(JATEKOS_TIPUS, new Jatekos());
-        JATEKELEM_NEVHEZ_OBJEKTUM.put(LEVEL_TIPUS, new Level());
-        JATEKELEM_NEVHEZ_OBJEKTUM.put(HORDO_TIPUS, new Hordo());
-        JATEKELEM_NEVHEZ_OBJEKTUM.put(DESZKA_TIPUS, new Deszka());
-        JATEKELEM_NEVHEZ_OBJEKTUM.put(HALO_TIPUS, new Halo());
-        JATEKELEM_NEVHEZ_OBJEKTUM.put(TUZ_TIPUS, new Tuz());
-        JATEKELEM_NEVHEZ_OBJEKTUM.put(VIZ_TISZTITO_TIPUS, new Viztisztito());
-    }
-
-    public static void loadGame(JFrame f, Palya palya) {
-        openFileChooser(f, false).ifPresent(filePath -> {
+    public static void loadGame(Board board, Palya palya) {
+        openFileChooser(board, false).ifPresent(filePath -> {
             try {
-                loadSetting(filePath, palya);
+                load(filePath, palya);
+                invokeLater(() -> board.draw(board));
             } catch (IOException e) {
                 e.printStackTrace();
                 showMessageDialog(null, "File not found!", "warning", ERROR_MESSAGE);
@@ -64,15 +55,32 @@ public class FileHandler {
         });
     }
 
-    private static void loadSetting(String fileName, Palya palya) throws IOException {
+    private static void load(String fileName, Palya palya) throws IOException {
         Jatekos jatekos = palya.getJatekos();
         palya.letorol();
         try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
-            String line = br.readLine();
-            String[] darabok = line.split(" ");
+            String sor = br.readLine();
+            String[] jatekosMezok = sor.split(" ");
+            jatekos.setCselekvesSzamlalo(parseInt(jatekosMezok[0]));
+            jatekos.setEhseg(parseInt(jatekosMezok[1]));
+            jatekos.setSzomjusag(parseInt(jatekosMezok[2]));
+            jatekos.getHolmik().put(DESZKA_TIPUS, parseInt(jatekosMezok[3]));
+            jatekos.getHolmik().put(LEVEL_TIPUS, parseInt(jatekosMezok[4]));
+            jatekos.getHolmik().put(HULLADEK_TIPUS, parseInt(jatekosMezok[5]));
+            jatekos.getHolmik().put(BURGONYA_TIPUS, parseInt(jatekosMezok[6]));
+            jatekos.getHolmik().put(HAL_TIPUS, parseInt(jatekosMezok[7]));
 
-            while ((line = br.readLine()) != null) {
-
+            int i = 0;
+            while ((sor = br.readLine()) != null) {
+                String[] mezok = sor.split(" ");
+                for (int j = 0; j < mezok.length; j++) {
+                    Mezo m = new Mezo();
+                    for(String jatekElem : mezok[j].split(";")) {
+                        m.lehelyez(nevhezJatekElem(jatekElem, jatekos));
+                    }
+                    palya.getTabla()[i][j] = m;
+                }
+                i++;
             }
         }
     }
@@ -92,6 +100,7 @@ public class FileHandler {
         Mezo[][] tabla = palya.getTabla();
         Jatekos jatekos = palya.getJatekos();
         try (FileWriter fw = new FileWriter(fileName)){
+            fw.write(jatekos.getCselekvesSzamlalo() + " ");
             fw.write(jatekos.getEhseg() + " ");
             fw.write(jatekos.getSzomjusag() + " ");
             for (Map.Entry<String, Integer> entry : jatekos.getHolmik().entrySet()) {
@@ -99,10 +108,10 @@ public class FileHandler {
             }
             fw.write("\n");
             for (Mezo[] mezos : tabla) {
-                for (int j = 0; j < mezos.length; j++) {
-                    for (int k = 0; k < mezos[j].getElemek().size(); k++) {
-                        fw.write(mezos[j].getElemek().get(k).tipus());
-                        if (k < mezos[j].getElemek().size() - 1) {
+                for (Mezo mezo : mezos) {
+                    for (int k = 0; k < mezo.getElemek().size(); k++) {
+                        fw.write(mezo.getElemek().get(k).tipus());
+                        if (k < mezo.getElemek().size() - 1) {
                             fw.write(";");
                         }
                     }
@@ -127,6 +136,22 @@ public class FileHandler {
                     return of(chooser.getSelectedFile().getAbsolutePath());
         }
         return empty();
+    }
+
+    private static JatekElem nevhezJatekElem(String nev, Jatekos jatekos) {
+        switch (nev) {
+            case FOLD_TIPUS: return new Fold();
+            case CAPA_TIPUS: return new Capa();
+            case JATEKOS_TIPUS: return jatekos; // ne csinalj uj jatekost
+            case LEVEL_TIPUS: return new Level();
+            case HORDO_TIPUS: return new Hordo();
+            case HULLADEK_TIPUS: return new Hulladek();
+            case DESZKA_TIPUS: return new Deszka();
+            case HALO_TIPUS: return new Halo();
+            case TUZ_TIPUS: return new Tuz();
+            case VIZ_TISZTITO_TIPUS: return new Viztisztito();
+            default: return new Tenger();
+        }
     }
 
 }
