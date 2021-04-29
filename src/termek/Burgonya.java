@@ -11,14 +11,25 @@ public class Burgonya extends Nyersanyag {
 
     private int atsultseg = 0;
 
+    /**
+     * noveli az burgony atsultseget
+     */
     void novelAtsultseg() {
         atsultseg++;
     }
 
+    /**
+     * megsult e mar a burgonya
+     * @return
+     */
     boolean kesz() {
         return atsultseg >= 25;
     }
 
+    /**
+     * tipust definial felul
+     * @return
+     */
     @Override
     public String tipus() {
         return BURGONYA_TIPUS;

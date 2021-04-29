@@ -11,18 +11,36 @@ public class Mezo {
 
     public Mezo() { }
 
+    /**
+     *
+     * @param jatekElem  jatekelem minden ami a palyan megjelenik es megjelenhet
+     */
     public Mezo(JatekElem jatekElem) {
         this.elemek.add(jatekElem);
     }
 
+    /**
+     * lehelyezhet egy jatekelemet pl viztisztito
+     * @param jatekElem
+     */
     public void lehelyez(JatekElem jatekElem) {
         elemek.add(jatekElem);
     }
 
+    /**
+     * felvehet egy jatekelemet vagyis a nyersanyagokat
+     * @return
+     */
     public JatekElem levesz() {
         return elemek.remove(getElemekSzama()-1);
     }
 
+    /**
+     * a palya retegekbol epul fel es ha leveszel egy elemet az allata levo jelenik meg
+     * @param felsoTipus a legfelso jatekelem amit latsz
+     * @param alattaTipus az a jatekelem ami allatta van
+     * @return
+     */
     public boolean ellFelsoKetTipusat(String felsoTipus, String alattaTipus) {
         return getLegfelso().tipus().equals(felsoTipus) && getMasodikLegfelso().tipus().equals(alattaTipus);
     }

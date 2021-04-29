@@ -13,7 +13,10 @@ import static palya.Jatekos.JATEKOS_TIPUS;
  * visszater igazzal ha megfelelo helyen szeretnenk parancsot vegrehajtani
  */
 public abstract class Parancs {
-
+    /**
+     * ha az adot parancs tamogatott akkor vegrehajtatja
+     * @param palya
+     */
     public void csinal(Palya palya) {
         if(tamogatott(palya)) {
             vegrehajt(palya);
@@ -23,6 +26,13 @@ public abstract class Parancs {
 
     protected abstract void vegrehajt(Palya palya);
 
+    /**
+     * megnezi hogy a keresettTipusu mezo van e a jatekos mellett
+     * @param palya
+     * @param irany
+     * @param keresettTipus
+     * @return
+     */
     boolean jatekosEsMellettVmi(Palya palya, Irany irany, String keresettTipus) {
         Mezo mezo = palya.aktualisMezo();
         Pozicio kovetkezoLepes = palya.getKovetkezoLepes(irany);
@@ -30,7 +40,13 @@ public abstract class Parancs {
                 .getLegfelso()
                 .tipus().equals(keresettTipus) && mezo.getLegfelso().tipus().equals(JATEKOS_TIPUS);
     }
-
+    /**
+     * megnezi hogy a keresettTipusu mezo van e a jatekos mellett es a jatekos hajon van e
+     * @param palya
+     * @param irany
+     * @param keresettTipus
+     * @return
+     */
     boolean jatekosFoldonEsMellettVmi(Palya palya, Irany irany, String keresettTipus) {
         Mezo mezo = palya.aktualisMezo();
         Pozicio kovetkezoLepes = palya.getKovetkezoLepes(irany);
@@ -41,6 +57,12 @@ public abstract class Parancs {
                 && mezo.getMasodikLegfelso().tipus().equals(FOLD_TIPUS);
     }
 
+    /**
+     * keresettTipusu mezo van e ott
+     * @param palya
+     * @param keresettTipus
+     * @return
+     */
     boolean mezoTipusu(Palya palya, String keresettTipus) {
         Mezo mezo = palya.aktualisMezo();
         return mezo.getLegfelso().tipus().equals(keresettTipus);

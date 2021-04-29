@@ -13,6 +13,11 @@ public class Palya {
     private int currI;
     private int currJ;
 
+    /**
+     * vegigmegy a palyan es feltolti jatekelemekkel
+     * @param height palya magassaga
+     * @param width palya szelessege
+     */
     public Palya(int height, int width) {
         this.palya = new Mezo[height][width];
         for (int i = 0; i < palya.length; i++) {
@@ -31,6 +36,10 @@ public class Palya {
         palya[middleHeight - 1][middleWidth - 3].lehelyez(new Capa());
     }
 
+    /**
+     * vegigmegy a palyan a parancsnak megfeleloen valtoztat rajta
+     * @param parancs
+     */
     public void vegigMegy(Parancs parancs) {
         for (int i = palya.length - 1; i >= 0; i--) {
             for (int j = 0; j < palya[i].length; j++) {

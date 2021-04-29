@@ -29,6 +29,9 @@ public class Jatekos implements JatekElem {
 
     private Map<String, Integer> holmik;
 
+    /**
+     * jatekos tartalmaz egy HashMapet amibe nyersanyag tipusok es ertekeik vannak
+     */
     public Jatekos() {
         holmik = new HashMap<>();
         holmik.put(DESZKA_TIPUS, 0);
@@ -38,22 +41,44 @@ public class Jatekos implements JatekElem {
         holmik.put(HAL_TIPUS, 0);
     }
 
+    /**
+     *
+     * @return szomjan vagy ehen halt e a jatekosunk
+     */
     public boolean isAlive() {
         return ehseg > 0 && szomjusag > 0;
     }
 
+    /**
+     * vege a jateknak mert lejatszotal 1000 lepest
+     * @return
+     */
     public boolean segitsegNemJottMeg() {
         return cselekvesSzamlalo > 0;
     }
 
+    /**
+     *
+     * @param holmi nyersanyag fajta ami benne van a mapbe
+     * @return van e ilyen holmilya az embernek
+     */
     public int keresHolmni(String holmi) {
         return holmik.getOrDefault(holmi, 0);
     }
 
+    /**
+     *
+     * @param holmi nyersanyag fajta ami benne van a mapbe
+     * @param mennyiseg ha vett valamit a jatekos csokkenti hogy a mennyisegevel a holmi menyiseget
+     */
     public void csokkentHolmi(String holmi, int mennyiseg) {
         holmik.put(holmi, holmik.get(holmi) - mennyiseg);
     }
 
+    /**
+     *
+     * @param jatekElem felveszi a megfelelo nyersanyagot
+     */
     public void felvesz(JatekElem jatekElem) {
         if(jatekElem.tipus().equals(HORDO_TIPUS)){
             for (Nyersanyag nyersanyag :((Hordo)jatekElem).getTartalom()) {
@@ -64,19 +89,31 @@ public class Jatekos implements JatekElem {
         }
     }
 
+    /**
+     * minden cselekvesnel csokkenti a szomjusagot es az ehseget
+     */
     public void csokkentElet() {
         ehseg--;
         szomjusag--;
     }
 
+    /**
+     * minden cselekvesnel csokkeni a meg vegrehajthato cselekvesek szamat
+     */
     public void csokkentCselekvesSzamlalo() {
         cselekvesSzamlalo--;
     }
 
+    /**
+     * iszik es noveli a szomjusagat
+     */
     public void iszik() {
         szomjusag = min(szomjusag + 40, 100 + 1); //+1 a mostani kor miatt
     }
 
+    /**
+     * eszik es noveli a ehseget
+     */
     public void eszik() {
         ehseg = min(ehseg + 60, 100 + 1);
     }
@@ -132,6 +169,10 @@ public class Jatekos implements JatekElem {
         return holmik;
     }
 
+    /**
+     * felulirja a tipust jatekos tipusra
+     * @return
+     */
     @Override
     public String tipus() {
         return JATEKOS_TIPUS;

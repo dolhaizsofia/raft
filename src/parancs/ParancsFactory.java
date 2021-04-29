@@ -5,7 +5,11 @@ import static palya.Irany.*;
  * melyik szamkombinacioval milyen parancsot hajt vegre a jatek
  */
 public class ParancsFactory {
-
+    /**
+     * parancskodok
+     * @param parancsKod kod
+     * @return mit csinaljon az adott kodra
+     */
     public static Parancs letrehozParancs(int parancsKod) {
         switch (parancsKod) {
             case 1: return new Mozgas(BALLE);

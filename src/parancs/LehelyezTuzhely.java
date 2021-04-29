@@ -20,7 +20,11 @@ public class LehelyezTuzhely extends Parancs {
     public LehelyezTuzhely(Irany irany) {
         this.irany = irany;
     }
-
+    /**
+     * megadott felteteleknek teljesulnie kell
+     * @param palya az adott palyat vizsgalom
+     * @return igaz ha megfelel a felteteleknek
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         return jatekosEsMellettVmi(palya, irany, FOLD_TIPUS)
@@ -28,7 +32,11 @@ public class LehelyezTuzhely extends Parancs {
                 && palya.getJatekos().keresHolmni(LEVEL_TIPUS) >= 4
                 && palya.getJatekos().keresHolmni(HULLADEK_TIPUS) >= 3;
     }
-
+    /**
+     * lerakja a tuzhelyet
+     * csokkenti az alapanyagok mennyiseget
+     * @param p
+     */
     @Override
     public void vegrehajt(Palya p) {
         p.getJatekos().csokkentHolmi(DESZKA_TIPUS, 2);

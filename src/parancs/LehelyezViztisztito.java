@@ -19,7 +19,11 @@ public class LehelyezViztisztito extends Parancs {
     LehelyezViztisztito(Irany irany) {
         this.irany = irany;
     }
-
+    /**
+     * megadott felteteleknek teljesulnie kell
+     * @param palya az adott palyat vizsgalom
+     * @return igaz ha megfelel a felteteleknek
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         return jatekosEsMellettVmi(palya, irany, FOLD_TIPUS)
@@ -27,6 +31,12 @@ public class LehelyezViztisztito extends Parancs {
                 && palya.getJatekos().keresHolmni(HULLADEK_TIPUS) >= 4;
     }
 
+
+    /**
+     * lerakja a viztisztitot
+     * csokkenti az alapanyagok mennyiseget
+     * @param p
+     */
     @Override
     public void vegrehajt(Palya p) {
         p.getJatekos().csokkentHolmi(LEVEL_TIPUS, 2);

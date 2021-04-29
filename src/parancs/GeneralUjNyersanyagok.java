@@ -16,6 +16,11 @@ public class GeneralUjNyersanyagok extends Parancs {
 
     private boolean valid = true;
 
+    /**
+     * feluldefinialja a szuloosztalyt
+     * @param palya
+     * @return
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         if (valid) {
@@ -25,11 +30,19 @@ public class GeneralUjNyersanyagok extends Parancs {
         return false;
     }
 
+    /**
+     * feluldefinialja a szulo osztalyt
+     * @param palya
+     */
     @Override
     protected void vegrehajt(Palya palya) {
         generalUjNyersanyagok(palya);
     }
 
+    /**
+     * uj gyersanyagokat general
+     * @param palya
+     */
     private void generalUjNyersanyagok(Palya palya) {
         int nyersanyagSzam = random.nextInt(3 + 1);
         Set<Integer> hova = new HashSet<>();

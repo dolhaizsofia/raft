@@ -11,7 +11,11 @@ import static termek.Tuz.TUZ_TIPUS;
  *megvizsgalja a palyat ha van hal es megsult visszater igazzal ha me nincs vagy meg nyers akkor hamissal
  */
 public class EszikHal extends Parancs {
-
+    /**
+     * megadott felteteleknek teljesulnie kell
+     * @param palya az adott palyat vizsgalom
+     * @return igaz ha megfelel a felteteleknek
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
@@ -19,6 +23,10 @@ public class EszikHal extends Parancs {
                 && ((Tuz) mezo.getMasodikLegfelso()).vanSultHal();
     }
 
+    /**
+     * vegrehajtja ha tamogatott
+     * @param palya
+     */
     @Override
     protected void vegrehajt(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
