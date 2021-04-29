@@ -4,7 +4,7 @@ import palya.*;
 
 import static nyersanyag.Deszka.DESZKA_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
-import static palya.Tenger.TENGER;
+import static palya.Tenger.TENGER_TIPUS;
 
 public class Bovites extends Parancs {
 
@@ -17,7 +17,7 @@ public class Bovites extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         return palya.palyanBelulE(irany)
-                && jatekosFoldonEsMellettVmi(palya, irany, TENGER)
+                && jatekosFoldonEsMellettVmi(palya, irany, TENGER_TIPUS)
                 && palya.getJatekos().keresHolmni(DESZKA_TIPUS) >= 2
                 && palya.getJatekos().keresHolmni(LEVEL_TIPUS) >= 2;
     }

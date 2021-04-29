@@ -7,7 +7,7 @@ import termek.Halo;
 
 import static nyersanyag.Deszka.DESZKA_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
-import static palya.Tenger.TENGER;
+import static palya.Tenger.TENGER_TIPUS;
 
 public class LehelyezHalo extends Parancs {
 
@@ -19,7 +19,7 @@ public class LehelyezHalo extends Parancs {
 
     @Override
     protected boolean tamogatott(Palya palya) {
-        return jatekosFoldonEsMellettVmi(palya, irany, TENGER)
+        return jatekosFoldonEsMellettVmi(palya, irany, TENGER_TIPUS)
                 && palya.getJatekos().keresHolmni(DESZKA_TIPUS) >= 2
                 && palya.getJatekos().keresHolmni(LEVEL_TIPUS) >= 6;
     }

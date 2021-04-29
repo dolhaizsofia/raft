@@ -6,7 +6,7 @@ import termek.Hal;
 import java.util.Random;
 
 import static palya.Jatekos.JATEKOS_TIPUS;
-import static palya.Tenger.TENGER;
+import static palya.Tenger.TENGER_TIPUS;
 
 public class Horgaszik extends Parancs {
 
@@ -14,7 +14,7 @@ public class Horgaszik extends Parancs {
 
     @Override
     protected boolean tamogatott(Palya palya) {
-        return palya.aktualisMezo().ellFelsoKetTipusat(JATEKOS_TIPUS, TENGER);
+        return palya.aktualisMezo().ellFelsoKetTipusat(JATEKOS_TIPUS, TENGER_TIPUS);
     }
 
     @Override

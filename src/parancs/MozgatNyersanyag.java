@@ -6,7 +6,7 @@ import palya.Palya;
 import termek.Halo;
 
 import static nyersanyag.Nyersanyag.nyersanyagE;
-import static palya.Tenger.TENGER;
+import static palya.Tenger.TENGER_TIPUS;
 
 public class MozgatNyersanyag extends Parancs {
 
@@ -27,7 +27,7 @@ public class MozgatNyersanyag extends Parancs {
         int currJ = p.getCurrJ();
         JatekElem jatekElem = palya[currI][currJ].levesz();
         if (currI < palya.length - 1
-                && (palya[currI + 1][currJ].getLegfelso().tipus().equals(TENGER)
+                && (palya[currI + 1][currJ].getLegfelso().tipus().equals(TENGER_TIPUS)
                 || palya[currI + 1][currJ].getLegfelso().tipus().equals(Halo.HALO_TIPUS))) {
             palya[currI + 1][currJ].lehelyez(jatekElem);
         }

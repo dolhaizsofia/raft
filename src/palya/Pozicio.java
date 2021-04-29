@@ -1,9 +1,10 @@
 package palya;
 
 public class Pozicio {
-    private int x, y;
+    private int x;
+    private int y;
 
-    public Pozicio(int x, int y) {
+    Pozicio(int x, int y) {
         this.x = x;
         this.y = y;
     }

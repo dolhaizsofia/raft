@@ -7,7 +7,7 @@ import palya.Palya;
 import java.util.Random;
 
 import static palya.Capa.CAPA_TIPUS;
-import static palya.Tenger.TENGER;
+import static palya.Tenger.TENGER_TIPUS;
 
 public class CapaMozgas extends Parancs {
 
@@ -41,6 +41,6 @@ public class CapaMozgas extends Parancs {
 
     private boolean tengerMezoE(Palya palya, int ujI, int ujJ) {
         return palya.palyanBelulE(ujI, ujJ)
-                && palya.getTabla()[ujI][ujJ].getLegfelso().tipus().equals(TENGER);
+                && palya.getTabla()[ujI][ujJ].getLegfelso().tipus().equals(TENGER_TIPUS);
     }
 }
