@@ -21,6 +21,7 @@ public class Burgonya extends Nyersanyag {
 
     /**
      * megsult e mar a burgonya
+     *
      * @return
      */
     boolean kesz() {
@@ -29,6 +30,7 @@ public class Burgonya extends Nyersanyag {
 
     /**
      * tipust definial felul
+     *
      * @return
      */
     @Override

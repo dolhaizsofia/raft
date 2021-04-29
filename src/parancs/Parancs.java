@@ -15,6 +15,7 @@ import static palya.Jatekos.JATEKOS_TIPUS;
 public abstract class Parancs {
     /**
      * ha az adot parancs tamogatott akkor vegrehajtatja
+     *
      * @param palya
      */
     public void csinal(Palya palya) {
@@ -29,6 +30,7 @@ public abstract class Parancs {
 
     /**
      * megnezi hogy a keresettTipusu mezo van e a jatekos mellett
+     *
      * @param palya
      * @param irany
      * @param keresettTipus
@@ -41,8 +43,10 @@ public abstract class Parancs {
                 .getLegfelso()
                 .tipus().equals(keresettTipus) && mezo.getLegfelso().tipus().equals(JATEKOS_TIPUS);
     }
+
     /**
      * megnezi hogy a keresettTipusu mezo van e a jatekos mellett es a jatekos hajon van e
+     *
      * @param palya
      * @param irany
      * @param keresettTipus
@@ -60,6 +64,7 @@ public abstract class Parancs {
 
     /**
      * keresettTipusu mezo van e ott
+     *
      * @param palya
      * @param keresettTipus
      * @return

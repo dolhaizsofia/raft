@@ -129,6 +129,7 @@ public class Board extends JFrame {
 
     /**
      * kirajzolja a jatekos ertekeit
+     *
      * @param contentPane
      */
     public void draw(Container contentPane) {

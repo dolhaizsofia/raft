@@ -3,7 +3,7 @@ package nyersanyag;
 import static nyersanyag.NyersanyagFactory.letrehozHordoTartalom;
 
 /**
- *  eldonti a statikus metodusa  hogy valami nyersanyage
+ * eldonti a statikus metodusa  hogy valami nyersanyage
  */
 public class Hordo extends Nyersanyag {
 
@@ -25,8 +25,7 @@ public class Hordo extends Nyersanyag {
     }
 
     /**
-     * @return
-     * nyersanyag osztalyt tipus metodusanak felulirasa hogy hordo tipust adjon vissza
+     * @return nyersanyag osztalyt tipus metodusanak felulirasa hogy hordo tipust adjon vissza
      */
     @Override
     public String tipus() {

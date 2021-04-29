@@ -29,6 +29,7 @@ public class CapaMozgas extends Parancs {
 
     /**
      * veletlencseruen generalt szammal adunk neki iranyt es emiat osze visza fog menni
+     *
      * @param p
      */
     @Override
@@ -52,6 +53,7 @@ public class CapaMozgas extends Parancs {
 
     /**
      * lekezeli hogy ne mehesen ra a hajora
+     *
      * @param palya
      * @param ujI
      * @param ujJ
@@ -59,6 +61,9 @@ public class CapaMozgas extends Parancs {
      */
     private boolean tengerMezoE(Palya palya, int ujI, int ujJ) {
         return palya.palyanBelulE(ujI, ujJ)
-                && palya.getTabla()[ujI][ujJ].getLegfelso().tipus().equals(TENGER_TIPUS);
+                && palya.getTabla()[ujI][ujJ]
+                .getLegfelso()
+                .tipus()
+                .equals(TENGER_TIPUS);
     }
 }

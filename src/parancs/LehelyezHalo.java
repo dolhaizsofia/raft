@@ -19,13 +19,16 @@ public class LehelyezHalo extends Parancs {
 
     /**
      * milyen iranyba rakja le a halot
+     *
      * @param irany
      */
     LehelyezHalo(Irany irany) {
         this.irany = irany;
     }
+
     /**
      * megadott felteteleknek teljesulnie kell
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -39,6 +42,7 @@ public class LehelyezHalo extends Parancs {
     /**
      * lerakja a halot
      * csokkenti az alapanyagok mennyiseget
+     *
      * @param p
      */
     @Override

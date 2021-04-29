@@ -10,9 +10,10 @@ import static termek.Viztisztito.VIZ_TISZTITO_TIPUS;
 /**
  * ha van egy pohar tiszta vize es a viztisztito melet van akkor iszik es no a szomjusaga
  */
-public class Iszik extends Parancs{
+public class Iszik extends Parancs {
     /**
      * megadott felteteleknek teljesulnie kell
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -25,6 +26,7 @@ public class Iszik extends Parancs{
 
     /**
      * ha tamogatott akkor vegrehajtja azaz iszik es csökenti aszomjusagot
+     *
      * @param palya
      */
     @Override

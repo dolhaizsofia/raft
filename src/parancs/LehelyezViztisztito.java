@@ -20,8 +20,10 @@ public class LehelyezViztisztito extends Parancs {
     LehelyezViztisztito(Irany irany) {
         this.irany = irany;
     }
+
     /**
      * megadott felteteleknek teljesulnie kell
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -36,6 +38,7 @@ public class LehelyezViztisztito extends Parancs {
     /**
      * lerakja a viztisztitot
      * csokkenti az alapanyagok mennyiseget
+     *
      * @param p
      */
     @Override

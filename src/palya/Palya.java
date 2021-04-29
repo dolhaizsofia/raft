@@ -15,8 +15,9 @@ public class Palya {
 
     /**
      * vegigmegy a palyan es feltolti jatekelemekkel
+     *
      * @param height palya magassaga
-     * @param width palya szelessege
+     * @param width  palya szelessege
      */
     public Palya(int height, int width) {
         this.palya = new Mezo[height][width];
@@ -38,6 +39,7 @@ public class Palya {
 
     /**
      * vegigmegy a palyan a parancsnak megfeleloen valtoztat rajta
+     *
      * @param parancs
      */
     public void vegigMegy(Parancs parancs) {

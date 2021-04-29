@@ -18,6 +18,7 @@ public class Mozgas extends Parancs {
 
     /**
      * megvizsgalja hogy szabalyos e a kovetkezo lepes
+     *
      * @param p
      * @return
      */
@@ -33,6 +34,7 @@ public class Mozgas extends Parancs {
 
     /**
      * ha tamogatott a kovetkezo lepes odalepteti
+     *
      * @param p
      */
     @Override

@@ -23,6 +23,7 @@ public class Tuz implements JatekElem {
 
     /**
      * rarakja a burgonyat
+     *
      * @param b
      */
     public void rarak(Burgonya b) {
@@ -31,6 +32,7 @@ public class Tuz implements JatekElem {
 
     /**
      * rarakja a halat
+     *
      * @param h
      */
     public void rarak(Hal h) {
@@ -39,6 +41,7 @@ public class Tuz implements JatekElem {
 
     /**
      * van e mar megsult hal
+     *
      * @return
      */
     public boolean vanSultHal() {
@@ -52,6 +55,7 @@ public class Tuz implements JatekElem {
 
     /**
      * van e mar megsult burgonya
+     *
      * @return
      */
     public boolean vanSultBurgonya() {
@@ -98,8 +102,10 @@ public class Tuz implements JatekElem {
             }
         }
     }
+
     /**
      * feluldefinialja a tipust
+     *
      * @return
      */
     @Override

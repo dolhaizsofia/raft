@@ -12,6 +12,7 @@ import static termek.Halo.HALO_TIPUS;
 public class HaloBegyujt extends Parancs {
     /**
      * megadott felteteleknek teljesulnie kell
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -23,6 +24,7 @@ public class HaloBegyujt extends Parancs {
 
     /**
      * lerakja a halot
+     *
      * @param palya
      */
     @Override

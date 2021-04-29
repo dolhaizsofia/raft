@@ -21,6 +21,7 @@ public class LeveszEro extends Parancs {
 
     /**
      * csokenti az eletet a jatekosnak
+     *
      * @param palya
      */
     @Override

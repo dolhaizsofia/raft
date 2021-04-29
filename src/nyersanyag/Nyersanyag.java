@@ -17,14 +17,12 @@ public abstract class Nyersanyag implements JatekElem {
 
     private static final List<String> NYERSANYAGOK = asList(DESZKA_TIPUS, HORDO_TIPUS, HULLADEK_TIPUS, LEVEL_TIPUS);
 
-    protected Nyersanyag() {}
+    protected Nyersanyag() {
+    }
 
     /**
-     *
-     * @param elemTipus
-     * a gyerekosztalyaiba definialt tipusok
-     * @return
-     * letezo nyersanyag e
+     * @param elemTipus a gyerekosztalyaiba definialt tipusok
+     * @return letezo nyersanyag e
      */
     public static boolean nyersanyagE(String elemTipus) {
         return NYERSANYAGOK.contains(elemTipus);

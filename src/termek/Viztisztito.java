@@ -22,6 +22,7 @@ public class Viztisztito implements JatekElem {
 
     /**
      * feluldefinialja tipust
+     *
      * @return
      */
     @Override
@@ -31,6 +32,7 @@ public class Viztisztito implements JatekElem {
 
     /**
      * van e mar egy pohar viz
+     *
      * @return
      */
     public boolean vanEgyPoharnyi() {

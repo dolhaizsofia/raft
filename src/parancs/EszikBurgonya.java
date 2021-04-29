@@ -13,6 +13,7 @@ import static termek.Tuz.TUZ_TIPUS;
 public class EszikBurgonya extends Parancs {
     /**
      * megadott felteteleknek teljesulnie kell
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -25,6 +26,7 @@ public class EszikBurgonya extends Parancs {
 
     /**
      * burgonyat eszik es no az eshege
+     *
      * @param palya
      */
     @Override

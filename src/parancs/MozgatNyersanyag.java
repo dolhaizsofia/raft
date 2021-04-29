@@ -14,6 +14,7 @@ import static palya.Tenger.TENGER_TIPUS;
 public class MozgatNyersanyag extends Parancs {
     /**
      * megnezi hogy mehet e oda nyersanyag
+     *
      * @param palya
      * @return
      */
@@ -30,6 +31,7 @@ public class MozgatNyersanyag extends Parancs {
 
     /**
      * lemozgatja minden lepesnel a nyersanyagokat
+     *
      * @param p
      */
     private void leMozgat(Palya p) {

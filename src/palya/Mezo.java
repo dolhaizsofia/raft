@@ -10,11 +10,11 @@ public class Mezo {
 
     private List<JatekElem> elemek = new ArrayList<>();
 
-    public Mezo() {}
+    public Mezo() {
+    }
 
     /**
-     *
-     * @param jatekElem  jatekelem minden ami a palyan megjelenik es megjelenhet
+     * @param jatekElem jatekelem minden ami a palyan megjelenik es megjelenhet
      */
     public Mezo(JatekElem jatekElem) {
         this.elemek.add(jatekElem);
@@ -22,6 +22,7 @@ public class Mezo {
 
     /**
      * lehelyezhet egy jatekelemet pl viztisztito
+     *
      * @param jatekElem
      */
     public void lehelyez(JatekElem jatekElem) {
@@ -30,6 +31,7 @@ public class Mezo {
 
     /**
      * felvehet egy jatekelemet vagyis a nyersanyagokat
+     *
      * @return
      */
     public JatekElem levesz() {
@@ -38,7 +40,8 @@ public class Mezo {
 
     /**
      * a palya retegekbol epul fel es ha leveszel egy elemet az allata levo jelenik meg
-     * @param felsoTipus a legfelso jatekelem amit latsz
+     *
+     * @param felsoTipus  a legfelso jatekelem amit latsz
      * @param alattaTipus az a jatekelem ami allatta van
      * @return
      */

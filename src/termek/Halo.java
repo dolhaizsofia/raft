@@ -11,6 +11,7 @@ public class Halo implements JatekElem {
 
     /**
      * feluldefinialja a tipust
+     *
      * @return
      */
     @Override

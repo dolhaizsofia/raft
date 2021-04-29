@@ -23,6 +23,7 @@ public class Bovites extends Parancs {
 
     /**
      * megadott felteteleknek teljesulnie kell hogy tudjuk bovitenoi a hajot
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -36,6 +37,7 @@ public class Bovites extends Parancs {
 
     /**
      * vegrehajtja az bovitest csokkent a nyersanyagokon es lehelyezi az elemet
+     *
      * @param palya palyaallas amitn ep allunk azt kapja parameterul
      */
     @Override
@@ -47,6 +49,7 @@ public class Bovites extends Parancs {
 
     /**
      * lefoglalja azt a teruletet hajonak es utana odaepiti
+     *
      * @param p palya palyaallas amitn ep allunk azt kapja parameterul
      */
     private void foglalTerulet(Palya p) {

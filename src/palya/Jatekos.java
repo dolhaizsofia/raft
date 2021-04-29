@@ -42,7 +42,6 @@ public class Jatekos implements JatekElem {
     }
 
     /**
-     *
      * @return szomjan vagy ehen halt e a jatekosunk
      */
     public boolean isDead() {
@@ -51,6 +50,7 @@ public class Jatekos implements JatekElem {
 
     /**
      * vege a jateknak mert lejatszotal 1000 lepest
+     *
      * @return
      */
     public boolean segitsegMegJott() {
@@ -58,7 +58,6 @@ public class Jatekos implements JatekElem {
     }
 
     /**
-     *
      * @param holmi nyersanyag fajta ami benne van a mapbe
      * @return van e ilyen holmilya az embernek
      */
@@ -67,8 +66,7 @@ public class Jatekos implements JatekElem {
     }
 
     /**
-     *
-     * @param holmi nyersanyag fajta ami benne van a mapbe
+     * @param holmi     nyersanyag fajta ami benne van a mapbe
      * @param mennyiseg ha vett valamit a jatekos csokkenti hogy a mennyisegevel a holmi menyiseget
      */
     public void csokkentHolmi(String holmi, int mennyiseg) {
@@ -76,7 +74,6 @@ public class Jatekos implements JatekElem {
     }
 
     /**
-     *
      * @param jatekElem felveszi a megfelelo nyersanyagot
      */
     public void felvesz(JatekElem jatekElem) {
@@ -171,6 +168,7 @@ public class Jatekos implements JatekElem {
 
     /**
      * felulirja a tipust jatekos tipusra
+     *
      * @return
      */
     @Override

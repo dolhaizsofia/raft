@@ -13,6 +13,7 @@ import static termek.Tuz.TUZ_TIPUS;
 public class EszikHal extends Parancs {
     /**
      * megadott felteteleknek teljesulnie kell
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -25,6 +26,7 @@ public class EszikHal extends Parancs {
 
     /**
      * vegrehajtja ha tamogatott
+     *
      * @param palya
      */
     @Override

@@ -14,8 +14,10 @@ import static palya.Tenger.TENGER_TIPUS;
 public class Horgaszik extends Parancs {
 
     private static Random random = new Random();
+
     /**
      * megadott felteteleknek teljesulnie kell
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -26,6 +28,7 @@ public class Horgaszik extends Parancs {
 
     /**
      * horgaszik randomadok egy szamot es ennek megfelelo szazalekba halaszunk halat
+     *
      * @param palya
      */
     @Override

@@ -15,6 +15,7 @@ import static termek.Tuz.TUZ_TIPUS;
 public class SutBurgonya extends Parancs {
     /**
      * megadott felteteleknek teljesulnie kell
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -26,6 +27,7 @@ public class SutBurgonya extends Parancs {
 
     /**
      * ha tamogatott akkor vegrehajtja
+     *
      * @param palya
      */
     @Override

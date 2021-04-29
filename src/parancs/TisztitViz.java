@@ -12,6 +12,7 @@ import static termek.Viztisztito.VIZ_TISZTITO_TIPUS;
 public class TisztitViz extends Parancs {
     /**
      * megadott felteteleknek teljesulnie kell
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -23,6 +24,7 @@ public class TisztitViz extends Parancs {
 
     /**
      * ha tamogatott akkor vegrehajtja
+     *
      * @param palya
      */
     @Override

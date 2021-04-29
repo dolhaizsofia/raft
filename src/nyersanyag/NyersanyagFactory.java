@@ -12,10 +12,12 @@ public class NyersanyagFactory {
 
     private static Random random = new Random();
 
-    private NyersanyagFactory() {}
+    private NyersanyagFactory() {
+    }
 
     /**
      * a megadott valoszinusegnek megfeleloen add vissza egy nyersanyagott
+     *
      * @return nyersanyaggal
      */
     public static Nyersanyag letrehozNyersanyag() {
@@ -28,6 +30,7 @@ public class NyersanyagFactory {
 
     /**
      * hordo tartalmat allitja ossze
+     *
      * @return
      */
     static Nyersanyag letrehozHordoTartalom() {

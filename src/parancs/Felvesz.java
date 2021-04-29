@@ -15,8 +15,10 @@ public class Felvesz extends Parancs {
     Felvesz(Irany irany) {
         this.irany = irany;
     }
+
     /**
      * megadott felteteleknek teljesulnie kell
+     *
      * @param palya az adott palyat vizsgalom
      * @return igaz ha megfelel a felteteleknek
      */
@@ -32,6 +34,7 @@ public class Felvesz extends Parancs {
 
     /**
      * vegrehajtja ha tamogatott
+     *
      * @param p
      */
     @Override

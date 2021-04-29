@@ -17,6 +17,7 @@ public class ParancsFeldolgozo {
 
     /**
      * feldolgozza a parancsokat
+     *
      * @param palya
      */
     ParancsFeldolgozo(Palya palya) {
@@ -25,6 +26,7 @@ public class ParancsFeldolgozo {
 
     /**
      * vegigmegy a parancsokon
+     *
      * @param parancs
      */
     public void vegrehajt(int parancs) {

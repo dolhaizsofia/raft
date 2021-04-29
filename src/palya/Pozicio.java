@@ -8,7 +8,6 @@ public class Pozicio {
     private int y;
 
     /**
-     *
      * @param x x kordinatalya annak hogy hol van
      * @param y y kordinataja annak hogy hol van
      */

@@ -14,6 +14,7 @@ public class ParancsFactory {
 
     /**
      * parancskodok
+     *
      * @param parancsKod kod
      * @return mit csinaljon az adott kodra
      */

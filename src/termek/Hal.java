@@ -11,6 +11,7 @@ public class Hal implements JatekElem {
     public static final String HAL_TIPUS = "hal";
 
     private int atsultseg = 0;
+
     /**
      * noveli az halatsultseget
      */
@@ -21,8 +22,10 @@ public class Hal implements JatekElem {
     public int getAtsultseg() {
         return atsultseg;
     }
+
     /**
      * megsult e mar a hal
+     *
      * @return
      */
     boolean kesz() {
@@ -31,6 +34,7 @@ public class Hal implements JatekElem {
 
     /**
      * feluldefinialja a tipust
+     *
      * @return
      */
     @Override

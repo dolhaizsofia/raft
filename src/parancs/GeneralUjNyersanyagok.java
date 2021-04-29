@@ -19,6 +19,7 @@ public class GeneralUjNyersanyagok extends Parancs {
 
     /**
      * feluldefinialja a szuloosztalyt
+     *
      * @param palya
      * @return
      */
@@ -33,6 +34,7 @@ public class GeneralUjNyersanyagok extends Parancs {
 
     /**
      * feluldefinialja a szulo osztalyt
+     *
      * @param palya
      */
     @Override
@@ -42,6 +44,7 @@ public class GeneralUjNyersanyagok extends Parancs {
 
     /**
      * uj gyersanyagokat general
+     *
      * @param palya
      */
     private void generalUjNyersanyagok(Palya palya) {
