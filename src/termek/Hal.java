@@ -2,8 +2,9 @@ package termek;
 
 import palya.JatekElem;
 
-/** eldonti a statikus metodusa  hogy termek e
- *es eltarolja a termekhez tartozo informaciokat
+/**
+ * eldonti a statikus metodusa  hogy termek e
+ * es eltarolja a termekhez tartozo informaciokat
  */
 public class Hal implements JatekElem {
 

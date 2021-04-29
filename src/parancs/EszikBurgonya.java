@@ -8,7 +8,7 @@ import static palya.Jatekos.JATEKOS_TIPUS;
 import static termek.Tuz.TUZ_TIPUS;
 
 /**
- *viszater igazzal hogy eheto e mar a burgony es megeszi
+ * viszater igazzal hogy eheto e mar a burgony es megeszi
  */
 public class EszikBurgonya extends Parancs {
 

@@ -5,16 +5,16 @@ import palya.JatekElem;
 import java.util.ArrayList;
 import java.util.List;
 
-/** eldonti a statikus metodusa  hogy termek e
- *es eltarolja a termekhez tartozo informaciokat
+/**
+ * eldonti a statikus metodusa  hogy termek e
+ * es eltarolja a termekhez tartozo informaciokat
  * es metodusokat
  */
 public class Tuz implements JatekElem {
 
+    public static final String TUZ_TIPUS = "tuz";
     private List<Burgonya> burgonyak;
     private List<Hal> halak;
-
-    public static final String TUZ_TIPUS = "tuz";
 
     public Tuz() {
         burgonyak = new ArrayList<>();
@@ -30,7 +30,7 @@ public class Tuz implements JatekElem {
     }
 
     public boolean vanSultHal() {
-        for (Hal h: halak) {
+        for (Hal h : halak) {
             if (h.kesz()) {
                 return true;
             }
@@ -39,7 +39,7 @@ public class Tuz implements JatekElem {
     }
 
     public boolean vanSultBurgonya() {
-        for (Burgonya b: burgonyak) {
+        for (Burgonya b : burgonyak) {
             if (b.kesz()) {
                 return true;
             }
@@ -48,16 +48,16 @@ public class Tuz implements JatekElem {
     }
 
     public void sul() {
-        for (Burgonya b: burgonyak) {
+        for (Burgonya b : burgonyak) {
             b.novelAtsultseg();
         }
-        for (Hal h: halak) {
+        for (Hal h : halak) {
             h.novelAtsultseg();
         }
     }
 
     public void leveszBurgonya() {
-        for (Burgonya b: burgonyak) {
+        for (Burgonya b : burgonyak) {
             if (b.kesz()) {
                 burgonyak.remove(b);
                 break;
@@ -66,7 +66,7 @@ public class Tuz implements JatekElem {
     }
 
     public void leveszHal() {
-        for (Hal h: halak) {
+        for (Hal h : halak) {
             if (h.kesz()) {
                 halak.remove(h);
                 break;

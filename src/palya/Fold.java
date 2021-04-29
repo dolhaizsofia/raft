@@ -1,4 +1,5 @@
 package palya;
+
 /**
  * eldonti a statikus metodusa  hogy palya elem e
  */

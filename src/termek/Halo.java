@@ -2,7 +2,8 @@ package termek;
 
 import palya.JatekElem;
 
-/** eldonti a statikus metodusa  hogy termek e
+/**
+ * eldonti a statikus metodusa  hogy termek e
  */
 public class Halo implements JatekElem {
 

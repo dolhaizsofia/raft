@@ -7,6 +7,7 @@ import java.util.Random;
 import java.util.Set;
 
 import static nyersanyag.NyersanyagFactory.letrehozNyersanyag;
+
 /**
  * uj nyersanyagokat general
  */
@@ -36,7 +37,7 @@ public class GeneralUjNyersanyagok extends Parancs {
         for (int i = 0; i < nyersanyagSzam; i++) {
             hova.add(random.nextInt(palya.getTabla()[0].length));
         }
-        for (int oszlop: hova) {
+        for (int oszlop : hova) {
             palya.getTabla()[0][oszlop].lehelyez(letrehozNyersanyag());
         }
     }

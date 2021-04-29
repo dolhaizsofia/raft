@@ -10,7 +10,7 @@ import static termek.Viztisztito.VIZ_TISZTITO_TIPUS;
 /**
  * ha van egy pohar tiszta vize es a viztisztito melet van akkor iszik es no a szomjusaga
  */
-public class Iszik extends Parancs{
+public class Iszik extends Parancs {
 
     @Override
     protected boolean tamogatott(Palya palya) {

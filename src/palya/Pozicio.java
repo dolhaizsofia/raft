@@ -1,4 +1,5 @@
 package palya;
+
 /**
  * eltarolja a poziciokat
  */
