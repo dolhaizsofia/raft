@@ -35,6 +35,7 @@ public class Board extends JFrame {
     private Label szomjusagLabel = new Label();
     private Label ehsegLabel = new Label();
     private Label holmikLabel = new Label();
+    private JLabel commandLabel = new JLabel("Parancs");
     private JTextField commandField = new JTextField();
     private JButton saveButton = new JButton("mentes");
     private JButton loadButton = new JButton("betoltes");
@@ -62,6 +63,9 @@ public class Board extends JFrame {
         southPanel.add(holmikLabel, gbc);
         eastPanel.setLayout(new BoxLayout(eastPanel, Y_AXIS));
         westPanel.add(magyarazat);
+        commandField.setMaximumSize(new Dimension(Short.MAX_VALUE, 20));
+        eastPanel.add(commandLabel);
+        eastPanel.add(commandField);
         eastPanel.add(new Box.Filler(new Dimension(10, 10), new Dimension(10, 10), new Dimension(10, 10)));
         eastPanel.add(saveButton);
         eastPanel.add(new Box.Filler(new Dimension(10, 10), new Dimension(10, 10), new Dimension(10, 10)));
@@ -91,7 +95,7 @@ public class Board extends JFrame {
                 }
             }
         });
-        eastPanel.add(commandField);
+
         saveButton.addActionListener(e -> saveGame(this, palya));
         loadButton.addActionListener(e -> loadGame(this, palya));
         magyarazat.setText("mozgas: szamok (kiveve 5)\n" +
