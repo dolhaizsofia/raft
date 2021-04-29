@@ -13,7 +13,7 @@ import static palya.elemek.Tenger.TENGER_TIPUS;
  */
 public class Horgaszik extends Parancs {
 
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     /**
      * megadott felteteleknek teljesulnie kell

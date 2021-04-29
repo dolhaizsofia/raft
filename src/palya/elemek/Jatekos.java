@@ -1,8 +1,8 @@
 package palya.elemek;
 
+import palya.JatekElem;
 import palya.elemek.nyersanyag.Hordo;
 import palya.elemek.nyersanyag.Nyersanyag;
-import palya.JatekElem;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -28,7 +28,7 @@ public class Jatekos implements JatekElem {
     private int szomjusag = 100;
     private int cselekvesSzamlalo = 1000;
 
-    private Map<String, Integer> holmik;
+    private final Map<String, Integer> holmik;
 
     /**
      * jatekos tartalmaz egy HashMapet amibe palya.elemek.nyersanyag tipusok es ertekeik vannak

@@ -1,7 +1,7 @@
 package main;
 
-import palya.elemek.Jatekos;
 import palya.Palya;
+import palya.elemek.Jatekos;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,23 +25,23 @@ import static javax.swing.SwingUtilities.getWindowAncestor;
 
 public class Tabla extends JFrame {
 
-    private Palya palya;
-    private JPanel centerPanel = new JPanel();
-    private JPanel southPanel = new JPanel();
-    private JPanel westPanel = new JPanel();
-    private JPanel eastPanel = new JPanel();
-    private JTextArea magyarazat = new JTextArea();
-    private Label korokSzamaLabel = new Label();
-    private Label szomjusagLabel = new Label();
-    private Label ehsegLabel = new Label();
-    private Label holmikLabel = new Label();
-    private JLabel commandLabel = new JLabel("parancs");
-    private JTextField commandField = new JTextField();
-    private JButton saveButton = new JButton("mentes");
-    private JButton loadButton = new JButton("betoltes");
-    private ImagePanel[] panels;
+    private final Palya palya;
+    private final JPanel centerPanel = new JPanel();
+    private final JPanel southPanel = new JPanel();
+    private final JPanel westPanel = new JPanel();
+    private final JPanel eastPanel = new JPanel();
+    private final JTextArea magyarazat = new JTextArea();
+    private final Label korokSzamaLabel = new Label();
+    private final Label szomjusagLabel = new Label();
+    private final Label ehsegLabel = new Label();
+    private final Label holmikLabel = new Label();
+    private final JLabel commandLabel = new JLabel("parancs");
+    private final JTextField commandField = new JTextField();
+    private final JButton saveButton = new JButton("mentes");
+    private final JButton loadButton = new JButton("betoltes");
+    private final ImagePanel[] panels;
 
-    private ParancsFeldolgozo parancsFeldolgozo;
+    private final ParancsFeldolgozo parancsFeldolgozo;
 
     Tabla(Palya palya) {
         this.palya = palya;

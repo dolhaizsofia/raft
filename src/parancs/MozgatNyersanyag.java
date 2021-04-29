@@ -5,8 +5,8 @@ import palya.Mezo;
 import palya.Palya;
 import termek.Halo;
 
-import static palya.elemek.nyersanyag.Nyersanyag.nyersanyagE;
 import static palya.elemek.Tenger.TENGER_TIPUS;
+import static palya.elemek.nyersanyag.Nyersanyag.nyersanyagE;
 
 /**
  * minden lepesnel lemozgatja eggyel a nyersanyagokat ha oda mehet palya.elemek.nyersanyag

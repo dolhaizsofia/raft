@@ -19,7 +19,7 @@ public class ParancsFactory {
      * @return mit csinaljon az adott kodra
      */
     public static Parancs letrehozParancs(int parancsKod) {
-        if (parancsKod>=90){ // iranymentes parancsok
+        if (parancsKod >= 90) { // iranymentes parancsok
             return getIranyNelkuliParancs(parancsKod);
         }
         Irany irany = getIrany(parancsKod % 10);
@@ -42,7 +42,7 @@ public class ParancsFactory {
     }
 
     private static Parancs getIranyNelkuliParancs(int parancsKod) {
-        switch (parancsKod){
+        switch (parancsKod) {
             case 90:
                 return new Iszik();
             case 91:

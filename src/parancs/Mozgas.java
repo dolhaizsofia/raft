@@ -9,7 +9,7 @@ import static palya.elemek.Jatekos.JATEKOS_TIPUS;
  */
 public class Mozgas extends Parancs {
 
-    private Irany irany;
+    private final Irany irany;
     private boolean valid = true;
 
     Mozgas(Irany irany) {

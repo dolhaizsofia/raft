@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Mezo {
 
-    private List<JatekElem> elemek = new ArrayList<>();
+    private final List<JatekElem> elemek = new ArrayList<>();
 
     public Mezo() {
     }

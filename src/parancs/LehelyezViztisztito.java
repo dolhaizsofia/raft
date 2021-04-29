@@ -5,9 +5,9 @@ import palya.Palya;
 import palya.Pozicio;
 import termek.Viztisztito;
 
+import static palya.elemek.Fold.FOLD_TIPUS;
 import static palya.elemek.nyersanyag.Hulladek.HULLADEK_TIPUS;
 import static palya.elemek.nyersanyag.Level.LEVEL_TIPUS;
-import static palya.elemek.Fold.FOLD_TIPUS;
 
 /**
  * a tamogatott megnezi hogy lehet e viztisztitot lehelyezni jo helyre akkarod e lerakni es van e eleg nyeranyagod
@@ -15,7 +15,7 @@ import static palya.elemek.Fold.FOLD_TIPUS;
  */
 public class LehelyezViztisztito extends Parancs {
 
-    private Irany irany;
+    private final Irany irany;
 
     LehelyezViztisztito(Irany irany) {
         this.irany = irany;

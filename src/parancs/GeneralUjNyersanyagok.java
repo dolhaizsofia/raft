@@ -13,7 +13,7 @@ import static palya.elemek.nyersanyag.NyersanyagFactory.letrehozNyersanyag;
  */
 public class GeneralUjNyersanyagok extends Parancs {
 
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     private boolean valid = true;
 

@@ -2,15 +2,15 @@ package parancs;
 
 import palya.*;
 
-import static palya.elemek.nyersanyag.Nyersanyag.nyersanyagE;
 import static palya.elemek.Jatekos.JATEKOS_TIPUS;
+import static palya.elemek.nyersanyag.Nyersanyag.nyersanyagE;
 
 /**
  * felveszi az adot nyersanyagot ha tudja
  */
 public class Felvesz extends Parancs {
 
-    private Irany irany;
+    private final Irany irany;
 
     Felvesz(Irany irany) {
         this.irany = irany;

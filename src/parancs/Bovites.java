@@ -1,13 +1,13 @@
 package parancs;
 
-import palya.elemek.Fold;
 import palya.Irany;
 import palya.Palya;
 import palya.Pozicio;
+import palya.elemek.Fold;
 
+import static palya.elemek.Tenger.TENGER_TIPUS;
 import static palya.elemek.nyersanyag.Deszka.DESZKA_TIPUS;
 import static palya.elemek.nyersanyag.Level.LEVEL_TIPUS;
-import static palya.elemek.Tenger.TENGER_TIPUS;
 
 /**
  * megvizsgalja a palyat hogy lehet e oda epiteni
@@ -15,7 +15,7 @@ import static palya.elemek.Tenger.TENGER_TIPUS;
  */
 public class Bovites extends Parancs {
 
-    private Irany irany;
+    private final Irany irany;
 
     Bovites(Irany irany) {
         this.irany = irany;

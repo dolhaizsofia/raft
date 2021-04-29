@@ -4,8 +4,8 @@ package palya;
  * eltarolja a poziciokat
  */
 public class Pozicio {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     /**
      * @param x x kordinatalya annak hogy hol van

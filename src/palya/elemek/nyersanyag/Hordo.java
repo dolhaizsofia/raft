@@ -9,7 +9,7 @@ public class Hordo extends Nyersanyag {
 
     public static final String HORDO_TIPUS = "hordo";
 
-    private Nyersanyag[] tartalom = new Nyersanyag[5];
+    private final Nyersanyag[] tartalom = new Nyersanyag[5];
 
     /**
      * feltolti a hordot

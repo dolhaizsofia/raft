@@ -13,8 +13,8 @@ import java.util.List;
 public class Tuz implements JatekElem {
 
     public static final String TUZ_TIPUS = "tuz";
-    private List<Burgonya> burgonyak;
-    private List<Hal> halak;
+    private final List<Burgonya> burgonyak;
+    private final List<Hal> halak;
 
     public Tuz() {
         burgonyak = new ArrayList<>();

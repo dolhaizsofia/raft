@@ -1,15 +1,17 @@
 package io;
 
 import main.Tabla;
-import palya.elemek.nyersanyag.Deszka;
-import palya.elemek.nyersanyag.Hordo;
-import palya.elemek.nyersanyag.Hulladek;
-import palya.elemek.nyersanyag.Level;
-import palya.*;
+import palya.JatekElem;
+import palya.Mezo;
+import palya.Palya;
 import palya.elemek.Capa;
 import palya.elemek.Fold;
 import palya.elemek.Jatekos;
 import palya.elemek.Tenger;
+import palya.elemek.nyersanyag.Deszka;
+import palya.elemek.nyersanyag.Hordo;
+import palya.elemek.nyersanyag.Hulladek;
+import palya.elemek.nyersanyag.Level;
 import termek.Halo;
 import termek.Tuz;
 import termek.Viztisztito;
@@ -29,13 +31,13 @@ import static java.util.Optional.of;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static javax.swing.SwingUtilities.invokeLater;
+import static palya.elemek.Capa.CAPA_TIPUS;
+import static palya.elemek.Fold.FOLD_TIPUS;
+import static palya.elemek.Jatekos.JATEKOS_TIPUS;
 import static palya.elemek.nyersanyag.Deszka.DESZKA_TIPUS;
 import static palya.elemek.nyersanyag.Hordo.HORDO_TIPUS;
 import static palya.elemek.nyersanyag.Hulladek.HULLADEK_TIPUS;
 import static palya.elemek.nyersanyag.Level.LEVEL_TIPUS;
-import static palya.elemek.Capa.CAPA_TIPUS;
-import static palya.elemek.Fold.FOLD_TIPUS;
-import static palya.elemek.Jatekos.JATEKOS_TIPUS;
 import static termek.Burgonya.BURGONYA_TIPUS;
 import static termek.Hal.HAL_TIPUS;
 import static termek.Halo.HALO_TIPUS;
@@ -47,6 +49,12 @@ public class FileHandler {
     private FileHandler() {
     }
 
+    /**
+     * betolti a jatekot
+     *
+     * @param tabla
+     * @param palya
+     */
     public static void loadGame(Tabla tabla, Palya palya) {
         openFileChooser(tabla, false).ifPresent(filePath -> {
             try {
@@ -59,6 +67,13 @@ public class FileHandler {
         });
     }
 
+    /**
+     * betolti a jatekot a megadot filebol
+     *
+     * @param fileName
+     * @param palya
+     * @throws IOException
+     */
     private static void load(String fileName, Palya palya) throws IOException {
         Jatekos jatekos = palya.getJatekos();
         palya.letorol();
@@ -89,6 +104,12 @@ public class FileHandler {
         }
     }
 
+    /**
+     * fajlba menti a jatekot
+     *
+     * @param f
+     * @param palya
+     */
     public static void saveGame(JFrame f, Palya palya) {
         openFileChooser(f, true).ifPresent(filePath -> {
             try {
@@ -100,6 +121,13 @@ public class FileHandler {
         });
     }
 
+    /**
+     * ezt kezeli le hogy hogy menti a jatekot fajlba
+     *
+     * @param fileName
+     * @param palya
+     * @throws IOException
+     */
     private static void save(String fileName, Palya palya) throws IOException {
         Mezo[][] tabla = palya.getTabla();
         Jatekos jatekos = palya.getJatekos();
@@ -126,6 +154,13 @@ public class FileHandler {
         }
     }
 
+    /**
+     * megnyitja a kivalasztott filet
+     *
+     * @param f
+     * @param save
+     * @return
+     */
     private static Optional<String> openFileChooser(JFrame f, boolean save) {
         JFileChooser chooser = new JFileChooser();
         chooser.setFileFilter(new FileNameExtensionFilter("raft file extention", "rft"));
@@ -135,6 +170,13 @@ public class FileHandler {
         return empty();
     }
 
+    /**
+     * hozzarendeli a nevehez a jatekelemet
+     *
+     * @param nev
+     * @param jatekos
+     * @return
+     */
     private static JatekElem nevhezJatekElem(String nev, Jatekos jatekos) {
         switch (nev) {
             case FOLD_TIPUS:

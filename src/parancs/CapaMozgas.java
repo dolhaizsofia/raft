@@ -14,7 +14,7 @@ import static palya.elemek.Tenger.TENGER_TIPUS;
  */
 public class CapaMozgas extends Parancs {
 
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     private boolean valid = true;
 

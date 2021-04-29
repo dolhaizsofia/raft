@@ -5,10 +5,10 @@ import palya.Palya;
 import palya.Pozicio;
 import termek.Tuz;
 
+import static palya.elemek.Fold.FOLD_TIPUS;
 import static palya.elemek.nyersanyag.Deszka.DESZKA_TIPUS;
 import static palya.elemek.nyersanyag.Hulladek.HULLADEK_TIPUS;
 import static palya.elemek.nyersanyag.Level.LEVEL_TIPUS;
-import static palya.elemek.Fold.FOLD_TIPUS;
 
 /**
  * ez az osztaly megnezi hogy minden feltetel teljesul e a tuzhely lehelyezesehez azaz van eleg palya.elemek.nyersanyag es jo helyre szeretne e lerakni
@@ -16,7 +16,7 @@ import static palya.elemek.Fold.FOLD_TIPUS;
  */
 public class LehelyezTuzhely extends Parancs {
 
-    private Irany irany;
+    private final Irany irany;
 
     public LehelyezTuzhely(Irany irany) {
         this.irany = irany;

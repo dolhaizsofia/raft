@@ -10,7 +10,7 @@ import java.util.Random;
  */
 public class NyersanyagFactory {
 
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     private NyersanyagFactory() {
     }

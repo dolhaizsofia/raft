@@ -13,7 +13,7 @@ import static parancs.ParancsFactory.letrehozParancs;
  */
 public class ParancsFeldolgozo {
 
-    private Palya palya;
+    private final Palya palya;
 
     /**
      * feldolgozza a parancsokat
