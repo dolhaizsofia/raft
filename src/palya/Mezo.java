@@ -2,6 +2,7 @@ package palya;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * lekezeli a mezoket
  */
@@ -9,7 +10,7 @@ public class Mezo {
 
     private List<JatekElem> elemek = new ArrayList<>();
 
-    public Mezo() { }
+    public Mezo() {}
 
     /**
      *
@@ -32,7 +33,7 @@ public class Mezo {
      * @return
      */
     public JatekElem levesz() {
-        return elemek.remove(getElemekSzama()-1);
+        return elemek.remove(getElemekSzama() - 1);
     }
 
     /**
@@ -41,16 +42,17 @@ public class Mezo {
      * @param alattaTipus az a jatekelem ami allatta van
      * @return
      */
-    public boolean ellFelsoKetTipusat(String felsoTipus, String alattaTipus) {
-        return getLegfelso().tipus().equals(felsoTipus) && getMasodikLegfelso().tipus().equals(alattaTipus);
+    public boolean ellenorizFelsoKetTipusat(String felsoTipus, String alattaTipus) {
+        return getLegfelso().tipus().equals(felsoTipus)
+                && getMasodikLegfelso().tipus().equals(alattaTipus);
     }
 
     public JatekElem getLegfelso() {
-        return elemek.get(getElemekSzama()-1);
+        return elemek.get(getElemekSzama() - 1);
     }
 
     public JatekElem getMasodikLegfelso() {
-        return elemek.get(getElemekSzama()-2);
+        return elemek.get(getElemekSzama() - 2);
     }
 
     public List<JatekElem> getElemek() {

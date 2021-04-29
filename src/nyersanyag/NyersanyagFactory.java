@@ -3,15 +3,16 @@ package nyersanyag;
 import termek.Burgonya;
 
 import java.util.Random;
+
 /**
- *veletlenszeruen a megadott valoszinusegnek megfeleloen letrehoz nyersanyagokat
+ * veletlenszeruen a megadott valoszinusegnek megfeleloen letrehoz nyersanyagokat
  * osszerakja veletlenszeruen a hordo tartalmat
  */
 public class NyersanyagFactory {
 
     private static Random random = new Random();
 
-    private NyersanyagFactory() { }
+    private NyersanyagFactory() {}
 
     /**
      * a megadott valoszinusegnek megfeleloen add vissza egy nyersanyagott

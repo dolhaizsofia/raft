@@ -8,8 +8,9 @@ import palya.Pozicio;
 import static nyersanyag.Deszka.DESZKA_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
 import static palya.Tenger.TENGER_TIPUS;
+
 /**
- *megvizsgalja a palyat hogy lehet e oda epiteni
+ * megvizsgalja a palyat hogy lehet e oda epiteni
  * leepit plusz egy foldteruletett ha van elég nyersanyag amugy meg visszater hamissal és nem csinal semmit
  */
 public class Bovites extends Parancs {

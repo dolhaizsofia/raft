@@ -8,6 +8,7 @@ import termek.Viztisztito;
 import static nyersanyag.Hulladek.HULLADEK_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
 import static palya.Fold.FOLD_TIPUS;
+
 /**
  * a tamogatott megnezi hogy lehet e viztisztitot lehelyezni jo helyre akkarod e lerakni es van e eleg nyeranyagod
  * a vegrehajt metodus meg lehelyezi es csokkenti a nyersanyagokat

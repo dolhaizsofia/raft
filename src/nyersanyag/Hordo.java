@@ -1,8 +1,9 @@
 package nyersanyag;
 
 import static nyersanyag.NyersanyagFactory.letrehozHordoTartalom;
+
 /**
- *  eldonti a statikus metodusa  hogy valami nyersanyag e
+ *  eldonti a statikus metodusa  hogy valami nyersanyage
  */
 public class Hordo extends Nyersanyag {
 

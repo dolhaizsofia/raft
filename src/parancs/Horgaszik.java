@@ -21,7 +21,7 @@ public class Horgaszik extends Parancs {
      */
     @Override
     protected boolean tamogatott(Palya palya) {
-        return palya.aktualisMezo().ellFelsoKetTipusat(JATEKOS_TIPUS, TENGER_TIPUS);
+        return palya.aktualisMezo().ellenorizFelsoKetTipusat(JATEKOS_TIPUS, TENGER_TIPUS);
     }
 
     /**

@@ -9,14 +9,15 @@ import static nyersanyag.Deszka.DESZKA_TIPUS;
 import static nyersanyag.Hordo.HORDO_TIPUS;
 import static nyersanyag.Hulladek.HULLADEK_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
+
 /**
  * eldonti a statikus metodusa  hogy valami nyersanyage
  */
 public abstract class Nyersanyag implements JatekElem {
 
-    protected Nyersanyag() {}
-
     private static final List<String> NYERSANYAGOK = asList(DESZKA_TIPUS, HORDO_TIPUS, HULLADEK_TIPUS, LEVEL_TIPUS);
+
+    protected Nyersanyag() {}
 
     /**
      *

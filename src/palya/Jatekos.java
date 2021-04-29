@@ -3,7 +3,7 @@ package palya;
 import nyersanyag.Hordo;
 import nyersanyag.Nyersanyag;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static java.lang.Math.min;
@@ -33,7 +33,7 @@ public class Jatekos implements JatekElem {
      * jatekos tartalmaz egy HashMapet amibe nyersanyag tipusok es ertekeik vannak
      */
     public Jatekos() {
-        holmik = new HashMap<>();
+        holmik = new LinkedHashMap<>();
         holmik.put(DESZKA_TIPUS, 0);
         holmik.put(LEVEL_TIPUS, 0);
         holmik.put(HULLADEK_TIPUS, 0);
@@ -45,16 +45,16 @@ public class Jatekos implements JatekElem {
      *
      * @return szomjan vagy ehen halt e a jatekosunk
      */
-    public boolean isAlive() {
-        return ehseg > 0 && szomjusag > 0;
+    public boolean isDead() {
+        return ehseg <= 0 && szomjusag <= 0;
     }
 
     /**
      * vege a jateknak mert lejatszotal 1000 lepest
      * @return
      */
-    public boolean segitsegNemJottMeg() {
-        return cselekvesSzamlalo > 0;
+    public boolean segitsegMegJott() {
+        return cselekvesSzamlalo <= 0;
     }
 
     /**
@@ -80,12 +80,12 @@ public class Jatekos implements JatekElem {
      * @param jatekElem felveszi a megfelelo nyersanyagot
      */
     public void felvesz(JatekElem jatekElem) {
-        if(jatekElem.tipus().equals(HORDO_TIPUS)){
-            for (Nyersanyag nyersanyag :((Hordo)jatekElem).getTartalom()) {
-                holmik.put(nyersanyag.tipus(), holmik.get(nyersanyag.tipus())  + 1);
+        if (jatekElem.tipus().equals(HORDO_TIPUS)) {
+            for (Nyersanyag nyersanyag : ((Hordo) jatekElem).getTartalom()) {
+                holmik.put(nyersanyag.tipus(), holmik.get(nyersanyag.tipus()) + 1);
             }
         } else {
-            holmik.put(jatekElem.tipus(), holmik.get(jatekElem.tipus())  + 1);
+            holmik.put(jatekElem.tipus(), holmik.get(jatekElem.tipus()) + 1);
         }
     }
 
@@ -122,24 +122,28 @@ public class Jatekos implements JatekElem {
         return ehseg;
     }
 
-    public int getSzomjusag() {
-        return szomjusag;
-    }
-
-    public int getCselekvesSzamlalo() {
-        return cselekvesSzamlalo;
-    }
-
     public void setEhseg(int ehseg) {
         this.ehseg = ehseg;
+    }
+
+    public int getSzomjusag() {
+        return szomjusag;
     }
 
     public void setSzomjusag(int szomjusag) {
         this.szomjusag = szomjusag;
     }
 
+    public int getCselekvesSzamlalo() {
+        return cselekvesSzamlalo;
+    }
+
     public void setCselekvesSzamlalo(int cselekvesSzamlalo) {
         this.cselekvesSzamlalo = cselekvesSzamlalo;
+    }
+
+    public Map<String, Integer> getHolmik() {
+        return holmik;
     }
 
     public String getFormazottCselekvesSzamlalo() {
@@ -156,17 +160,13 @@ public class Jatekos implements JatekElem {
 
     public String getFormazottHolmik() {
         StringBuilder builder = new StringBuilder();
-        for (Map.Entry<String, Integer> e:holmik.entrySet()) {
+        for (Map.Entry<String, Integer> e : holmik.entrySet()) {
             builder.append(e.getKey())
                     .append(": ")
                     .append(e.getValue())
                     .append("  ");
         }
         return builder.toString();
-    }
-
-    public Map<String, Integer> getHolmik() {
-        return holmik;
     }
 
     /**

@@ -8,7 +8,7 @@ import static palya.Jatekos.JATEKOS_TIPUS;
 import static termek.Tuz.TUZ_TIPUS;
 
 /**
- *viszater igazzal hogy eheto e mar a burgony es megeszi
+ * viszater igazzal hogy eheto e mar a burgony es megeszi
  */
 public class EszikBurgonya extends Parancs {
     /**
@@ -19,7 +19,7 @@ public class EszikBurgonya extends Parancs {
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.ellFelsoKetTipusat(JATEKOS_TIPUS, TUZ_TIPUS)
+        return mezo.ellenorizFelsoKetTipusat(JATEKOS_TIPUS, TUZ_TIPUS)
                 && ((Tuz) mezo.getMasodikLegfelso()).vanSultBurgonya();
     }
 

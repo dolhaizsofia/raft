@@ -19,7 +19,7 @@ public class Iszik extends Parancs{
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
-        return mezo.ellFelsoKetTipusat(JATEKOS_TIPUS, VIZ_TISZTITO_TIPUS)
+        return mezo.ellenorizFelsoKetTipusat(JATEKOS_TIPUS, VIZ_TISZTITO_TIPUS)
                 && ((Viztisztito) mezo.getMasodikLegfelso()).vanEgyPoharnyi();
     }
 

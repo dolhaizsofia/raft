@@ -1,4 +1,5 @@
 package nyersanyag;
+
 /**
  * eldonti a statikus metodusa  hogy valami nyersanyage
  */

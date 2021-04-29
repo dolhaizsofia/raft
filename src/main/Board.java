@@ -5,17 +5,23 @@ import palya.Palya;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
 import static io.FileHandler.loadGame;
 import static io.FileHandler.saveGame;
+import static java.awt.event.KeyEvent.VK_ENTER;
+import static java.lang.Integer.parseInt;
 import static java.util.Objects.requireNonNull;
 import static javax.imageio.ImageIO.read;
 import static javax.swing.BorderFactory.createEmptyBorder;
 import static javax.swing.BorderFactory.createLineBorder;
 import static javax.swing.BoxLayout.Y_AXIS;
+import static javax.swing.JOptionPane.showMessageDialog;
+import static javax.swing.SwingUtilities.getWindowAncestor;
 
 public class Board extends JFrame {
 
@@ -29,12 +35,17 @@ public class Board extends JFrame {
     private Label szomjusagLabel = new Label();
     private Label ehsegLabel = new Label();
     private Label holmikLabel = new Label();
+    private JLabel commandLabel = new JLabel("parancs");
+    private JTextField commandField = new JTextField();
     private JButton saveButton = new JButton("mentes");
     private JButton loadButton = new JButton("betoltes");
     private ImagePanel[] panels;
 
+    private ParancsFeldolgozo parancsFeldolgozo;
+
     Board(Palya palya) {
         this.palya = palya;
+        parancsFeldolgozo = new ParancsFeldolgozo(palya);
         panels = new ImagePanel[palya.getTabla().length * palya.getTabla()[0].length];
         createAndShowGUI();
     }
@@ -55,10 +66,39 @@ public class Board extends JFrame {
         southPanel.add(holmikLabel, gbc);
         eastPanel.setLayout(new BoxLayout(eastPanel, Y_AXIS));
         westPanel.add(magyarazat);
+        commandField.setMaximumSize(new Dimension(Short.MAX_VALUE, 20));
+        eastPanel.add(commandLabel);
+        eastPanel.add(commandField);
         eastPanel.add(new Box.Filler(new Dimension(10, 10), new Dimension(10, 10), new Dimension(10, 10)));
         eastPanel.add(saveButton);
         eastPanel.add(new Box.Filler(new Dimension(10, 10), new Dimension(10, 10), new Dimension(10, 10)));
         eastPanel.add(loadButton);
+        commandField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == VK_ENTER) {
+                    int command;
+                    try {
+                        command = parseInt(commandField.getText());
+                    } catch (NumberFormatException nfe) {
+                        commandField.setText("");
+                        return;
+                    }
+                    parancsFeldolgozo.vegrehajt(command);
+                    draw(getContentPane());
+                    if (palya.getJatekos().isDead()) {
+                        showMessageDialog(getContentPane(), "Vesztettel!!!");
+                        getWindowAncestor(getContentPane()).dispose();
+                    }
+                    if (palya.getJatekos().segitsegMegJott()) {
+                        showMessageDialog(getContentPane(), "Nyertel!!!");
+                        getWindowAncestor(getContentPane()).dispose();
+                    }
+                    commandField.setText("");
+                }
+            }
+        });
+
         saveButton.addActionListener(e -> saveGame(this, palya));
         loadButton.addActionListener(e -> loadGame(this, palya));
         magyarazat.setText("mozgas: szamok (kiveve 5)\n" +
