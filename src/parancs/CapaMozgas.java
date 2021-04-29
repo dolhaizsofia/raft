@@ -18,11 +18,19 @@ public class CapaMozgas extends Parancs {
 
     private boolean valid = true;
 
+    /**
+     * @param palya palyat kap parameterul
+     * @return ha capa es igaz akkor igaz ha nem capa kkor mindegy mert a capat akkarjuk mozgatni
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         return mezoTipusu(palya, CAPA_TIPUS) && valid;
     }
 
+    /**
+     * veletlencseruen generalt szammal adunk neki iranyt es emiat osze visza fog menni
+     * @param p
+     */
     @Override
     protected void vegrehajt(Palya p) {
         Mezo[][] palya = p.getTabla();
@@ -42,6 +50,13 @@ public class CapaMozgas extends Parancs {
         valid = false;
     }
 
+    /**
+     * lekezeli hogy ne mehesen ra a hajora
+     * @param palya
+     * @param ujI
+     * @param ujJ
+     * @return
+     */
     private boolean tengerMezoE(Palya palya, int ujI, int ujJ) {
         return palya.palyanBelulE(ujI, ujJ)
                 && palya.getTabla()[ujI][ujJ].getLegfelso().tipus().equals(TENGER_TIPUS);

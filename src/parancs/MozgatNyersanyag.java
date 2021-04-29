@@ -12,7 +12,11 @@ import static palya.Tenger.TENGER_TIPUS;
  * minden lepesnel lemozgatja eggyel a nyersanyagokat ha oda mehet nyersanyag
  */
 public class MozgatNyersanyag extends Parancs {
-
+    /**
+     * megnezi hogy mehet e oda nyersanyag
+     * @param palya
+     * @return
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
@@ -24,6 +28,10 @@ public class MozgatNyersanyag extends Parancs {
         leMozgat(palya);
     }
 
+    /**
+     * lemozgatja minden lepesnel a nyersanyagokat
+     * @param p
+     */
     private void leMozgat(Palya p) {
         Mezo[][] palya = p.getTabla();
         int currI = p.getCurrI();

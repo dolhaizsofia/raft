@@ -19,6 +19,13 @@ public abstract class Nyersanyag implements JatekElem {
 
     protected Nyersanyag() {}
 
+    /**
+     *
+     * @param elemTipus
+     * a gyerekosztalyaiba definialt tipusok
+     * @return
+     * letezo nyersanyag e
+     */
     public static boolean nyersanyagE(String elemTipus) {
         return NYERSANYAGOK.contains(elemTipus);
     }

@@ -21,6 +21,11 @@ public class Bovites extends Parancs {
         this.irany = irany;
     }
 
+    /**
+     * megadott felteteleknek teljesulnie kell hogy tudjuk bovitenoi a hajot
+     * @param palya az adott palyat vizsgalom
+     * @return igaz ha megfelel a felteteleknek
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         return palya.palyanBelulE(irany)
@@ -29,6 +34,10 @@ public class Bovites extends Parancs {
                 && palya.getJatekos().keresHolmni(LEVEL_TIPUS) >= 2;
     }
 
+    /**
+     * vegrehajtja az bovitest csokkent a nyersanyagokon es lehelyezi az elemet
+     * @param palya palyaallas amitn ep allunk azt kapja parameterul
+     */
     @Override
     public void vegrehajt(Palya palya) {
         palya.getJatekos().csokkentHolmi(DESZKA_TIPUS, 2);
@@ -36,6 +45,10 @@ public class Bovites extends Parancs {
         foglalTerulet(palya);
     }
 
+    /**
+     * lefoglalja azt a teruletet hajonak es utana odaepiti
+     * @param p palya palyaallas amitn ep allunk azt kapja parameterul
+     */
     private void foglalTerulet(Palya p) {
         Pozicio kovetkezoLepes = p.getKovetkezoLepes(irany);
         p.getTabla()[kovetkezoLepes.getY()][kovetkezoLepes.getX()].lehelyez(new Fold());

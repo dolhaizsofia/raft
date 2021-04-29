@@ -16,6 +16,11 @@ public class Mozgas extends Parancs {
         this.irany = irany;
     }
 
+    /**
+     * megvizsgalja hogy szabalyos e a kovetkezo lepes
+     * @param p
+     * @return
+     */
     @Override
     protected boolean tamogatott(Palya p) {
         Mezo mezo = p.aktualisMezo();
@@ -26,6 +31,10 @@ public class Mozgas extends Parancs {
         return false;
     }
 
+    /**
+     * ha tamogatott a kovetkezo lepes odalepteti
+     * @param p
+     */
     @Override
     protected void vegrehajt(Palya p) {
         Mezo[][] palya = p.getTabla();

@@ -13,7 +13,11 @@ import static termek.Tuz.TUZ_TIPUS;
  * megnezihogy tud e halat sutni es ha igen akkor suti
  */
 public class SutHal extends Parancs {
-
+    /**
+     * megadott felteteleknek teljesulnie kell
+     * @param palya az adott palyat vizsgalom
+     * @return igaz ha megfelel a felteteleknek
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
@@ -21,6 +25,10 @@ public class SutHal extends Parancs {
                 && palya.getJatekos().keresHolmni(HAL_TIPUS) > 0;
     }
 
+    /**
+     * ha tamogatott akkor vegrehajtja
+     * @param palya
+     */
     @Override
     protected void vegrehajt(Palya palya) {
         Mezo mezo = palya.aktualisMezo();

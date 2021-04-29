@@ -50,6 +50,9 @@ public class Board extends JFrame {
         createAndShowGUI();
     }
 
+    /**
+     * GUI-t csinal
+     */
     private void createAndShowGUI() {
         setTitle("Raft");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -124,6 +127,10 @@ public class Board extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * kirajzolja a jatekos ertekeit
+     * @param contentPane
+     */
     public void draw(Container contentPane) {
         Jatekos jatekos = palya.getJatekos();
         korokSzamaLabel.setText(jatekos.getFormazottCselekvesSzamlalo());

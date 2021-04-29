@@ -12,6 +12,11 @@ public class ParancsFactory {
     private ParancsFactory() {
     }
 
+    /**
+     * parancskodok
+     * @param parancsKod kod
+     * @return mit csinaljon az adott kodra
+     */
     public static Parancs letrehozParancs(int parancsKod) {
         Irany irany = getIrany(parancsKod % 10);
         switch (parancsKod / 10) {

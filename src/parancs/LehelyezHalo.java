@@ -17,10 +17,18 @@ public class LehelyezHalo extends Parancs {
 
     private Irany irany;
 
+    /**
+     * milyen iranyba rakja le a halot
+     * @param irany
+     */
     LehelyezHalo(Irany irany) {
         this.irany = irany;
     }
-
+    /**
+     * megadott felteteleknek teljesulnie kell
+     * @param palya az adott palyat vizsgalom
+     * @return igaz ha megfelel a felteteleknek
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         return jatekosFoldonEsMellettVmi(palya, irany, TENGER_TIPUS)
@@ -28,6 +36,11 @@ public class LehelyezHalo extends Parancs {
                 && palya.getJatekos().keresHolmni(LEVEL_TIPUS) >= 6;
     }
 
+    /**
+     * lerakja a halot
+     * csokkenti az alapanyagok mennyiseget
+     * @param p
+     */
     @Override
     public void vegrehajt(Palya p) {
         p.getJatekos().csokkentHolmi(DESZKA_TIPUS, 2);

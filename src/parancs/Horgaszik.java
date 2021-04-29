@@ -14,12 +14,20 @@ import static palya.Tenger.TENGER_TIPUS;
 public class Horgaszik extends Parancs {
 
     private static Random random = new Random();
-
+    /**
+     * megadott felteteleknek teljesulnie kell
+     * @param palya az adott palyat vizsgalom
+     * @return igaz ha megfelel a felteteleknek
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         return palya.aktualisMezo().ellenorizFelsoKetTipusat(JATEKOS_TIPUS, TENGER_TIPUS);
     }
 
+    /**
+     * horgaszik randomadok egy szamot es ennek megfelelo szazalekba halaszunk halat
+     * @param palya
+     */
     @Override
     protected void vegrehajt(Palya palya) {
         if (random.nextInt(4) == 1) {

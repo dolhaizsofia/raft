@@ -15,10 +15,18 @@ public class ParancsFeldolgozo {
 
     private Palya palya;
 
+    /**
+     * feldolgozza a parancsokat
+     * @param palya
+     */
     ParancsFeldolgozo(Palya palya) {
         this.palya = palya;
     }
 
+    /**
+     * vegigmegy a parancsokon
+     * @param parancs
+     */
     public void vegrehajt(int parancs) {
         elokeszitParancsok(parancs);
         for (Parancs p : elokeszitParancsok(parancs)) {

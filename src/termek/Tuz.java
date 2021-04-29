@@ -21,14 +21,26 @@ public class Tuz implements JatekElem {
         halak = new ArrayList<>();
     }
 
+    /**
+     * rarakja a burgonyat
+     * @param b
+     */
     public void rarak(Burgonya b) {
         burgonyak.add(b);
     }
 
+    /**
+     * rarakja a halat
+     * @param h
+     */
     public void rarak(Hal h) {
         halak.add(h);
     }
 
+    /**
+     * van e mar megsult hal
+     * @return
+     */
     public boolean vanSultHal() {
         for (Hal h : halak) {
             if (h.kesz()) {
@@ -38,6 +50,10 @@ public class Tuz implements JatekElem {
         return false;
     }
 
+    /**
+     * van e mar megsult burgonya
+     * @return
+     */
     public boolean vanSultBurgonya() {
         for (Burgonya b : burgonyak) {
             if (b.kesz()) {
@@ -47,6 +63,9 @@ public class Tuz implements JatekElem {
         return false;
     }
 
+    /**
+     * suti a burgonyat es a halat
+     */
     public void sul() {
         for (Burgonya b : burgonyak) {
             b.novelAtsultseg();
@@ -56,6 +75,9 @@ public class Tuz implements JatekElem {
         }
     }
 
+    /**
+     * ha megsult a burgony leveszi
+     */
     public void leveszBurgonya() {
         for (Burgonya b : burgonyak) {
             if (b.kesz()) {
@@ -65,6 +87,9 @@ public class Tuz implements JatekElem {
         }
     }
 
+    /**
+     * meg lehet enni a halat akkor leveszi
+     */
     public void leveszHal() {
         for (Hal h : halak) {
             if (h.kesz()) {
@@ -73,7 +98,10 @@ public class Tuz implements JatekElem {
             }
         }
     }
-
+    /**
+     * feluldefinialja a tipust
+     * @return
+     */
     @Override
     public String tipus() {
         return TUZ_TIPUS;

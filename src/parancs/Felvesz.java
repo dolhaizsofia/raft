@@ -15,7 +15,11 @@ public class Felvesz extends Parancs {
     Felvesz(Irany irany) {
         this.irany = irany;
     }
-
+    /**
+     * megadott felteteleknek teljesulnie kell
+     * @param palya az adott palyat vizsgalom
+     * @return igaz ha megfelel a felteteleknek
+     */
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();
@@ -26,6 +30,10 @@ public class Felvesz extends Parancs {
                 && mezo.getLegfelso().tipus().equals(JATEKOS_TIPUS);
     }
 
+    /**
+     * vegrehajtja ha tamogatott
+     * @param p
+     */
     @Override
     protected void vegrehajt(Palya p) {
         Pozicio kovetkezoLepes = p.getKovetkezoLepes(irany);

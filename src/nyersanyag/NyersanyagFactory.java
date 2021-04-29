@@ -14,6 +14,10 @@ public class NyersanyagFactory {
 
     private NyersanyagFactory() {}
 
+    /**
+     * a megadott valoszinusegnek megfeleloen add vissza egy nyersanyagott
+     * @return nyersanyaggal
+     */
     public static Nyersanyag letrehozNyersanyag() {
         int valoszinuseg = random.nextInt(100);
         if (valoszinuseg < 32) return new Deszka();
@@ -22,6 +26,10 @@ public class NyersanyagFactory {
         else return new Hordo();
     }
 
+    /**
+     * hordo tartalmat allitja ossze
+     * @return
+     */
     static Nyersanyag letrehozHordoTartalom() {
         int valoszinuseg = random.nextInt(4);
         if (valoszinuseg == 0) return new Deszka();
