@@ -3,7 +3,7 @@ package palya;
 import nyersanyag.Hordo;
 import nyersanyag.Nyersanyag;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static java.lang.Math.min;
@@ -30,7 +30,7 @@ public class Jatekos implements JatekElem {
     private Map<String, Integer> holmik;
 
     public Jatekos() {
-        holmik = new HashMap<>();
+        holmik = new LinkedHashMap<>();
         holmik.put(DESZKA_TIPUS, 0);
         holmik.put(LEVEL_TIPUS, 0);
         holmik.put(HULLADEK_TIPUS, 0);
