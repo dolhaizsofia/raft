@@ -62,6 +62,10 @@ public class Palya {
         return palya[currI][currJ];
     }
 
+    public void letorol() {
+        this.palya = new Mezo[palya.length][palya[0].length];
+    }
+
     public Pozicio getKovetkezoLepes(Irany irany) {
         Pozicio elmozdulas = getElmozdulasIranyhoz(irany);
         Pozicio ujPozicio = new Pozicio(currJ + elmozdulas.getX(), currI + elmozdulas.getY());

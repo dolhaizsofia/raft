@@ -18,5 +18,6 @@ public class LeveszEro extends Parancs {
     @Override
     protected void vegrehajt(Palya palya) {
         palya.getJatekos().csokkentElet();
+        palya.getJatekos().csokkentElet();
     }
 }

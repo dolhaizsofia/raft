@@ -1,5 +1,6 @@
 package main;
 
+import palya.Jatekos;
 import palya.Palya;
 
 import javax.swing.*;
@@ -77,17 +78,18 @@ class Board extends JFrame {
         container.add(southPanel, BorderLayout.SOUTH);
         container.add(westPanel, BorderLayout.WEST);
         container.add(eastPanel, BorderLayout.EAST);
-        draw(container, new VisszaJelzes());
+        draw(container);
         setSize(1000, 600);
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
-    void draw(Container contentPane, VisszaJelzes visszaJelzes) {
-        korokSzamaLabel.setText(visszaJelzes.getKorokSzama());
-        szomjusagLabel.setText(visszaJelzes.getSzomjusag());
-        ehsegLabel.setText(visszaJelzes.getEhseg());
-        holmikLabel.setText(visszaJelzes.getHolmik());
+    void draw(Container contentPane) {
+        Jatekos jatekos = palya.getJatekos();
+        korokSzamaLabel.setText(jatekos.getFormazottKorokSzama());
+        szomjusagLabel.setText(jatekos.getFormazottSzomjusag());
+        ehsegLabel.setText(jatekos.getFormazottEhseg());
+        holmikLabel.setText(jatekos.getFormazottHolmik());
         GridLayout gridLayout = new GridLayout(palya.getTabla().length, palya.getTabla()[0].length);
         centerPanel.setLayout(gridLayout);
         centerPanel.setBorder(createEmptyBorder(2, 2, 2, 2));

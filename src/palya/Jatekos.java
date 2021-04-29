@@ -13,6 +13,7 @@ import static nyersanyag.Hulladek.HULLADEK_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
 import static termek.Burgonya.BURGONYA_TIPUS;
 import static termek.Hal.HAL_TIPUS;
+
 /**
  * eldonti a statikus metodusa  hogy palya elem e
  * eltarolja hogy mennyi nyersanyaggal rendelkezet
@@ -24,6 +25,7 @@ public class Jatekos implements JatekElem {
 
     private int ehseg = 100;
     private int szomjusag = 100;
+    private int cselekvesSzamlalo = 1000;
 
     private Map<String, Integer> holmik;
 
@@ -38,6 +40,10 @@ public class Jatekos implements JatekElem {
 
     public boolean isAlive() {
         return ehseg > 0 && szomjusag > 0;
+    }
+
+    public boolean segitsegNemJottMeg() {
+        return cselekvesSzamlalo > 0;
     }
 
     public int keresHolmni(String holmi) {
@@ -63,6 +69,10 @@ public class Jatekos implements JatekElem {
         szomjusag--;
     }
 
+    public void csokkentCselekvesSzamlalo() {
+        cselekvesSzamlalo--;
+    }
+
     public void iszik() {
         szomjusag = min(szomjusag + 40, 100 + 1); //+1 a mostani kor miatt
     }
@@ -77,6 +87,29 @@ public class Jatekos implements JatekElem {
 
     public int getSzomjusag() {
         return szomjusag;
+    }
+
+    public String getFormazottKorokSzama() {
+        return "korok szama: " + cselekvesSzamlalo;
+    }
+
+    public String getFormazottSzomjusag() {
+        return "szomjusag: " + szomjusag;
+    }
+
+    public String getFormazottEhseg() {
+        return "ehseg: " + ehseg;
+    }
+
+    public String getFormazottHolmik() {
+        StringBuilder builder = new StringBuilder();
+        for (Map.Entry<String, Integer> e:holmik.entrySet()) {
+            builder.append(e.getKey())
+                    .append(": ")
+                    .append(e.getValue())
+                    .append("  ");
+        }
+        return builder.toString();
     }
 
     public Map<String, Integer> getHolmik() {

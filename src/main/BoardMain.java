@@ -1,5 +1,6 @@
 package main;
 
+import palya.Jatekos;
 import palya.Palya;
 import parancs.*;
 
@@ -16,12 +17,12 @@ public class BoardMain {
 
     public static void main(String[] args) {
         Palya palya = new Palya(25, 35);
+        Jatekos jatekos = palya.getJatekos();
         Board board = new Board(palya);
         ParancsFeldolgozo parancsFeldolgozo = new ParancsFeldolgozo(palya);
-
-        int cselekvesSzamlalo = 1000;
         Scanner olvaso = new Scanner(in);
-        while (palya.getJatekos().isAlive()) {
+
+        while (jatekos.isAlive() && jatekos.segitsegNemJottMeg()) {
             List<Parancs> parancsok = new ArrayList<>();
             parancsok.add(letrehozParancs(olvaso.nextInt()));
             parancsok.add(new MozgatNyersanyag());
@@ -31,27 +32,12 @@ public class BoardMain {
             parancsok.add(new SulEtel());
             parancsok.add(new HaloBegyujt());
             parancsok.add(new CapaMozgas());
-
             parancsFeldolgozo.vegrehajt(parancsok);
-
-            cselekvesSzamlalo--;
-            VisszaJelzes visszaJelzes = new VisszaJelzes(cselekvesSzamlalo,
-                    palya.getJatekos().getSzomjusag(),
-                    palya.getJatekos().getEhseg(),
-                    palya.getJatekos().getHolmik());
-            invokeLater(() -> board.draw(board, visszaJelzes));
-
-            if(!palya.getJatekos().isAlive()) {
-                showMessageDialog(board, "Vesztettel!!!");
-                board.dispose();
-                break;
-            }
-
-            if (cselekvesSzamlalo == 0) {
-                showMessageDialog(board, "Nyertel!!!");
-                board.dispose();
-                break;
-            }
+            invokeLater(() -> board.draw(board));
         }
+
+        if (jatekos.isAlive()) showMessageDialog(board, "Nyertel!!!");
+        else showMessageDialog(board, "Vesztettel!!!");
+        board.dispose();
     }
 }

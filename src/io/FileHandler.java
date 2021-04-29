@@ -66,6 +66,7 @@ public class FileHandler {
 
     private static void loadSetting(String fileName, Palya palya) throws IOException {
         Jatekos jatekos = palya.getJatekos();
+        palya.letorol();
         try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
             String line = br.readLine();
             String[] darabok = line.split(" ");
