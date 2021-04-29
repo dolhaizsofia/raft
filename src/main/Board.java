@@ -20,6 +20,8 @@ import static javax.imageio.ImageIO.read;
 import static javax.swing.BorderFactory.createEmptyBorder;
 import static javax.swing.BorderFactory.createLineBorder;
 import static javax.swing.BoxLayout.Y_AXIS;
+import static javax.swing.JOptionPane.showMessageDialog;
+import static javax.swing.SwingUtilities.getWindowAncestor;
 
 public class Board extends JFrame {
 
@@ -38,8 +40,11 @@ public class Board extends JFrame {
     private JButton loadButton = new JButton("betoltes");
     private ImagePanel[] panels;
 
+    private ParancsFeldolgozo parancsFeldolgozo;
+
     Board(Palya palya) {
         this.palya = palya;
+        parancsFeldolgozo = new ParancsFeldolgozo(palya);
         panels = new ImagePanel[palya.getTabla().length * palya.getTabla()[0].length];
         createAndShowGUI();
     }
@@ -65,14 +70,23 @@ public class Board extends JFrame {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == VK_ENTER) {
-                    int command = 0;
+                    int command;
                     try {
                         command = parseInt(commandField.getText());
                     } catch (NumberFormatException nfe) {
                         commandField.setText("");
                         return;
                     }
-                    System.out.println(command);
+                    parancsFeldolgozo.vegrehajt(command);
+                    draw(getContentPane());
+                    if (palya.getJatekos().isDead()) {
+                        showMessageDialog(getContentPane(), "Vesztettel!!!");
+                        getWindowAncestor(getContentPane()).dispose();
+                    }
+                    if (palya.getJatekos().segitsegMegJott()) {
+                        showMessageDialog(getContentPane(), "Nyertel!!!");
+                        getWindowAncestor(getContentPane()).dispose();
+                    }
                     commandField.setText("");
                 }
             }

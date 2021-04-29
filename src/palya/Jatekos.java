@@ -38,12 +38,12 @@ public class Jatekos implements JatekElem {
         holmik.put(HAL_TIPUS, 0);
     }
 
-    public boolean isAlive() {
-        return ehseg > 0 && szomjusag > 0;
+    public boolean isDead() {
+        return ehseg <= 0 && szomjusag <= 0;
     }
 
-    public boolean segitsegNemJottMeg() {
-        return cselekvesSzamlalo > 0;
+    public boolean segitsegMegJott() {
+        return cselekvesSzamlalo <= 0;
     }
 
     public int keresHolmni(String holmi) {
