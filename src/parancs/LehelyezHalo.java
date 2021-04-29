@@ -10,7 +10,7 @@ import static nyersanyag.Level.LEVEL_TIPUS;
 import static palya.Tenger.TENGER_TIPUS;
 
 /**
- *megnezi hogy rakhat e le halot oda ahova szeretne es hogy van e eleg nyersanyaga ha mindaketto
+ * megnezi hogy rakhat e le halot oda ahova szeretne es hogy van e eleg nyersanyaga ha mindaketto
  * igaz akkor lerak egy halot
  */
 public class LehelyezHalo extends Parancs {

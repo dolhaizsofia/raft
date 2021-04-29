@@ -1,9 +1,13 @@
 package main;
 
 import palya.Palya;
-import parancs.Parancs;
+import parancs.*;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static parancs.ParancsFactory.letrehozParancs;
+
 /**
  * feldolgoza a parancsokat
  */
@@ -15,10 +19,24 @@ public class ParancsFeldolgozo {
         this.palya = palya;
     }
 
-    public void vegrehajt(List<Parancs> allandoParancsok) {
-        for (Parancs parancs : allandoParancsok) {
-            palya.vegigMegy(parancs);
+    public void vegrehajt(int parancs) {
+        elokeszitParancsok(parancs);
+        for (Parancs p : elokeszitParancsok(parancs)) {
+            palya.vegigMegy(p);
         }
+    }
+
+    private List<Parancs> elokeszitParancsok(int parancs) {
+        List<Parancs> parancsok = new ArrayList<>();
+        parancsok.add(letrehozParancs(parancs));
+        parancsok.add(new MozgatNyersanyag());
+        parancsok.add(new GeneralUjNyersanyagok());
+        parancsok.add(new LeveszEro());
+        parancsok.add(new TisztitViz());
+        parancsok.add(new SulEtel());
+        parancsok.add(new HaloBegyujt());
+        parancsok.add(new CapaMozgas());
+        return parancsok;
     }
 
 }

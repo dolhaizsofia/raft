@@ -5,12 +5,16 @@ import palya.Palya;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
 import static io.FileHandler.loadGame;
 import static io.FileHandler.saveGame;
+import static java.awt.event.KeyEvent.VK_ENTER;
+import static java.lang.Integer.parseInt;
 import static java.util.Objects.requireNonNull;
 import static javax.imageio.ImageIO.read;
 import static javax.swing.BorderFactory.createEmptyBorder;
@@ -29,6 +33,7 @@ public class Board extends JFrame {
     private Label szomjusagLabel = new Label();
     private Label ehsegLabel = new Label();
     private Label holmikLabel = new Label();
+    private JTextField commandField = new JTextField();
     private JButton saveButton = new JButton("mentes");
     private JButton loadButton = new JButton("betoltes");
     private ImagePanel[] panels;
@@ -56,6 +61,23 @@ public class Board extends JFrame {
         eastPanel.add(saveButton);
         eastPanel.add(new Box.Filler(new Dimension(10, 10), new Dimension(10, 10), new Dimension(10, 10)));
         eastPanel.add(loadButton);
+        commandField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == VK_ENTER) {
+                    int command = 0;
+                    try {
+                        command = parseInt(commandField.getText());
+                    } catch (NumberFormatException nfe) {
+                        commandField.setText("");
+                        return;
+                    }
+                    System.out.println(command);
+                    commandField.setText("");
+                }
+            }
+        });
+        eastPanel.add(commandField);
         saveButton.addActionListener(e -> saveGame(this, palya));
         loadButton.addActionListener(e -> loadGame(this, palya));
         magyarazat.setText("mozgas: szamok (kiveve 5)\n" +
