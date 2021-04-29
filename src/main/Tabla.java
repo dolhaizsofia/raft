@@ -23,7 +23,7 @@ import static javax.swing.BoxLayout.Y_AXIS;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static javax.swing.SwingUtilities.getWindowAncestor;
 
-public class Board extends JFrame {
+public class Tabla extends JFrame {
 
     private Palya palya;
     private JPanel centerPanel = new JPanel();
@@ -43,7 +43,7 @@ public class Board extends JFrame {
 
     private ParancsFeldolgozo parancsFeldolgozo;
 
-    Board(Palya palya) {
+    Tabla(Palya palya) {
         this.palya = palya;
         parancsFeldolgozo = new ParancsFeldolgozo(palya);
         panels = new ImagePanel[palya.getTabla().length * palya.getTabla()[0].length];

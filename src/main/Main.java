@@ -2,10 +2,10 @@ package main;
 
 import palya.Palya;
 
-public class BoardMain {
+public class Main {
 
     public static void main(String[] args) {
-        new Board(new Palya(25, 35));
+        new Tabla(new Palya(25, 35));
     }
 
 }

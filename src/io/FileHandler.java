@@ -1,6 +1,6 @@
 package io;
 
-import main.Board;
+import main.Tabla;
 import palya.elemek.nyersanyag.Deszka;
 import palya.elemek.nyersanyag.Hordo;
 import palya.elemek.nyersanyag.Hulladek;
@@ -47,11 +47,11 @@ public class FileHandler {
     private FileHandler() {
     }
 
-    public static void loadGame(Board board, Palya palya) {
-        openFileChooser(board, false).ifPresent(filePath -> {
+    public static void loadGame(Tabla tabla, Palya palya) {
+        openFileChooser(tabla, false).ifPresent(filePath -> {
             try {
                 load(filePath, palya);
-                invokeLater(() -> board.draw(board));
+                invokeLater(() -> tabla.draw(tabla));
             } catch (IOException e) {
                 e.printStackTrace();
                 showMessageDialog(null, "File not found!", "warning", ERROR_MESSAGE);
