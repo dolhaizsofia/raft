@@ -5,8 +5,8 @@ import termek.Hal;
 
 import java.util.Random;
 
-import static palya.Jatekos.JATEKOS_TIPUS;
-import static palya.Tenger.TENGER_TIPUS;
+import static palya.elemek.Jatekos.JATEKOS_TIPUS;
+import static palya.elemek.Tenger.TENGER_TIPUS;
 
 /**
  * ha vizen van a jatekos akkor tud horgaszni

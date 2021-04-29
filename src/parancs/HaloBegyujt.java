@@ -3,11 +3,11 @@ package parancs;
 import palya.JatekElem;
 import palya.Palya;
 
-import static nyersanyag.Nyersanyag.nyersanyagE;
+import static palya.elemek.nyersanyag.Nyersanyag.nyersanyagE;
 import static termek.Halo.HALO_TIPUS;
 
 /**
- * ha a halohoz erkezik egy nyersanyag azt begyujti
+ * ha a halohoz erkezik egy palya.elemek.nyersanyag azt begyujti
  */
 public class HaloBegyujt extends Parancs {
     /**

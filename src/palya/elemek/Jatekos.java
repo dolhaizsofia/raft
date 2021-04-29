@@ -1,16 +1,17 @@
-package palya;
+package palya.elemek;
 
-import nyersanyag.Hordo;
-import nyersanyag.Nyersanyag;
+import palya.elemek.nyersanyag.Hordo;
+import palya.elemek.nyersanyag.Nyersanyag;
+import palya.JatekElem;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static java.lang.Math.min;
-import static nyersanyag.Deszka.DESZKA_TIPUS;
-import static nyersanyag.Hordo.HORDO_TIPUS;
-import static nyersanyag.Hulladek.HULLADEK_TIPUS;
-import static nyersanyag.Level.LEVEL_TIPUS;
+import static palya.elemek.nyersanyag.Deszka.DESZKA_TIPUS;
+import static palya.elemek.nyersanyag.Hordo.HORDO_TIPUS;
+import static palya.elemek.nyersanyag.Hulladek.HULLADEK_TIPUS;
+import static palya.elemek.nyersanyag.Level.LEVEL_TIPUS;
 import static termek.Burgonya.BURGONYA_TIPUS;
 import static termek.Hal.HAL_TIPUS;
 
@@ -30,7 +31,7 @@ public class Jatekos implements JatekElem {
     private Map<String, Integer> holmik;
 
     /**
-     * jatekos tartalmaz egy HashMapet amibe nyersanyag tipusok es ertekeik vannak
+     * jatekos tartalmaz egy HashMapet amibe palya.elemek.nyersanyag tipusok es ertekeik vannak
      */
     public Jatekos() {
         holmik = new LinkedHashMap<>();
@@ -58,7 +59,7 @@ public class Jatekos implements JatekElem {
     }
 
     /**
-     * @param holmi nyersanyag fajta ami benne van a mapbe
+     * @param holmi palya.elemek.nyersanyag fajta ami benne van a mapbe
      * @return van e ilyen holmilya az embernek
      */
     public int keresHolmni(String holmi) {
@@ -66,7 +67,7 @@ public class Jatekos implements JatekElem {
     }
 
     /**
-     * @param holmi     nyersanyag fajta ami benne van a mapbe
+     * @param holmi     palya.elemek.nyersanyag fajta ami benne van a mapbe
      * @param mennyiseg ha vett valamit a jatekos csokkenti hogy a mennyisegevel a holmi menyiseget
      */
     public void csokkentHolmi(String holmi, int mennyiseg) {

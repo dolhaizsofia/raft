@@ -1,17 +1,17 @@
 package parancs;
 
-import palya.Fold;
+import palya.elemek.Fold;
 import palya.Irany;
 import palya.Palya;
 import palya.Pozicio;
 
-import static nyersanyag.Deszka.DESZKA_TIPUS;
-import static nyersanyag.Level.LEVEL_TIPUS;
-import static palya.Tenger.TENGER_TIPUS;
+import static palya.elemek.nyersanyag.Deszka.DESZKA_TIPUS;
+import static palya.elemek.nyersanyag.Level.LEVEL_TIPUS;
+import static palya.elemek.Tenger.TENGER_TIPUS;
 
 /**
  * megvizsgalja a palyat hogy lehet e oda epiteni
- * leepit plusz egy foldteruletett ha van elég nyersanyag amugy meg visszater hamissal és nem csinal semmit
+ * leepit plusz egy foldteruletett ha van elég palya.elemek.nyersanyag amugy meg visszater hamissal és nem csinal semmit
  */
 public class Bovites extends Parancs {
 

@@ -1,6 +1,6 @@
-package nyersanyag;
+package palya.elemek.nyersanyag;
 
-import static nyersanyag.NyersanyagFactory.letrehozHordoTartalom;
+import static palya.elemek.nyersanyag.NyersanyagFactory.letrehozHordoTartalom;
 
 /**
  * eldonti a statikus metodusa  hogy valami nyersanyage
@@ -25,7 +25,7 @@ public class Hordo extends Nyersanyag {
     }
 
     /**
-     * @return nyersanyag osztalyt tipus metodusanak felulirasa hogy hordo tipust adjon vissza
+     * @return palya.elemek.nyersanyag osztalyt tipus metodusanak felulirasa hogy hordo tipust adjon vissza
      */
     @Override
     public String tipus() {

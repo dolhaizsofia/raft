@@ -6,8 +6,8 @@ import palya.Palya;
 
 import java.util.Random;
 
-import static palya.Capa.CAPA_TIPUS;
-import static palya.Tenger.TENGER_TIPUS;
+import static palya.elemek.Capa.CAPA_TIPUS;
+import static palya.elemek.Tenger.TENGER_TIPUS;
 
 /**
  * palyat vizsgalja hogy oda mehet e a capa

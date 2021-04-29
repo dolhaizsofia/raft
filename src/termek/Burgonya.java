@@ -1,6 +1,6 @@
 package termek;
 
-import nyersanyag.Nyersanyag;
+import palya.elemek.nyersanyag.Nyersanyag;
 
 /**
  * eldonti a statikus metodusa  hogy termek e

@@ -1,6 +1,6 @@
 package main;
 
-import palya.Jatekos;
+import palya.elemek.Jatekos;
 import palya.Palya;
 
 import javax.swing.*;
@@ -104,7 +104,7 @@ public class Board extends JFrame {
         magyarazat.setText("mozgas: szamok (kiveve 5)\n" +
                 "\n" +
                 "Parancsok irannyal:\n" +
-                "nyersanyag felvetele: 1\n" +
+                "palya.elemek.nyersanyag felvetele: 1\n" +
                 "halo lehelyezese: 2\n" +
                 "viztisztito lehelyezese: 3\n" +
                 "tuzhely lehelyezese: 4\n" +

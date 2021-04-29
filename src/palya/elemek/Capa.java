@@ -1,4 +1,6 @@
-package palya;
+package palya.elemek;
+
+import palya.JatekElem;
 
 /**
  * eldonti a statikus metodusa  hogy palya elem e

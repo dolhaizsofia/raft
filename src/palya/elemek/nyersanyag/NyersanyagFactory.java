@@ -1,4 +1,4 @@
-package nyersanyag;
+package palya.elemek.nyersanyag;
 
 import termek.Burgonya;
 

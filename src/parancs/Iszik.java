@@ -4,7 +4,7 @@ import palya.Mezo;
 import palya.Palya;
 import termek.Viztisztito;
 
-import static palya.Jatekos.JATEKOS_TIPUS;
+import static palya.elemek.Jatekos.JATEKOS_TIPUS;
 import static termek.Viztisztito.VIZ_TISZTITO_TIPUS;
 
 /**

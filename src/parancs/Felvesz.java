@@ -2,8 +2,8 @@ package parancs;
 
 import palya.*;
 
-import static nyersanyag.Nyersanyag.nyersanyagE;
-import static palya.Jatekos.JATEKOS_TIPUS;
+import static palya.elemek.nyersanyag.Nyersanyag.nyersanyagE;
+import static palya.elemek.Jatekos.JATEKOS_TIPUS;
 
 /**
  * felveszi az adot nyersanyagot ha tudja

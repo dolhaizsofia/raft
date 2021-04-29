@@ -3,7 +3,7 @@ package parancs;
 import palya.Mezo;
 import palya.Palya;
 
-import static palya.Jatekos.JATEKOS_TIPUS;
+import static palya.elemek.Jatekos.JATEKOS_TIPUS;
 
 /**
  * ez az osztaly minden cselekvesnel az jatekosunk erejebol azaz szomjusagabol es esegebol

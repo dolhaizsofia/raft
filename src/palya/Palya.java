@@ -1,5 +1,9 @@
 package palya;
 
+import palya.elemek.Capa;
+import palya.elemek.Fold;
+import palya.elemek.Jatekos;
+import palya.elemek.Tenger;
 import parancs.Parancs;
 
 /**

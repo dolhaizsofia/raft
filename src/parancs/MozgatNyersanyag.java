@@ -5,15 +5,15 @@ import palya.Mezo;
 import palya.Palya;
 import termek.Halo;
 
-import static nyersanyag.Nyersanyag.nyersanyagE;
-import static palya.Tenger.TENGER_TIPUS;
+import static palya.elemek.nyersanyag.Nyersanyag.nyersanyagE;
+import static palya.elemek.Tenger.TENGER_TIPUS;
 
 /**
- * minden lepesnel lemozgatja eggyel a nyersanyagokat ha oda mehet nyersanyag
+ * minden lepesnel lemozgatja eggyel a nyersanyagokat ha oda mehet palya.elemek.nyersanyag
  */
 public class MozgatNyersanyag extends Parancs {
     /**
-     * megnezi hogy mehet e oda nyersanyag
+     * megnezi hogy mehet e oda palya.elemek.nyersanyag
      *
      * @param palya
      * @return

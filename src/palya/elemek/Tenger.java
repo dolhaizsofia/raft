@@ -1,4 +1,6 @@
-package palya;
+package palya.elemek;
+
+import palya.JatekElem;
 
 /**
  * eldonti hogy palya elem e

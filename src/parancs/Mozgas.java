@@ -2,7 +2,7 @@ package parancs;
 
 import palya.*;
 
-import static palya.Jatekos.JATEKOS_TIPUS;
+import static palya.elemek.Jatekos.JATEKOS_TIPUS;
 
 /**
  * megnezi hogy a jatekosunk mehet e arra amera az utasitas adta es ha igen akkor odamozgatja amugy nem hajtja vegre a cselekvest

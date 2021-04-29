@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import static nyersanyag.NyersanyagFactory.letrehozNyersanyag;
+import static palya.elemek.nyersanyag.NyersanyagFactory.letrehozNyersanyag;
 
 /**
  * uj nyersanyagokat general

@@ -5,7 +5,7 @@ import palya.Palya;
 import termek.Burgonya;
 import termek.Tuz;
 
-import static palya.Jatekos.JATEKOS_TIPUS;
+import static palya.elemek.Jatekos.JATEKOS_TIPUS;
 import static termek.Burgonya.BURGONYA_TIPUS;
 import static termek.Tuz.TUZ_TIPUS;
 

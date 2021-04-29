@@ -5,9 +5,9 @@ import palya.Palya;
 import palya.Pozicio;
 import termek.Halo;
 
-import static nyersanyag.Deszka.DESZKA_TIPUS;
-import static nyersanyag.Level.LEVEL_TIPUS;
-import static palya.Tenger.TENGER_TIPUS;
+import static palya.elemek.nyersanyag.Deszka.DESZKA_TIPUS;
+import static palya.elemek.nyersanyag.Level.LEVEL_TIPUS;
+import static palya.elemek.Tenger.TENGER_TIPUS;
 
 /**
  * megnezi hogy rakhat e le halot oda ahova szeretne es hogy van e eleg nyersanyaga ha mindaketto

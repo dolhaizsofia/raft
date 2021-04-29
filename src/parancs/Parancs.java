@@ -5,8 +5,8 @@ import palya.Mezo;
 import palya.Palya;
 import palya.Pozicio;
 
-import static palya.Fold.FOLD_TIPUS;
-import static palya.Jatekos.JATEKOS_TIPUS;
+import static palya.elemek.Fold.FOLD_TIPUS;
+import static palya.elemek.Jatekos.JATEKOS_TIPUS;
 
 /**
  * a palyan fogja vegrehajtani az adott parancsokat
