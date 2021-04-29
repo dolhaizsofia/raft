@@ -1,9 +1,8 @@
 package nyersanyag;
-
+/**
+ * eldonti a statikus metodusa  hogy valami nyersanyage
+ */
 public class Level extends Nyersanyag {
-    /** eldonti a statikus metodusa  hogy valami nyersanyage
-     *
-     */
 
     public static final String LEVEL_TIPUS = "level";
 

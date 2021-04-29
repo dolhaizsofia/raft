@@ -5,6 +5,9 @@ import palya.*;
 import static nyersanyag.Nyersanyag.nyersanyagE;
 import static palya.Jatekos.JATEKOS_TIPUS;
 
+/**
+ * felveszi az adot nyersanyagot ha tudja
+ */
 public class Felvesz extends Parancs {
 
     private Irany irany;
@@ -12,12 +15,6 @@ public class Felvesz extends Parancs {
     Felvesz(Irany irany) {
         this.irany = irany;
     }
-
-    /**
-     *
-     * @param palya
-     * @return
-     */
 
     @Override
     protected boolean tamogatott(Palya palya) {

@@ -6,14 +6,11 @@ import termek.Tuz;
 
 import static palya.Jatekos.JATEKOS_TIPUS;
 import static termek.Tuz.TUZ;
-
+/**
+ *megvizsgalja a palyat ha van hal es megsult visszater igazzal ha me nincs vagy meg nyers akkor hamissal
+ */
 public class EszikHal extends Parancs {
 
-    /**
-     *
-     * @param palya megvizsgalja a palyat
-     * @return ha van hal es megsult visszater igazzal ha me nincs vagy meg nyers akkor hamissal
-     */
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();

@@ -13,13 +13,12 @@ import static nyersanyag.Hulladek.HULLADEK_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
 import static termek.Burgonya.BURGONYA_TIPUS;
 import static termek.Hal.HAL_TIPUS;
-
+/**
+ * eldonti a statikus metodusa  hogy palya elem e
+ * eltarolja hogy mennyi nyersanyaggal rendelkezet
+ * hogy el e meg
+ */
 public class Jatekos implements JatekElem {
-    /**
-     * eldonti a statikus metodusa  hogy palya elem e
-     * eltarolja hogy mennyi nyersanyaggal rendelkezet
-     * hogy el e meg
-     */
 
     public static final String JATEKOS_TIPUS = "jatekos";
 

@@ -7,18 +7,15 @@ import java.util.Random;
 import java.util.Set;
 
 import static nyersanyag.NyersanyagFactory.letrehozNyersanyag;
-
+/**
+ * uj nyersanyagokat general
+ */
 public class GeneralUjNyersanyagok extends Parancs {
 
     private static Random random = new Random();
 
     private boolean valid = true;
 
-    /**
-     *
-     * @param palya megvizsgalja a palyat hogy ott van e mar nyersanyag
-     * @return visszater igazzal ha nincs meg ott semmi es hamisal ha van
-     */
     @Override
     protected boolean tamogatott(Palya palya) {
         if (valid) {
@@ -27,11 +24,6 @@ public class GeneralUjNyersanyagok extends Parancs {
         }
         return false;
     }
-
-    /**
-     *
-     * @param palya
-     */
 
     @Override
     protected void vegrehajt(Palya palya) {

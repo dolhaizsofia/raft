@@ -4,11 +4,10 @@ import palya.Palya;
 import parancs.Parancs;
 
 import java.util.List;
-
+/**
+ * feldolgoza a parancsokat
+ */
 public class ParancsFeldolgozo {
-    /**
-     * feldolgoza a parancsokat
-     */
 
     private Palya palya;
 

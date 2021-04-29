@@ -9,19 +9,14 @@ import static nyersanyag.Level.LEVEL_TIPUS;
 import static termek.Burgonya.BURGONYA_TIPUS;
 import static termek.Hal.HAL_TIPUS;
 
+/**
+ * feldolgoza hogy a jatekosnak hogy all menyire ehes, szomjas, menyi holmija van es mennyi kore van meg
+ */
 public class VisszaJelzes {
     private Integer korokSzama;
     private Integer szomjusag;
     private Integer ehseg;
     private Map<String, Integer> holmik;
-
-    /**
-     * feldolgoza hogy a jatekosnak hogy all menyire ehes, szomjas, menyi holmija van es mennyi kore van meg
-     * @param korokSzama
-     * @param szomjusag
-     * @param ehseg
-     * @param holmik
-     */
 
     VisszaJelzes(int korokSzama, int szomjusag, int ehseg, Map<String, Integer> holmik) {
         this.korokSzama = korokSzama;

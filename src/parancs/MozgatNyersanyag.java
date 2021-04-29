@@ -8,13 +8,10 @@ import termek.Halo;
 import static nyersanyag.Nyersanyag.nyersanyagE;
 import static palya.Tenger.TENGER_TIPUS;
 
+/**
+ * minden lepesnel lemozgatja eggyel a nyersanyagokat ha oda mehet nyersanyag
+ */
 public class MozgatNyersanyag extends Parancs {
-
-    /**
-     * minden lepesnel lemozgatja eggyel a nyersanyagokat ha oda mehet nyersanyag
-     * @param palya
-     * @return
-     */
 
     @Override
     protected boolean tamogatott(Palya palya) {

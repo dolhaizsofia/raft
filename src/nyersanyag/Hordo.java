@@ -1,11 +1,10 @@
 package nyersanyag;
 
 import static nyersanyag.NyersanyagFactory.letrehozHordoTartalom;
-
+/**
+ *  eldonti a statikus metodusa  hogy valami nyersanyage
+ */
 public class Hordo extends Nyersanyag {
-
-    /** eldonti a statikus metodusa  hogy valami nyersanyage
-     */
 
     public static final String HORDO = "hordo";
 

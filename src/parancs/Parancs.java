@@ -7,13 +7,12 @@ import palya.Pozicio;
 
 import static palya.Fold.FOLD_TIPUS;
 import static palya.Jatekos.JATEKOS_TIPUS;
-
+/**
+ *
+ * a palyan fogja vegrehajtani az adott parancsokat
+ * visszater igazzal ha megfelelo helyen szeretnenk parancsot vegrehajtani
+ */
 public abstract class Parancs {
-    /**
-     *
-     * @param palya a palyan fogja vegrehajtani az adott parancsokat
-     * @return visszater igazzal ha megfelelo helyen szeretnenk parancsot vegrehajtani
-     */
 
     public void csinal(Palya palya) {
         if(tamogatott(palya)) {

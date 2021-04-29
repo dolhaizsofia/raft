@@ -5,7 +5,10 @@ import palya.*;
 import static nyersanyag.Deszka.DESZKA_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
 import static palya.Tenger.TENGER_TIPUS;
-
+/**
+ *megvizsgalja a palyat hogy lehet e oda epiteni
+ * leepit plusz egy foldteruletett ha van elég nyersanyag amugy meg visszater hamissal és nem csinal semmit
+ */
 public class Bovites extends Parancs {
 
     private Irany irany;
@@ -14,11 +17,6 @@ public class Bovites extends Parancs {
         this.irany = irany;
     }
 
-    /**
-     *
-     * @param palya megvizsgalja a palyat hogy lehet e oda epiteni
-     * @return leepit plusz egy foldteruletett ha van elég nyersanyag amugy meg visszater hamissal és nem csinal semmit
-     */
     @Override
     protected boolean tamogatott(Palya palya) {
         return palya.palyanBelulE(irany)

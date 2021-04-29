@@ -7,12 +7,10 @@ import termek.Viztisztito;
 import static palya.Jatekos.JATEKOS_TIPUS;
 import static termek.Viztisztito.VIZ_TISZTITO;
 
+/**
+ * ha van egy pohar tiszta vize es a viztisztito melet van akkor iszik es no a szomjusaga
+ */
 public class Iszik extends Parancs{
-    /**
-     *
-     * @param palya megvizsgalja hogy van e egy poharnyi tiszta vize ha ven
-     * @return hagyja inni ha nincs nem csinal semmit
-     */
 
     @Override
     protected boolean tamogatott(Palya palya) {

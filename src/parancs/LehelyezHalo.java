@@ -9,15 +9,13 @@ import static nyersanyag.Deszka.DESZKA_TIPUS;
 import static nyersanyag.Level.LEVEL_TIPUS;
 import static palya.Tenger.TENGER_TIPUS;
 
+/**
+ *megnezi hogy rakhat e le halot oda ahova szeretne es hogy van e eleg nyersanyaga ha mindaketto
+ * igaz akkor lerak egy halot
+ */
 public class LehelyezHalo extends Parancs {
 
     private Irany irany;
-
-    /**
-     *ez az osztaly megnezi hogy rakhat e le halot oda ahova szeretne es hogy van e eleg nyersanyaga ha mindaketto
-     * igaz akkor lerak egy halot
-     * @param irany
-     */
 
     LehelyezHalo(Irany irany) {
         this.irany = irany;

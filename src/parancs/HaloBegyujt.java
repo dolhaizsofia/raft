@@ -6,13 +6,11 @@ import palya.Palya;
 import static nyersanyag.Nyersanyag.nyersanyagE;
 import static termek.Halo.HALO_TIPUS;
 
+/**
+ * ha a halohoz erkezik egy nyersanyag azt begyujti
+ */
 public class HaloBegyujt extends Parancs {
 
-    /**
-     *
-     * @param palya megvizsgalja a palyat
-     * @return ha nyersanyag kerölt a halora azt atadja a jatekosnak
-     */
     @Override
     protected boolean tamogatott(Palya palya) {
         return nyersanyagE(palya.aktualisMezo().getLegfelso().tipus())

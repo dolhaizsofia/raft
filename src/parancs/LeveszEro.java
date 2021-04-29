@@ -4,14 +4,11 @@ import palya.Mezo;
 import palya.Palya;
 
 import static palya.Jatekos.JATEKOS_TIPUS;
-
+/**
+ * ez az osztaly minden cselekvesnel az jatekosunk erejebol azaz szomjusagabol es esegebol
+ */
 public class LeveszEro extends Parancs {
 
-    /**
-     * ez az osztaly minden cselekvesnel az jatekosunk erejebol azaz szomjusagabol es esegebol
-     * @param palya
-     * @return
-     */
     @Override
     protected boolean tamogatott(Palya palya) {
         Mezo mezo = palya.aktualisMezo();

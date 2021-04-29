@@ -8,28 +8,19 @@ import java.util.Random;
 
 import static palya.Capa.CAPA_TIPUS;
 import static palya.Tenger.TENGER_TIPUS;
-
+/**
+ *palyat vizsgalja hogy oda mehet e a capa
+ */
 public class CapaMozgas extends Parancs {
 
     private static Random random = new Random();
 
     private boolean valid = true;
 
-    /**
-     *
-     * @param palya a palyat vizsgalja
-     * @return viszater hogy oda mehet e a capa
-     */
-
     @Override
     protected boolean tamogatott(Palya palya) {
         return mezoTipusu(palya, CAPA_TIPUS) && valid;
     }
-
-    /**
-     *
-     * @param p
-     */
 
     @Override
     protected void vegrehajt(Palya p) {

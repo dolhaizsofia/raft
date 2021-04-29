@@ -1,13 +1,10 @@
 package parancs;
 
 import static palya.Irany.*;
-
+/**
+ * melyik szamkombinacioval milyen parancsot hajt vegre a jatek
+ */
 public class ParancsFactory {
-    /**
-     * melyik szamkombinacioval milyen parancsot hajt vegre a jatek
-     * @param parancsKod
-     * @return
-     */
 
     public static Parancs letrehozParancs(int parancsKod) {
         switch (parancsKod) {

@@ -2,11 +2,10 @@ package palya;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * lekezeli a mezoket
+ */
 public class Mezo {
-    /**
-     * lekezeli a mezoket
-     */
 
     private List<JatekElem> elemek = new ArrayList<>();
 

@@ -2,6 +2,9 @@ package palya;
 
 import parancs.Parancs;
 
+/**
+ * osszerakja a palyat
+ */
 public class Palya {
 
     private Jatekos jatekos;
@@ -10,12 +13,6 @@ public class Palya {
     //    jatekelem should have position???
     private int currI;
     private int currJ;
-
-    /**
-     * osszerakja a palyat
-     * @param height
-     * @param width
-     */
 
     public Palya(int height, int width) {
         this.palya = new Mezo[height][width];
