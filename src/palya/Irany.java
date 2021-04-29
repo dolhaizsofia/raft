@@ -8,5 +8,6 @@ public enum Irany {
     BALLE,
     BALFEL,
     JOBBLE,
-    JOBBFEL
+    JOBBFEL,
+    NOOP
 }

@@ -9,6 +9,9 @@ import static palya.Irany.*;
  */
 public class ParancsFactory {
 
+    private ParancsFactory() {
+    }
+
     public static Parancs letrehozParancs(int parancsKod) {
         Irany irany = getIrany(parancsKod % 10);
         switch (parancsKod / 10) {
@@ -60,7 +63,7 @@ public class ParancsFactory {
             case 9:
                 return JOBBFEL;
             default:
-                return BAL;
+                return NOOP;
         }
     }
 
