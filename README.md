@@ -1,6 +1,8 @@
 ## Raft
 ![picture](resources/jatek.png)
-A jatekost a terminalba megadott szamkombinaciokkal lehet iranyitani, es kulonbozo cselekveseket vegrehajtatni vele.
+
+
+A jatekost a parancs rublikaba megadott szamkombinaciokkal lehet iranyitani, es kulonbozo cselekveseket vegrehajtatni vele.
 ~~~~
 A parancsok ugy épulnek fel hogy a mozgatas 1-9-ig
 (1:balle , 2:le, 3:jobble, 4:bal, 6:jobb, 7:balfel, 8:fel, 9:jobbfel)
@@ -29,7 +31,7 @@ Halatsut:94
 
 Burgonyatsut:95.
 ~~~~
-####A Termekek arai: 
+#### A Termekek arai: 
 ~~~~
 Halo: 2*deszka + 6*level
 
@@ -41,3 +43,5 @@ Teruletbovites: 2*deszka + 2*level.
 ~~~~
 A tuzhely sehol nem irja ki hogy hogy all az epp felrakot burgony igy azt erdemes lehet szamolni a viztisztito szinten nem irja ki
 , mindketto 25 cselekves allat vegez a feladataval tehat keszit egy pohar vizet es suti keszre az etelt.
+
+A JavaDoc- bol legeneralt HTML fajlt a docs mappaban index.html alatt talalni
